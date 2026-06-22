@@ -1,0 +1,259 @@
+[
+  {
+    "ContainingType": "InsuranceCompany.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "InsuranceCompany.DTOs.Authentication.UserLoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InsuranceCompany.Controllers.AuthController",
+    "Method": "Register",
+    "RelativePath": "api/Auth/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "InsuranceCompany.DTOs.Authentication.UserRegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InsuranceCompany.Controllers.Operations.ClaimController",
+    "Method": "ReviewClaim",
+    "RelativePath": "api/Claim/{id}/review",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "InsuranceCompany.Dtos.Claims.ClaimReviewDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InsuranceCompany.Controllers.Operations.ClaimController",
+    "Method": "TrackClaimStatus",
+    "RelativePath": "api/Claim/{id}/Status",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InsuranceCompany.Controllers.Operations.ClaimController",
+    "Method": "FileClaim",
+    "RelativePath": "api/Claim/file",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "InsuranceCompany.Dtos.Claims.ClaimFileDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InsuranceCompany.Controllers.Operations.ClaimController",
+    "Method": "GetMyClaimsHistory",
+    "RelativePath": "api/Claim/my-history",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InsuranceCompany.Controllers.Operations.ClaimController",
+    "Method": "GetPendingQueue",
+    "RelativePath": "api/Claim/pending-queue",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InsuranceCompany.Controllers.Payments.PaymentController",
+    "Method": "ProcessCheckout",
+    "RelativePath": "api/Payment/checkout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "InsuranceCompany.DTOs.Payments.PaymentProcessDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InsuranceCompany.Controllers.PolicyManagement.PolicyController",
+    "Method": "AllPolicy",
+    "RelativePath": "api/Policy",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InsuranceCompany.Controllers.PolicyManagement.PolicyController",
+    "Method": "GetPolicyById",
+    "RelativePath": "api/Policy/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InsuranceCompany.Controllers.PolicyManagement.PolicyController",
+    "Method": "CreatePolicy",
+    "RelativePath": "api/Policy/AddPolicy",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "InsuranceCompany.DTOs.PolicyManagement.PolicyCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InsuranceCompany.Controllers.PolicyManagement.PolicyController",
+    "Method": "UpdatePolicy",
+    "RelativePath": "api/Policy/UpdatePolicy/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "InsuranceCompany.DTOs.PolicyManagement.PolicyUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InsuranceCompany.Controllers.Proposals.ProposalController",
+    "Method": "GetById",
+    "RelativePath": "api/Proposal/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InsuranceCompany.Controllers.Proposals.ProposalController",
+    "Method": "ReviewProposal",
+    "RelativePath": "api/Proposal/{id}/review",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "InsuranceCompany.DTOs.Proposals.ProposalReviewDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InsuranceCompany.Controllers.Proposals.ProposalController",
+    "Method": "GetPendingProposals",
+    "RelativePath": "api/Proposal/Pending",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InsuranceCompany.Controllers.Proposals.ProposalController",
+    "Method": "AddProposal",
+    "RelativePath": "api/Proposal/Submit",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "InsuranceCompany.DTOs.Proposals.ProposalCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InsuranceCompany.Controllers.Proposals.ProposalController",
+    "Method": "GetMyProposalHistory",
+    "RelativePath": "api/Proposal/UserProposals",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
