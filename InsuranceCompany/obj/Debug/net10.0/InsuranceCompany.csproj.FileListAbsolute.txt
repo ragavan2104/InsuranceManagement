@@ -167,3 +167,5 @@ D:\c#\InsuranceCompany\InsuranceCompany\obj\Debug\net10.0\refint\InsuranceCompan
 D:\c#\InsuranceCompany\InsuranceCompany\obj\Debug\net10.0\InsuranceCompany.pdb
 D:\c#\InsuranceCompany\InsuranceCompany\obj\Debug\net10.0\InsuranceCompany.genruntimeconfig.cache
 D:\c#\InsuranceCompany\InsuranceCompany\obj\Debug\net10.0\ref\InsuranceCompany.dll
+D:\c#\InsuranceCompany\InsuranceCompany\obj\Debug\net10.0\InsuranceCompany.sourcelink.json
+D:\c#\InsuranceCompany\InsuranceCompany\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

@@ -3,16 +3,52 @@
   "WorkspaceRootPath": "D:\\c#\\InsuranceCompany\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|d:\\c#\\insurancecompany\\insurancecompany\\services\\claims\\claimservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|solutionrelative:insurancecompany\\services\\claims\\claimservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|d:\\c#\\insurancecompany\\insurancecompany\\log4net.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|solutionrelative:insurancecompany\\log4net.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|d:\\c#\\insurancecompany\\insurancecompany\\insurancecompany.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|solutionrelative:insurancecompany\\insurancecompany.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|d:\\c#\\insurancecompany\\insurancecompany\\controllers\\policymanagement\\policycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|solutionrelative:insurancecompany\\controllers\\policymanagement\\policycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7FD22D3-6A03-4F43-9FB3-77BA9C903279}|InsuranceCompany.Tests\\InsuranceCompany.Tests.csproj|d:\\c#\\insurancecompany\\insurancecompany.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7FD22D3-6A03-4F43-9FB3-77BA9C903279}|InsuranceCompany.Tests\\InsuranceCompany.Tests.csproj|solutionrelative:insurancecompany.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|d:\\c#\\insurancecompany\\insurancecompany\\services\\authentication\\passwordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|solutionrelative:insurancecompany\\services\\authentication\\passwordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|d:\\c#\\insurancecompany\\insurancecompany\\services\\authentication\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|solutionrelative:insurancecompany\\services\\authentication\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|d:\\c#\\insurancecompany\\insurancecompany\\controllers\\proposals\\proposalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|solutionrelative:insurancecompany\\controllers\\proposals\\proposalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|d:\\c#\\insurancecompany\\insurancecompany\\controllers\\operations\\claimcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|solutionrelative:insurancecompany\\controllers\\operations\\claimcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|d:\\c#\\insurancecompany\\insurancecompany\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|solutionrelative:insurancecompany\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|d:\\c#\\insurancecompany\\insurancecompany\\services\\claims\\claimservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|solutionrelative:insurancecompany\\services\\claims\\claimservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|d:\\c#\\insurancecompany\\insurancecompany\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|solutionrelative:insurancecompany\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7FD22D3-6A03-4F43-9FB3-77BA9C903279}|InsuranceCompany.Tests\\InsuranceCompany.Tests.csproj|d:\\c#\\insurancecompany\\insurancecompany.tests\\insurancecompany.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{C7FD22D3-6A03-4F43-9FB3-77BA9C903279}|InsuranceCompany.Tests\\InsuranceCompany.Tests.csproj|solutionrelative:insurancecompany.tests\\insurancecompany.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|d:\\c#\\insurancecompany\\insurancecompany\\controllers\\operations\\claimcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|solutionrelative:insurancecompany\\controllers\\operations\\claimcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|d:\\c#\\insurancecompany\\insurancecompany\\insurancecompany.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -51,10 +87,6 @@
       "RelativeMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|solutionrelative:insurancecompany\\controllers\\payment\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|d:\\c#\\insurancecompany\\insurancecompany\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|solutionrelative:insurancecompany\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|d:\\c#\\insurancecompany\\insurancecompany\\dtos\\claims\\claimreviewdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|solutionrelative:insurancecompany\\dtos\\claims\\claimreviewdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -67,10 +99,6 @@
       "RelativeMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|solutionrelative:insurancecompany\\models\\operations\\claim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|d:\\c#\\insurancecompany\\insurancecompany\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|solutionrelative:insurancecompany\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|d:\\c#\\insurancecompany\\insurancecompany\\dtos\\policymanagement\\policyresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|solutionrelative:insurancecompany\\dtos\\policymanagement\\policyresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -79,24 +107,12 @@
       "RelativeMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|solutionrelative:insurancecompany\\services\\policymanagement\\ipolicyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|d:\\c#\\insurancecompany\\insurancecompany\\controllers\\policymanagement\\policycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|solutionrelative:insurancecompany\\controllers\\policymanagement\\policycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|d:\\c#\\insurancecompany\\insurancecompany\\services\\proposals\\iproposalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|solutionrelative:insurancecompany\\services\\proposals\\iproposalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|d:\\c#\\insurancecompany\\insurancecompany\\dtos\\policymanagement\\policycreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|solutionrelative:insurancecompany\\dtos\\policymanagement\\policycreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|d:\\c#\\insurancecompany\\insurancecompany\\services\\authentication\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|solutionrelative:insurancecompany\\services\\authentication\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|d:\\c#\\insurancecompany\\insurancecompany\\services\\authentication\\passwordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|solutionrelative:insurancecompany\\services\\authentication\\passwordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|d:\\c#\\insurancecompany\\insurancecompany\\services\\authentication\\itokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -161,10 +177,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|d:\\c#\\insurancecompany\\insurancecompany\\dtos\\proposals\\proposalreviewdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|solutionrelative:insurancecompany\\dtos\\proposals\\proposalreviewdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|d:\\c#\\insurancecompany\\insurancecompany\\log4net.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|solutionrelative:insurancecompany\\log4net.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E0267D27-EF82-BC1C-54CE-3CCFC6BC65CB}|InsuranceCompany\\InsuranceCompany.csproj|d:\\c#\\insurancecompany\\insurancecompany\\dtos\\proposals\\proposalresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -286,7 +298,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -294,272 +306,105 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ProposalController.cs",
-              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Controllers\\Proposals\\ProposalController.cs",
-              "RelativeDocumentMoniker": "InsuranceCompany\\Controllers\\Proposals\\ProposalController.cs",
-              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Controllers\\Proposals\\ProposalController.cs",
-              "RelativeToolTip": "InsuranceCompany\\Controllers\\Proposals\\ProposalController.cs",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAmwLoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-19T06:34:33.849Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ClaimService.cs",
-              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\Claims\\ClaimService.cs",
-              "RelativeDocumentMoniker": "InsuranceCompany\\Services\\Claims\\ClaimService.cs",
-              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\Claims\\ClaimService.cs",
-              "RelativeToolTip": "InsuranceCompany\\Services\\Claims\\ClaimService.cs",
-              "ViewState": "AgIAAI4AAAAAAAAAAAAgwJMAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-22T05:31:32.57Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IClaimService.cs",
-              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\Claims\\IClaimService.cs",
-              "RelativeDocumentMoniker": "InsuranceCompany\\Services\\Claims\\IClaimService.cs",
-              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\Claims\\IClaimService.cs",
-              "RelativeToolTip": "InsuranceCompany\\Services\\Claims\\IClaimService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-22T05:31:59.141Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "PolicyUpdateDto.cs",
-              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\DTOs\\PolicyManagement\\PolicyUpdateDto.cs",
-              "RelativeDocumentMoniker": "InsuranceCompany\\DTOs\\PolicyManagement\\PolicyUpdateDto.cs",
-              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\DTOs\\PolicyManagement\\PolicyUpdateDto.cs",
-              "RelativeToolTip": "InsuranceCompany\\DTOs\\PolicyManagement\\PolicyUpdateDto.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAUwBcAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-17T06:53:36.202Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "InsuranceCompany.csproj",
-              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\InsuranceCompany.csproj",
-              "RelativeDocumentMoniker": "InsuranceCompany\\InsuranceCompany.csproj",
-              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\InsuranceCompany.csproj",
-              "RelativeToolTip": "InsuranceCompany\\InsuranceCompany.csproj",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABkAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-06-13T09:58:32.876Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ProposalRepository.cs",
-              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Repositories\\Proposals\\ProposalRepository.cs",
-              "RelativeDocumentMoniker": "InsuranceCompany\\Repositories\\Proposals\\ProposalRepository.cs",
-              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Repositories\\Proposals\\ProposalRepository.cs",
-              "RelativeToolTip": "InsuranceCompany\\Repositories\\Proposals\\ProposalRepository.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAADwv1sAAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-19T04:19:11.748Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ProposalService.cs",
-              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\Proposals\\ProposalService.cs",
-              "RelativeDocumentMoniker": "InsuranceCompany\\Services\\Proposals\\ProposalService.cs",
-              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\Proposals\\ProposalService.cs",
-              "RelativeToolTip": "InsuranceCompany\\Services\\Proposals\\ProposalService.cs",
-              "ViewState": "AgIAAJIAAAAAAAAAAAAgwHQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-19T05:04:37.585Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ClaimController.cs",
-              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Controllers\\Operations\\ClaimController.cs",
-              "RelativeDocumentMoniker": "InsuranceCompany\\Controllers\\Operations\\ClaimController.cs",
-              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Controllers\\Operations\\ClaimController.cs",
-              "RelativeToolTip": "InsuranceCompany\\Controllers\\Operations\\ClaimController.cs",
-              "ViewState": "AgIAAMEAAAAAAAAAAAAgwNcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-22T05:34:56.234Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PolicyService.cs",
-              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\PolicyManagement\\PolicyService.cs",
-              "RelativeDocumentMoniker": "InsuranceCompany\\Services\\PolicyManagement\\PolicyService.cs",
-              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\PolicyManagement\\PolicyService.cs",
-              "RelativeToolTip": "InsuranceCompany\\Services\\PolicyManagement\\PolicyService.cs",
-              "ViewState": "AgIAAIkAAAAAAAAAAAAowJQAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-17T07:24:07.282Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "PaymentController.cs",
-              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Controllers\\Payment\\PaymentController.cs",
-              "RelativeDocumentMoniker": "InsuranceCompany\\Controllers\\Payment\\PaymentController.cs",
-              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Controllers\\Payment\\PaymentController.cs",
-              "RelativeToolTip": "InsuranceCompany\\Controllers\\Payment\\PaymentController.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-22T04:01:56.265Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Program.cs",
-              "RelativeDocumentMoniker": "InsuranceCompany\\Program.cs",
-              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Program.cs",
-              "RelativeToolTip": "InsuranceCompany\\Program.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAIwC0AAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-12T17:20:02.185Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "IClaimRepository.cs",
-              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Repositories\\Claims\\IClaimRepository.cs",
-              "RelativeDocumentMoniker": "InsuranceCompany\\Repositories\\Claims\\IClaimRepository.cs",
-              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Repositories\\Claims\\IClaimRepository.cs",
-              "RelativeToolTip": "InsuranceCompany\\Repositories\\Claims\\IClaimRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-22T05:24:16.047Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ClaimRepository.cs",
-              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Repositories\\Claims\\ClaimRepository.cs",
-              "RelativeDocumentMoniker": "InsuranceCompany\\Repositories\\Claims\\ClaimRepository.cs",
-              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Repositories\\Claims\\ClaimRepository.cs",
-              "RelativeToolTip": "InsuranceCompany\\Repositories\\Claims\\ClaimRepository.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAkwCcAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-22T05:25:14.85Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 68,
-              "Title": "20260622055040_AddClaimsTableProperties.cs",
-              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Migrations\\20260622055040_AddClaimsTableProperties.cs",
-              "RelativeDocumentMoniker": "InsuranceCompany\\Migrations\\20260622055040_AddClaimsTableProperties.cs",
-              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Migrations\\20260622055040_AddClaimsTableProperties.cs",
-              "RelativeToolTip": "InsuranceCompany\\Migrations\\20260622055040_AddClaimsTableProperties.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-22T05:50:41.171Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ClaimReviewDto.cs",
-              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\DTOs\\Claims\\ClaimReviewDto.cs",
-              "RelativeDocumentMoniker": "InsuranceCompany\\DTOs\\Claims\\ClaimReviewDto.cs",
-              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\DTOs\\Claims\\ClaimReviewDto.cs",
-              "RelativeToolTip": "InsuranceCompany\\DTOs\\Claims\\ClaimReviewDto.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAwBEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-22T05:21:08.347Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "ClaimFileDto.cs",
-              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\DTOs\\Claims\\ClaimFileDto.cs",
-              "RelativeDocumentMoniker": "InsuranceCompany\\DTOs\\Claims\\ClaimFileDto.cs",
-              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\DTOs\\Claims\\ClaimFileDto.cs",
-              "RelativeToolTip": "InsuranceCompany\\DTOs\\Claims\\ClaimFileDto.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-22T05:20:34.615Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "PolicyCreateDto.cs",
-              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\DTOs\\PolicyManagement\\PolicyCreateDto.cs",
-              "RelativeDocumentMoniker": "InsuranceCompany\\DTOs\\PolicyManagement\\PolicyCreateDto.cs",
-              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\DTOs\\PolicyManagement\\PolicyCreateDto.cs",
-              "RelativeToolTip": "InsuranceCompany\\DTOs\\PolicyManagement\\PolicyCreateDto.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAswBsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-17T06:47:58.318Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "PolicyResponseDto.cs",
-              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\DTOs\\PolicyManagement\\PolicyResponseDto.cs",
-              "RelativeDocumentMoniker": "InsuranceCompany\\DTOs\\PolicyManagement\\PolicyResponseDto.cs",
-              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\DTOs\\PolicyManagement\\PolicyResponseDto.cs",
-              "RelativeToolTip": "InsuranceCompany\\DTOs\\PolicyManagement\\PolicyResponseDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-17T06:54:51.919Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "IPolicyService.cs",
-              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\PolicyManagement\\IPolicyService.cs",
-              "RelativeDocumentMoniker": "InsuranceCompany\\Services\\PolicyManagement\\IPolicyService.cs",
-              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\PolicyManagement\\IPolicyService.cs",
-              "RelativeToolTip": "InsuranceCompany\\Services\\PolicyManagement\\IPolicyService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-17T07:20:14.59Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "IProposalService.cs",
-              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\Proposals\\IProposalService.cs",
-              "RelativeDocumentMoniker": "InsuranceCompany\\Services\\Proposals\\IProposalService.cs",
-              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\Proposals\\IProposalService.cs",
-              "RelativeToolTip": "InsuranceCompany\\Services\\Proposals\\IProposalService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-19T05:01:02.435Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
               "Title": "AuthController.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\Controllers\\AuthController.cs",
               "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Controllers\\AuthController.cs",
               "RelativeToolTip": "InsuranceCompany\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAYwHIAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwHYAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-16T03:39:40.873Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Claim.cs",
-              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Models\\Operations\\Claim.cs",
-              "RelativeDocumentMoniker": "InsuranceCompany\\Models\\Operations\\Claim.cs",
-              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Models\\Operations\\Claim.cs",
-              "RelativeToolTip": "InsuranceCompany\\Models\\Operations\\Claim.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAAB0AAAA7AAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "TokenService.cs",
+              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\Authentication\\TokenService.cs",
+              "RelativeDocumentMoniker": "InsuranceCompany\\Services\\Authentication\\TokenService.cs",
+              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\Authentication\\TokenService.cs",
+              "RelativeToolTip": "InsuranceCompany\\Services\\Authentication\\TokenService.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAUwBQAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-12T17:23:01.366Z"
+              "WhenOpened": "2026-06-15T17:25:08.214Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 5,
+              "Title": "PasswordHasher.cs",
+              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\Authentication\\PasswordHasher.cs",
+              "RelativeDocumentMoniker": "InsuranceCompany\\Services\\Authentication\\PasswordHasher.cs",
+              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\Authentication\\PasswordHasher.cs",
+              "RelativeToolTip": "InsuranceCompany\\Services\\Authentication\\PasswordHasher.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAADwvxgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-15T17:14:01.954Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ClaimService.cs",
+              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\Claims\\ClaimService.cs",
+              "RelativeDocumentMoniker": "InsuranceCompany\\Services\\Claims\\ClaimService.cs",
+              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\Claims\\ClaimService.cs",
+              "RelativeToolTip": "InsuranceCompany\\Services\\Claims\\ClaimService.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAhwB8AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T05:31:32.57Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UnitTest1.cs",
+              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany.Tests\\UnitTest1.cs",
+              "RelativeDocumentMoniker": "InsuranceCompany.Tests\\UnitTest1.cs",
+              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany.Tests\\UnitTest1.cs",
+              "RelativeToolTip": "InsuranceCompany.Tests\\UnitTest1.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAQwBMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T02:41:17.472Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "log4net.config",
+              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\log4net.config",
+              "RelativeDocumentMoniker": "InsuranceCompany\\log4net.config",
+              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\log4net.config",
+              "RelativeToolTip": "InsuranceCompany\\log4net.config",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAYwBMAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2026-06-19T07:00:28.663Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "InsuranceCompany.http",
+              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\InsuranceCompany.http",
+              "RelativeDocumentMoniker": "InsuranceCompany\\InsuranceCompany.http",
+              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\InsuranceCompany.http",
+              "RelativeToolTip": "InsuranceCompany\\InsuranceCompany.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2026-06-23T04:24:42.718Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Program.cs",
+              "RelativeDocumentMoniker": "InsuranceCompany\\Program.cs",
+              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Program.cs",
+              "RelativeToolTip": "InsuranceCompany\\Program.cs",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAIwIQAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-12T17:20:02.185Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "PolicyController.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Controllers\\PolicyManagement\\PolicyController.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\Controllers\\PolicyManagement\\PolicyController.cs",
@@ -571,19 +416,249 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "PasswordHasher.cs",
-              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\Authentication\\PasswordHasher.cs",
-              "RelativeDocumentMoniker": "InsuranceCompany\\Services\\Authentication\\PasswordHasher.cs",
-              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\Authentication\\PasswordHasher.cs",
-              "RelativeToolTip": "InsuranceCompany\\Services\\Authentication\\PasswordHasher.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 17,
+              "Title": "PolicyUpdateDto.cs",
+              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\DTOs\\PolicyManagement\\PolicyUpdateDto.cs",
+              "RelativeDocumentMoniker": "InsuranceCompany\\DTOs\\PolicyManagement\\PolicyUpdateDto.cs",
+              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\DTOs\\PolicyManagement\\PolicyUpdateDto.cs",
+              "RelativeToolTip": "InsuranceCompany\\DTOs\\PolicyManagement\\PolicyUpdateDto.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAUwBcAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-15T17:14:01.954Z"
+              "WhenOpened": "2026-06-17T06:53:36.202Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IClaimService.cs",
+              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\Claims\\IClaimService.cs",
+              "RelativeDocumentMoniker": "InsuranceCompany\\Services\\Claims\\IClaimService.cs",
+              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\Claims\\IClaimService.cs",
+              "RelativeToolTip": "InsuranceCompany\\Services\\Claims\\IClaimService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T05:31:59.141Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "InsuranceCompany.Tests.csproj",
+              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany.Tests\\InsuranceCompany.Tests.csproj",
+              "RelativeDocumentMoniker": "InsuranceCompany.Tests\\InsuranceCompany.Tests.csproj",
+              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany.Tests\\InsuranceCompany.Tests.csproj",
+              "RelativeToolTip": "InsuranceCompany.Tests\\InsuranceCompany.Tests.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-06-23T02:41:14.799Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ProposalController.cs",
+              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Controllers\\Proposals\\ProposalController.cs",
+              "RelativeDocumentMoniker": "InsuranceCompany\\Controllers\\Proposals\\ProposalController.cs",
+              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Controllers\\Proposals\\ProposalController.cs",
+              "RelativeToolTip": "InsuranceCompany\\Controllers\\Proposals\\ProposalController.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAmwGwAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-19T06:34:33.849Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "InsuranceCompany.csproj",
+              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\InsuranceCompany.csproj",
+              "RelativeDocumentMoniker": "InsuranceCompany\\InsuranceCompany.csproj",
+              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\InsuranceCompany.csproj",
+              "RelativeToolTip": "InsuranceCompany\\InsuranceCompany.csproj",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABkAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-06-13T09:58:32.876Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ProposalRepository.cs",
+              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Repositories\\Proposals\\ProposalRepository.cs",
+              "RelativeDocumentMoniker": "InsuranceCompany\\Repositories\\Proposals\\ProposalRepository.cs",
+              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Repositories\\Proposals\\ProposalRepository.cs",
+              "RelativeToolTip": "InsuranceCompany\\Repositories\\Proposals\\ProposalRepository.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAADwv1sAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-19T04:19:11.748Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ProposalService.cs",
+              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\Proposals\\ProposalService.cs",
+              "RelativeDocumentMoniker": "InsuranceCompany\\Services\\Proposals\\ProposalService.cs",
+              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\Proposals\\ProposalService.cs",
+              "RelativeToolTip": "InsuranceCompany\\Services\\Proposals\\ProposalService.cs",
+              "ViewState": "AgIAAJIAAAAAAAAAAAAgwHQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-19T05:04:37.585Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ClaimController.cs",
+              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Controllers\\Operations\\ClaimController.cs",
+              "RelativeDocumentMoniker": "InsuranceCompany\\Controllers\\Operations\\ClaimController.cs",
+              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Controllers\\Operations\\ClaimController.cs",
+              "RelativeToolTip": "InsuranceCompany\\Controllers\\Operations\\ClaimController.cs",
+              "ViewState": "AgIAAMEAAAAAAAAAAAAgwNcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T05:34:56.234Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "PolicyService.cs",
+              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\PolicyManagement\\PolicyService.cs",
+              "RelativeDocumentMoniker": "InsuranceCompany\\Services\\PolicyManagement\\PolicyService.cs",
+              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\PolicyManagement\\PolicyService.cs",
+              "RelativeToolTip": "InsuranceCompany\\Services\\PolicyManagement\\PolicyService.cs",
+              "ViewState": "AgIAAIkAAAAAAAAAAAAowJQAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-17T07:24:07.282Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "PaymentController.cs",
+              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Controllers\\Payment\\PaymentController.cs",
+              "RelativeDocumentMoniker": "InsuranceCompany\\Controllers\\Payment\\PaymentController.cs",
+              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Controllers\\Payment\\PaymentController.cs",
+              "RelativeToolTip": "InsuranceCompany\\Controllers\\Payment\\PaymentController.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T04:01:56.265Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "IClaimRepository.cs",
+              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Repositories\\Claims\\IClaimRepository.cs",
+              "RelativeDocumentMoniker": "InsuranceCompany\\Repositories\\Claims\\IClaimRepository.cs",
+              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Repositories\\Claims\\IClaimRepository.cs",
+              "RelativeToolTip": "InsuranceCompany\\Repositories\\Claims\\IClaimRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T05:24:16.047Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ClaimRepository.cs",
+              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Repositories\\Claims\\ClaimRepository.cs",
+              "RelativeDocumentMoniker": "InsuranceCompany\\Repositories\\Claims\\ClaimRepository.cs",
+              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Repositories\\Claims\\ClaimRepository.cs",
+              "RelativeToolTip": "InsuranceCompany\\Repositories\\Claims\\ClaimRepository.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAkwCcAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T05:25:14.85Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 71,
+              "Title": "20260622055040_AddClaimsTableProperties.cs",
+              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Migrations\\20260622055040_AddClaimsTableProperties.cs",
+              "RelativeDocumentMoniker": "InsuranceCompany\\Migrations\\20260622055040_AddClaimsTableProperties.cs",
+              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Migrations\\20260622055040_AddClaimsTableProperties.cs",
+              "RelativeToolTip": "InsuranceCompany\\Migrations\\20260622055040_AddClaimsTableProperties.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T05:50:41.171Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ClaimReviewDto.cs",
+              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\DTOs\\Claims\\ClaimReviewDto.cs",
+              "RelativeDocumentMoniker": "InsuranceCompany\\DTOs\\Claims\\ClaimReviewDto.cs",
+              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\DTOs\\Claims\\ClaimReviewDto.cs",
+              "RelativeToolTip": "InsuranceCompany\\DTOs\\Claims\\ClaimReviewDto.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwBEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T05:21:08.347Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ClaimFileDto.cs",
+              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\DTOs\\Claims\\ClaimFileDto.cs",
+              "RelativeDocumentMoniker": "InsuranceCompany\\DTOs\\Claims\\ClaimFileDto.cs",
+              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\DTOs\\Claims\\ClaimFileDto.cs",
+              "RelativeToolTip": "InsuranceCompany\\DTOs\\Claims\\ClaimFileDto.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T05:20:34.615Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "PolicyCreateDto.cs",
+              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\DTOs\\PolicyManagement\\PolicyCreateDto.cs",
+              "RelativeDocumentMoniker": "InsuranceCompany\\DTOs\\PolicyManagement\\PolicyCreateDto.cs",
+              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\DTOs\\PolicyManagement\\PolicyCreateDto.cs",
+              "RelativeToolTip": "InsuranceCompany\\DTOs\\PolicyManagement\\PolicyCreateDto.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAswBsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-17T06:47:58.318Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 24,
+              "Title": "PolicyResponseDto.cs",
+              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\DTOs\\PolicyManagement\\PolicyResponseDto.cs",
+              "RelativeDocumentMoniker": "InsuranceCompany\\DTOs\\PolicyManagement\\PolicyResponseDto.cs",
+              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\DTOs\\PolicyManagement\\PolicyResponseDto.cs",
+              "RelativeToolTip": "InsuranceCompany\\DTOs\\PolicyManagement\\PolicyResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-17T06:54:51.919Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "IPolicyService.cs",
+              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\PolicyManagement\\IPolicyService.cs",
+              "RelativeDocumentMoniker": "InsuranceCompany\\Services\\PolicyManagement\\IPolicyService.cs",
+              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\PolicyManagement\\IPolicyService.cs",
+              "RelativeToolTip": "InsuranceCompany\\Services\\PolicyManagement\\IPolicyService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-17T07:20:14.59Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "IProposalService.cs",
+              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\Proposals\\IProposalService.cs",
+              "RelativeDocumentMoniker": "InsuranceCompany\\Services\\Proposals\\IProposalService.cs",
+              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\Proposals\\IProposalService.cs",
+              "RelativeToolTip": "InsuranceCompany\\Services\\Proposals\\IProposalService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-19T05:01:02.435Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Claim.cs",
+              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Models\\Operations\\Claim.cs",
+              "RelativeDocumentMoniker": "InsuranceCompany\\Models\\Operations\\Claim.cs",
+              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Models\\Operations\\Claim.cs",
+              "RelativeToolTip": "InsuranceCompany\\Models\\Operations\\Claim.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAAB0AAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-12T17:23:01.366Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
               "Title": "ITokenService.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\Authentication\\ITokenService.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\Services\\Authentication\\ITokenService.cs",
@@ -595,19 +670,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "TokenService.cs",
-              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\Authentication\\TokenService.cs",
-              "RelativeDocumentMoniker": "InsuranceCompany\\Services\\Authentication\\TokenService.cs",
-              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\Authentication\\TokenService.cs",
-              "RelativeToolTip": "InsuranceCompany\\Services\\Authentication\\TokenService.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAIwBQAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-15T17:25:08.214Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 29,
               "Title": "IPasswordHasher.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\Authentication\\IPasswordHasher.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\Services\\Authentication\\IPasswordHasher.cs",
@@ -619,7 +682,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 30,
               "Title": "Quote.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Models\\Proposals\\Quote.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\Models\\Proposals\\Quote.cs",
@@ -631,7 +694,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 31,
               "Title": "PaymentService.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\Payments\\PaymentService.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\Services\\Payments\\PaymentService.cs",
@@ -643,7 +706,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 32,
               "Title": "PolicyRepository.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Repositories\\PolicyManagement\\PolicyRepository.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\Repositories\\PolicyManagement\\PolicyRepository.cs",
@@ -655,7 +718,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 33,
               "Title": "InsuranceCompany.csproj.Backup.tmp",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\InsuranceCompany.csproj.Backup.tmp",
               "RelativeDocumentMoniker": "InsuranceCompany\\InsuranceCompany.csproj.Backup.tmp",
@@ -667,7 +730,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 34,
               "Title": "Proposal.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Models\\Proposals\\Proposal.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\Models\\Proposals\\Proposal.cs",
@@ -679,7 +742,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 35,
               "Title": "ProposalDocument.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Models\\Proposals\\ProposalDocument.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\Models\\Proposals\\ProposalDocument.cs",
@@ -691,7 +754,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 36,
               "Title": "PaymentRepository.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Repositories\\Payments\\PaymentRepository.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\Repositories\\Payments\\PaymentRepository.cs",
@@ -703,7 +766,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 38,
               "Title": "IPaymentRepository.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Repositories\\Payments\\IPaymentRepository.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\Repositories\\Payments\\IPaymentRepository.cs",
@@ -715,7 +778,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 37,
               "Title": "IPaymentService.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Services\\Payments\\IPaymentService.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\Services\\Payments\\IPaymentService.cs",
@@ -727,7 +790,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 70,
               "Title": "20260619114800_added policynumber.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Migrations\\20260619114800_added policynumber.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\Migrations\\20260619114800_added policynumber.cs",
@@ -739,7 +802,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 39,
               "Title": "InsurancePolicy.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Models\\PolicyManagement\\InsurancePolicy.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\Models\\PolicyManagement\\InsurancePolicy.cs",
@@ -751,7 +814,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 40,
               "Title": "Payment.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Models\\Operations\\Payment.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\Models\\Operations\\Payment.cs",
@@ -763,7 +826,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 41,
               "Title": "PolicyReciptDto.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\DTOs\\Payments\\PolicyReciptDto.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\DTOs\\Payments\\PolicyReciptDto.cs",
@@ -775,7 +838,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 42,
               "Title": "PaymentProcessDto.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\DTOs\\Payments\\PaymentProcessDto.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\DTOs\\Payments\\PaymentProcessDto.cs",
@@ -787,7 +850,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 43,
               "Title": "ProposalReviewDto.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\DTOs\\Proposals\\ProposalReviewDto.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\DTOs\\Proposals\\ProposalReviewDto.cs",
@@ -799,19 +862,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "log4net.config",
-              "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\log4net.config",
-              "RelativeDocumentMoniker": "InsuranceCompany\\log4net.config",
-              "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\log4net.config",
-              "RelativeToolTip": "InsuranceCompany\\log4net.config",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABMAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2026-06-19T07:00:28.663Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 44,
               "Title": "ProposalResponseDto.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\DTOs\\Proposals\\ProposalResponseDto.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\DTOs\\Proposals\\ProposalResponseDto.cs",
@@ -823,7 +874,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 45,
               "Title": "ProposalAddOn.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Models\\Proposals\\ProposalAddOn.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\Models\\Proposals\\ProposalAddOn.cs",
@@ -835,7 +886,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 46,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Models\\Authentication\\User.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\Models\\Authentication\\User.cs",
@@ -847,7 +898,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 47,
               "Title": "ProposalCreateDto.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\DTOs\\Proposals\\ProposalCreateDto.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\DTOs\\Proposals\\ProposalCreateDto.cs",
@@ -859,7 +910,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 48,
               "Title": "IPolicyRepository.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Repositories\\PolicyManagement\\IPolicyRepository.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\Repositories\\PolicyManagement\\IPolicyRepository.cs",
@@ -871,7 +922,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 49,
               "Title": "IProposalRepository.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Repositories\\Proposals\\IProposalRepository.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\Repositories\\Proposals\\IProposalRepository.cs",
@@ -883,7 +934,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 51,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\Data\\AppDbContext.cs",
@@ -895,7 +946,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 50,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\appsettings.json",
               "RelativeDocumentMoniker": "InsuranceCompany\\appsettings.json",
@@ -907,7 +958,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 52,
               "Title": "AddOn.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Models\\PolicyManagement\\AddOn.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\Models\\PolicyManagement\\AddOn.cs",
@@ -919,7 +970,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 53,
               "Title": "VehicleCategory.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Models\\PolicyManagement\\VehicleCategory.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\Models\\PolicyManagement\\VehicleCategory.cs",
@@ -931,7 +982,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 69,
               "Title": "20260617075012_AlterInsurancePolicyColumns.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Migrations\\20260617075012_AlterInsurancePolicyColumns.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\Migrations\\20260617075012_AlterInsurancePolicyColumns.cs",
@@ -943,7 +994,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 54,
               "Title": "InsurancePolicyValidator.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Validators\\PolicyManagement\\InsurancePolicyValidator.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\Validators\\PolicyManagement\\InsurancePolicyValidator.cs",
@@ -955,7 +1006,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 55,
               "Title": "UserRegisterDtoValidator.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Validators\\Authentication\\UserRegisterDtoValidator.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\Validators\\Authentication\\UserRegisterDtoValidator.cs",
@@ -967,7 +1018,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 56,
               "Title": "UserRegisterDto.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\DTOs\\Authentication\\UserRegisterDto.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\DTOs\\Authentication\\UserRegisterDto.cs",
@@ -979,7 +1030,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 58,
               "Title": "UserLoginDto.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\DTOs\\Authentication\\UserLoginDto.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\DTOs\\Authentication\\UserLoginDto.cs",
@@ -991,7 +1042,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 57,
               "Title": "AuthResponseDto.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\DTOs\\Authentication\\AuthResponseDto.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\DTOs\\Authentication\\AuthResponseDto.cs",
@@ -1003,18 +1054,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 59,
               "Title": "InsuranceCompany",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\InsuranceCompany.csproj",
               "RelativeDocumentMoniker": "InsuranceCompany\\InsuranceCompany.csproj",
               "ToolTip": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\InsuranceCompany.csproj",
               "RelativeToolTip": "InsuranceCompany\\InsuranceCompany.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-06-13T09:59:07.503Z"
+              "WhenOpened": "2026-06-13T09:59:07.503Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 60,
               "Title": "20260612174226_initail Migrate.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Migrations\\20260612174226_initail Migrate.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\Migrations\\20260612174226_initail Migrate.cs",
@@ -1026,7 +1078,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 62,
               "Title": "20260612173828_initail Migrate.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Migrations\\20260612173828_initail Migrate.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\Migrations\\20260612173828_initail Migrate.cs",
@@ -1037,7 +1089,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 63,
               "Title": "QuoteValidator.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Validators\\Proposals\\QuoteValidator.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\Validators\\Proposals\\QuoteValidator.cs",
@@ -1049,7 +1101,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 61,
               "Title": "20260612174056_initail Migrate.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Migrations\\20260612174056_initail Migrate.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\Migrations\\20260612174056_initail Migrate.cs",
@@ -1060,7 +1112,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 64,
               "Title": "EmailNotification.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Models\\Communications\\EmailNotification.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\Models\\Communications\\EmailNotification.cs",
@@ -1072,7 +1124,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 65,
               "Title": "20260612172656_initail Migrate.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Migrations\\20260612172656_initail Migrate.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\Migrations\\20260612172656_initail Migrate.cs",
@@ -1083,7 +1135,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 66,
               "Title": "EmailNotificationValidator.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Validators\\Communications\\EmailNotificationValidator.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\Validators\\Communications\\EmailNotificationValidator.cs",
@@ -1095,7 +1147,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 68,
               "Title": "ProposalValidator.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Validators\\Proposals\\ProposalValidator.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\Validators\\Proposals\\ProposalValidator.cs",
@@ -1107,7 +1159,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 67,
               "Title": "ProposalAddOnValidator.cs",
               "DocumentMoniker": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\Validators\\Proposals\\ProposalAddOnValidator.cs",
               "RelativeDocumentMoniker": "InsuranceCompany\\Validators\\Proposals\\ProposalAddOnValidator.cs",

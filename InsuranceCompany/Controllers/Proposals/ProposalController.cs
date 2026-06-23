@@ -106,7 +106,7 @@ namespace InsuranceCompany.Controllers.Proposals
                 if (string.IsNullOrEmpty(userIdClaim))
                 {
                     _log.Warn("Failed to fetch history: User ID claim not found in token.");
-                    return Unauthorized("User ID not found in token.");
+                    return Unauthorized("User ID not found .");
                 }
 
                 int userId = int.Parse(userIdClaim);

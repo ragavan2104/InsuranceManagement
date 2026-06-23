@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -24,6 +24,19 @@ namespace InsuranceCompany.Services.Claims
             try
             {
                 _log.Info($"User {userId} is filing a new claim for IssuedPolicyId: {dto.IssuedPolicyId}");
+
+                var policy = await _claimRepository.GetIssuedPolicyByIdAsync(dto.IssuedPolicyId);
+                if (policy == null)
+                {
+                    _log.Warn($"Claim filing blocked: Issued policy with ID {dto.IssuedPolicyId} not found.");
+                    throw new KeyNotFoundException("Issued policy not found.");
+                }
+
+                if (policy.Proposal == null || policy.Proposal.UserId != userId)
+                {
+                    _log.Warn($"Claim filing blocked: User {userId} does not own Policy ID {dto.IssuedPolicyId}.");
+                    throw new UnauthorizedAccessException("You do not have permission to file a claim for this policy.");
+                }
 
                 var claimEntity = new Claim
                 {

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using InsuranceCompany.Models.Operations;
 
@@ -11,5 +11,6 @@ namespace InsuranceCompany.Repositories.Claims
         Task<IEnumerable<Claim>> GetClaimsByUserIdAsync(int userId);
         Task<IEnumerable<Claim>> GetAllPendingClaimsAsync();
         Task UpdateClaimAsync(Claim claim);
+        Task<IssuedPolicy?> GetIssuedPolicyByIdAsync(int issuedPolicyId);
     }
 }

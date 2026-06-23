@@ -45,6 +45,15 @@ namespace InsuranceCompany.Tests.Claims
                 IncidentDate = DateTime.UtcNow.AddDays(-2)
             };
 
+            var mockPolicy = new IssuedPolicy
+            {
+                IssuedPolicyId = dto.IssuedPolicyId,
+                Proposal = new InsuranceCompany.Models.Proposals.Proposal
+                {
+                    UserId = userId
+                }
+            };
+
             var expectedClaim = new Claim
             {
                 ClaimId = 101,
@@ -55,6 +64,10 @@ namespace InsuranceCompany.Tests.Claims
                 Status = "ClaimFiled",
                 FiledAt = DateTime.UtcNow
             };
+
+            _mockClaimRepository
+                .Setup(r => r.GetIssuedPolicyByIdAsync(dto.IssuedPolicyId))
+                .ReturnsAsync(mockPolicy);
 
             _mockClaimRepository
                 .Setup(r => r.AddClaimAsync(It.IsAny<Claim>()))
@@ -77,11 +90,57 @@ namespace InsuranceCompany.Tests.Claims
         {
             int userId = 1;
             var dto = new ClaimFileDto { IssuedPolicyId = 10 };
+            var mockPolicy = new IssuedPolicy
+            {
+                IssuedPolicyId = dto.IssuedPolicyId,
+                Proposal = new InsuranceCompany.Models.Proposals.Proposal
+                {
+                    UserId = userId
+                }
+            };
+
+            _mockClaimRepository
+                .Setup(r => r.GetIssuedPolicyByIdAsync(dto.IssuedPolicyId))
+                .ReturnsAsync(mockPolicy);
+
             _mockClaimRepository
                 .Setup(r => r.AddClaimAsync(It.IsAny<Claim>()))
                 .ThrowsAsync(new Exception("Database error"));
 
             Assert.ThrowsAsync<Exception>(() => _claimService.FileClaimAsync(userId, dto));
+        }
+
+        [Test]
+        public void FileClaimAsync_ShouldThrowKeyNotFoundException_WhenPolicyDoesNotExist()
+        {
+            int userId = 1;
+            var dto = new ClaimFileDto { IssuedPolicyId = 99 };
+            _mockClaimRepository
+                .Setup(r => r.GetIssuedPolicyByIdAsync(dto.IssuedPolicyId))
+                .ReturnsAsync((IssuedPolicy?)null);
+
+            Assert.ThrowsAsync<KeyNotFoundException>(() => _claimService.FileClaimAsync(userId, dto));
+        }
+
+        [Test]
+        public void FileClaimAsync_ShouldThrowUnauthorizedAccessException_WhenPolicyDoesNotBelongToUser()
+        {
+            int userId = 1;
+            var dto = new ClaimFileDto { IssuedPolicyId = 10 };
+            var mockPolicy = new IssuedPolicy
+            {
+                IssuedPolicyId = dto.IssuedPolicyId,
+                Proposal = new InsuranceCompany.Models.Proposals.Proposal
+                {
+                    UserId = 2 // Different user
+                }
+            };
+
+            _mockClaimRepository
+                .Setup(r => r.GetIssuedPolicyByIdAsync(dto.IssuedPolicyId))
+                .ReturnsAsync(mockPolicy);
+
+            Assert.ThrowsAsync<UnauthorizedAccessException>(() => _claimService.FileClaimAsync(userId, dto));
         }
 
         #endregion

@@ -563,3 +563,4 @@ D:\c#\InsuranceCompany\InsuranceCompany.Tests\obj\Debug\net10.0\refint\Insurance
 D:\c#\InsuranceCompany\InsuranceCompany.Tests\obj\Debug\net10.0\InsuranceCompany.Tests.pdb
 D:\c#\InsuranceCompany\InsuranceCompany.Tests\obj\Debug\net10.0\InsuranceCompany.Tests.genruntimeconfig.cache
 D:\c#\InsuranceCompany\InsuranceCompany.Tests\obj\Debug\net10.0\ref\InsuranceCompany.Tests.dll
+D:\c#\InsuranceCompany\InsuranceCompany.Tests\obj\Debug\net10.0\InsuranceCompany.Tests.sourcelink.json

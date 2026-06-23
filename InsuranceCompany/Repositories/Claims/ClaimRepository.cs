@@ -60,5 +60,12 @@ namespace InsuranceCompany.Repositories.Claims
             _context.Claims.Update(claim);
             await _context.SaveChangesAsync();
         }
+
+        public async Task<IssuedPolicy?> GetIssuedPolicyByIdAsync(int issuedPolicyId)
+        {
+            return await _context.IssuedPolicies
+                .Include(p => p.Proposal)
+                .FirstOrDefaultAsync(p => p.IssuedPolicyId == issuedPolicyId);
+        }
     }
 }

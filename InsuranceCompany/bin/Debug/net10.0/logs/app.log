@@ -1028,3 +1028,477 @@ System.UnauthorizedAccessException: Not your claim!
 2026-06-22 17:38:51,444 [2] INFO  Program - Starting Vehicle Insurance API application...
 2026-06-22 17:38:52,284 [2] INFO  Program - Database connection check successful.
 2026-06-22 17:38:52,489 [2] INFO  Program - Application initialized completely. Listening for web requests...
+2026-06-23 09:20:25,258 [2] INFO  Program - Starting Vehicle Insurance API application...
+2026-06-23 09:20:27,429 [2] INFO  Program - Database connection check successful.
+2026-06-23 09:20:27,628 [2] INFO  Program - Application initialized completely. Listening for web requests...
+2026-06-23 09:30:08,008 [2] INFO  Program - Starting Vehicle Insurance API application...
+2026-06-23 09:30:09,514 [2] INFO  Program - Database connection check successful.
+2026-06-23 09:30:09,844 [2] INFO  Program - Application initialized completely. Listening for web requests...
+2026-06-23 09:30:52,800 [16] INFO  InsuranceCompany.Controllers.AuthController - Login authentication verification .
+2026-06-23 09:30:59,934 [15] INFO  InsuranceCompany.Controllers.AuthController - User Login successful.
+2026-06-23 09:31:21,837 [14] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-06-23 09:31:21,842 [14] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-06-23 09:31:21,845 [14] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-06-23 09:31:52,353 [3] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for Policy ID: 6
+2026-06-23 09:31:52,355 [3] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching details for Policy ID: 6
+2026-06-23 09:31:52,357 [3] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching policy with ID: 6
+2026-06-23 09:31:59,652 [16] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for Policy ID: 2
+2026-06-23 09:31:59,652 [16] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching details for Policy ID: 2
+2026-06-23 09:31:59,652 [16] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching policy with ID: 2
+2026-06-23 09:31:59,782 [21] WARN  InsuranceCompany.Services.PolicyManagement.PolicyService - Policy with ID 2  not found.
+2026-06-23 09:31:59,782 [21] WARN  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Policy with ID 2 was not found.
+2026-06-23 09:32:52,822 [17] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received POST request to create a new policy: 'Commercial vehicle premium insurance'
+2026-06-23 09:32:52,828 [17] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Attempting to create a new policy: Commercial vehicle premium insurance
+2026-06-23 09:32:52,831 [17] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Adding policy to the database.
+2026-06-23 09:32:53,322 [25] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Successfully created policy 'Commercial vehicle premium insurance' with ID: 8
+2026-06-23 09:32:53,322 [25] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Successfully created policy with ID: 8
+2026-06-23 09:32:59,761 [17] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-06-23 09:32:59,762 [17] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-06-23 09:32:59,762 [17] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-06-23 09:33:28,538 [25] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Updating Policy
+2026-06-23 09:33:28,538 [25] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching details for Policy ID: 7
+2026-06-23 09:33:28,538 [25] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching policy with ID: 7
+2026-06-23 09:33:28,634 [24] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Attempting to update Policy ID: 7
+2026-06-23 09:33:28,634 [24] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching policy with ID: 7
+2026-06-23 09:33:28,636 [24] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Updating policy in the database.
+2026-06-23 09:33:28,674 [21] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Successfully updated records for Policy ID: 7
+2026-06-23 09:33:28,675 [21] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Successfully updated records for Policy ID: 7
+2026-06-23 09:33:38,036 [21] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-06-23 09:33:38,036 [21] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-06-23 09:33:38,036 [21] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-06-23 09:34:41,843 [38] INFO  InsuranceCompany.Controllers.AuthController - Login authentication verification .
+2026-06-23 09:34:42,334 [39] INFO  InsuranceCompany.Controllers.AuthController - User Login successful.
+2026-06-23 09:36:15,127 [28] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Creating proposal for User ID: 6
+2026-06-23 09:36:15,130 [28] INFO  InsuranceCompany.Services.Proposals.ProposalService - Attempting to create proposal for UserId: 6, PolicyId: 7
+2026-06-23 09:36:15,131 [28] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching policy with ID: 7
+2026-06-23 09:36:15,225 [39] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Adding proposal to the database.
+2026-06-23 09:36:15,444 [28] INFO  InsuranceCompany.Services.Proposals.ProposalService - Successfully created proposal with ID: 4 for UserId: 6
+2026-06-23 09:36:15,447 [28] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Proposal created successfully with ID: 4
+2026-06-23 09:36:40,696 [46] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching all pending proposals.
+2026-06-23 09:36:40,698 [46] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching all pending and submitted proposals.
+2026-06-23 09:36:40,699 [46] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching all proposals from the database.
+2026-06-23 09:37:14,699 [41] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Officer 4 is reviewing proposal ID: 4
+2026-06-23 09:37:14,701 [41] INFO  InsuranceCompany.Services.Proposals.ProposalService - Officer 4 is reviewing Proposal ID: 4 with status: Approved
+2026-06-23 09:37:14,703 [41] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposal with ID: 4
+2026-06-23 09:37:14,959 [46] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Updating proposal in the database.
+2026-06-23 09:37:15,016 [44] INFO  InsuranceCompany.Services.Proposals.ProposalService - Successfully updated review status for Proposal ID: 4
+2026-06-23 09:37:15,017 [44] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Proposal ID 4 successfully marked as Approved.
+2026-06-23 09:37:30,994 [46] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 6
+2026-06-23 09:37:30,995 [46] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 6
+2026-06-23 09:37:30,999 [46] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 6
+2026-06-23 09:38:16,135 [46] INFO  InsuranceCompany.Services.Payments.PaymentService - Initiating payment processing for UserId: 6, ProposalId: 4
+2026-06-23 09:38:16,135 [46] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposal with ID: 4
+2026-06-23 09:38:16,253 [46] INFO  InsuranceCompany.Repositories.Payments.PaymentRepository - Adding payment to the database.
+2026-06-23 09:38:16,343 [46] INFO  InsuranceCompany.Services.Payments.PaymentService - Payment registered successfully. PaymentId: 2, TransactionId: sud552133122t8a
+2026-06-23 09:38:16,343 [46] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Updating proposal in the database.
+2026-06-23 09:38:16,480 [46] INFO  InsuranceCompany.Repositories.Payments.PaymentRepository - Saving issued policy to the database.
+2026-06-23 09:38:16,589 [46] INFO  InsuranceCompany.Services.Payments.PaymentService - Policy generation successful. Policy Number: POL-2026-E81DBAB6 issued for ProposalId: 4
+2026-06-23 09:38:31,966 [42] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 6
+2026-06-23 09:38:31,966 [42] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 6
+2026-06-23 09:38:31,966 [42] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 6
+2026-06-23 09:39:17,557 [51] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to file claim for PolicyId: 4
+2026-06-23 09:39:17,560 [51] INFO  InsuranceCompany.Services.Claims.ClaimService - User 6 is filing a new claim for IssuedPolicyId: 4
+2026-06-23 09:39:17,982 [42] ERROR InsuranceCompany.Services.Claims.ClaimService - Error occurred while filing claim for User 6
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Claims_IssuedPolicies_IssuedPolicyId". The conflict occurred in database "VehicleInsuranceDB", table "dbo.IssuedPolicies", column 'IssuedPolicyId'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:fa9a4e16-92c1-455b-a51c-2ca75759be90
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at InsuranceCompany.Repositories.Claims.ClaimRepository.AddClaimAsync(Claim claim) in D:\c#\InsuranceCompany\InsuranceCompany\Repositories\Claims\ClaimRepository.cs:line 22
+   at InsuranceCompany.Services.Claims.ClaimService.FileClaimAsync(Int32 userId, ClaimFileDto dto) in D:\c#\InsuranceCompany\InsuranceCompany\Services\Claims\ClaimService.cs:line 38
+2026-06-23 09:39:18,073 [42] ERROR InsuranceCompany.Controllers.Operations.ClaimController - Error occurred while filing claim.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Claims_IssuedPolicies_IssuedPolicyId". The conflict occurred in database "VehicleInsuranceDB", table "dbo.IssuedPolicies", column 'IssuedPolicyId'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:fa9a4e16-92c1-455b-a51c-2ca75759be90
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at InsuranceCompany.Repositories.Claims.ClaimRepository.AddClaimAsync(Claim claim) in D:\c#\InsuranceCompany\InsuranceCompany\Repositories\Claims\ClaimRepository.cs:line 22
+   at InsuranceCompany.Services.Claims.ClaimService.FileClaimAsync(Int32 userId, ClaimFileDto dto) in D:\c#\InsuranceCompany\InsuranceCompany\Services\Claims\ClaimService.cs:line 38
+   at InsuranceCompany.Controllers.Operations.ClaimController.FileClaim(ClaimFileDto dto) in D:\c#\InsuranceCompany\InsuranceCompany\Controllers\Operations\ClaimController.cs:line 50
+2026-06-23 09:39:39,336 [51] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to file claim for PolicyId: 7
+2026-06-23 09:39:39,336 [51] INFO  InsuranceCompany.Services.Claims.ClaimService - User 6 is filing a new claim for IssuedPolicyId: 7
+2026-06-23 09:39:39,547 [42] ERROR InsuranceCompany.Services.Claims.ClaimService - Error occurred while filing claim for User 6
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Claims_IssuedPolicies_IssuedPolicyId". The conflict occurred in database "VehicleInsuranceDB", table "dbo.IssuedPolicies", column 'IssuedPolicyId'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:d43a57bb-ea14-4826-9aa3-b354870f3233
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at InsuranceCompany.Repositories.Claims.ClaimRepository.AddClaimAsync(Claim claim) in D:\c#\InsuranceCompany\InsuranceCompany\Repositories\Claims\ClaimRepository.cs:line 22
+   at InsuranceCompany.Services.Claims.ClaimService.FileClaimAsync(Int32 userId, ClaimFileDto dto) in D:\c#\InsuranceCompany\InsuranceCompany\Services\Claims\ClaimService.cs:line 38
+2026-06-23 09:39:39,601 [42] ERROR InsuranceCompany.Controllers.Operations.ClaimController - Error occurred while filing claim.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Claims_IssuedPolicies_IssuedPolicyId". The conflict occurred in database "VehicleInsuranceDB", table "dbo.IssuedPolicies", column 'IssuedPolicyId'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:d43a57bb-ea14-4826-9aa3-b354870f3233
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at InsuranceCompany.Repositories.Claims.ClaimRepository.AddClaimAsync(Claim claim) in D:\c#\InsuranceCompany\InsuranceCompany\Repositories\Claims\ClaimRepository.cs:line 22
+   at InsuranceCompany.Services.Claims.ClaimService.FileClaimAsync(Int32 userId, ClaimFileDto dto) in D:\c#\InsuranceCompany\InsuranceCompany\Services\Claims\ClaimService.cs:line 38
+   at InsuranceCompany.Controllers.Operations.ClaimController.FileClaim(ClaimFileDto dto) in D:\c#\InsuranceCompany\InsuranceCompany\Controllers\Operations\ClaimController.cs:line 50
+2026-06-23 09:39:52,577 [60] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 6
+2026-06-23 09:39:52,577 [60] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 6
+2026-06-23 09:39:52,577 [60] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 6
+2026-06-23 09:40:28,839 [60] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to file claim for PolicyId: 8
+2026-06-23 09:40:28,839 [60] INFO  InsuranceCompany.Services.Claims.ClaimService - User 6 is filing a new claim for IssuedPolicyId: 8
+2026-06-23 09:40:29,027 [60] ERROR InsuranceCompany.Services.Claims.ClaimService - Error occurred while filing claim for User 6
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Claims_IssuedPolicies_IssuedPolicyId". The conflict occurred in database "VehicleInsuranceDB", table "dbo.IssuedPolicies", column 'IssuedPolicyId'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:f0e9b5c5-1849-482e-bbe4-4485275a45d1
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at InsuranceCompany.Repositories.Claims.ClaimRepository.AddClaimAsync(Claim claim) in D:\c#\InsuranceCompany\InsuranceCompany\Repositories\Claims\ClaimRepository.cs:line 22
+   at InsuranceCompany.Services.Claims.ClaimService.FileClaimAsync(Int32 userId, ClaimFileDto dto) in D:\c#\InsuranceCompany\InsuranceCompany\Services\Claims\ClaimService.cs:line 38
+2026-06-23 09:40:29,082 [60] ERROR InsuranceCompany.Controllers.Operations.ClaimController - Error occurred while filing claim.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Claims_IssuedPolicies_IssuedPolicyId". The conflict occurred in database "VehicleInsuranceDB", table "dbo.IssuedPolicies", column 'IssuedPolicyId'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:f0e9b5c5-1849-482e-bbe4-4485275a45d1
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at InsuranceCompany.Repositories.Claims.ClaimRepository.AddClaimAsync(Claim claim) in D:\c#\InsuranceCompany\InsuranceCompany\Repositories\Claims\ClaimRepository.cs:line 22
+   at InsuranceCompany.Services.Claims.ClaimService.FileClaimAsync(Int32 userId, ClaimFileDto dto) in D:\c#\InsuranceCompany\InsuranceCompany\Services\Claims\ClaimService.cs:line 38
+   at InsuranceCompany.Controllers.Operations.ClaimController.FileClaim(ClaimFileDto dto) in D:\c#\InsuranceCompany\InsuranceCompany\Controllers\Operations\ClaimController.cs:line 50
+2026-06-23 09:41:03,117 [46] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Officer fetching pending claims dashboard workbench queue.
+2026-06-23 09:41:03,120 [46] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching all pending claims.
+2026-06-23 09:41:03,276 [46] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched all pending claims.
+2026-06-23 09:41:34,689 [58] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to review Claim ID: 3
+2026-06-23 09:41:34,691 [58] INFO  InsuranceCompany.Services.Claims.ClaimService - Officer 4 is reviewing Claim ID: 3 with status: Rejected
+2026-06-23 09:41:34,894 [57] INFO  InsuranceCompany.Services.Claims.ClaimService - Claim ID 3 successfully reviewed and marked as: Rejected
+2026-06-23 09:41:34,894 [57] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Claim ID 3 successfully marked as: Rejected
+2026-06-23 09:41:39,738 [55] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Officer fetching pending claims dashboard workbench queue.
+2026-06-23 09:41:39,738 [55] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching all pending claims.
+2026-06-23 09:41:39,866 [57] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched all pending claims.
+2026-06-23 09:46:22,942 [2] INFO  Program - Starting Vehicle Insurance API application...
+2026-06-23 09:46:23,591 [2] INFO  Program - Database connection check successful.
+2026-06-23 09:46:23,820 [2] INFO  Program - Application initialized completely. Listening for web requests...
+2026-06-23 09:46:37,786 [9] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-06-23 09:46:37,787 [9] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 6
+2026-06-23 09:46:37,788 [9] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 6
+2026-06-23 09:46:40,555 [10] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 6
+2026-06-23 09:47:16,094 [17] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 6
+2026-06-23 09:47:16,097 [17] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 6
+2026-06-23 09:47:16,099 [17] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 6
+2026-06-23 09:47:48,418 [18] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to file claim for PolicyId: 7
+2026-06-23 09:47:48,419 [18] INFO  InsuranceCompany.Services.Claims.ClaimService - User 6 is filing a new claim for IssuedPolicyId: 7
+2026-06-23 09:47:49,157 [15] ERROR InsuranceCompany.Services.Claims.ClaimService - Error occurred while filing claim for User 6
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Claims_IssuedPolicies_IssuedPolicyId". The conflict occurred in database "VehicleInsuranceDB", table "dbo.IssuedPolicies", column 'IssuedPolicyId'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:5e6442c0-cf7b-4886-9aed-fffe7b46b1cf
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at InsuranceCompany.Repositories.Claims.ClaimRepository.AddClaimAsync(Claim claim) in D:\c#\InsuranceCompany\InsuranceCompany\Repositories\Claims\ClaimRepository.cs:line 22
+   at InsuranceCompany.Services.Claims.ClaimService.FileClaimAsync(Int32 userId, ClaimFileDto dto) in D:\c#\InsuranceCompany\InsuranceCompany\Services\Claims\ClaimService.cs:line 38
+2026-06-23 09:47:49,224 [15] ERROR InsuranceCompany.Controllers.Operations.ClaimController - Error occurred while filing claim.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Claims_IssuedPolicies_IssuedPolicyId". The conflict occurred in database "VehicleInsuranceDB", table "dbo.IssuedPolicies", column 'IssuedPolicyId'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:5e6442c0-cf7b-4886-9aed-fffe7b46b1cf
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at InsuranceCompany.Repositories.Claims.ClaimRepository.AddClaimAsync(Claim claim) in D:\c#\InsuranceCompany\InsuranceCompany\Repositories\Claims\ClaimRepository.cs:line 22
+   at InsuranceCompany.Services.Claims.ClaimService.FileClaimAsync(Int32 userId, ClaimFileDto dto) in D:\c#\InsuranceCompany\InsuranceCompany\Services\Claims\ClaimService.cs:line 38
+   at InsuranceCompany.Controllers.Operations.ClaimController.FileClaim(ClaimFileDto dto) in D:\c#\InsuranceCompany\InsuranceCompany\Controllers\Operations\ClaimController.cs:line 50
+2026-06-23 09:58:23,001 [2] INFO  Program - Starting Vehicle Insurance API application...
+2026-06-23 09:58:23,717 [2] INFO  Program - Database connection check successful.
+2026-06-23 09:58:23,957 [2] INFO  Program - Application initialized completely. Listening for web requests...
+2026-06-23 09:58:26,775 [13] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to file claim for PolicyId: 7
+2026-06-23 09:58:26,779 [13] INFO  InsuranceCompany.Services.Claims.ClaimService - User 6 is filing a new claim for IssuedPolicyId: 7
+2026-06-23 09:58:30,545 [15] WARN  InsuranceCompany.Services.Claims.ClaimService - Claim filing blocked: Issued policy with ID 7 not found.
+2026-06-23 09:58:30,629 [15] ERROR InsuranceCompany.Services.Claims.ClaimService - Error occurred while filing claim for User 6
+System.Collections.Generic.KeyNotFoundException: Issued policy not found.
+   at InsuranceCompany.Services.Claims.ClaimService.FileClaimAsync(Int32 userId, ClaimFileDto dto) in D:\c#\InsuranceCompany\InsuranceCompany\Services\Claims\ClaimService.cs:line 32
+2026-06-23 09:58:30,721 [15] ERROR InsuranceCompany.Controllers.Operations.ClaimController - Error occurred while filing claim.
+System.Collections.Generic.KeyNotFoundException: Issued policy not found.
+   at InsuranceCompany.Services.Claims.ClaimService.FileClaimAsync(Int32 userId, ClaimFileDto dto) in D:\c#\InsuranceCompany\InsuranceCompany\Services\Claims\ClaimService.cs:line 32
+   at InsuranceCompany.Controllers.Operations.ClaimController.FileClaim(ClaimFileDto dto) in D:\c#\InsuranceCompany\InsuranceCompany\Controllers\Operations\ClaimController.cs:line 50
+2026-06-23 09:58:37,709 [14] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to file claim for PolicyId: 7
+2026-06-23 09:58:37,709 [14] INFO  InsuranceCompany.Services.Claims.ClaimService - User 6 is filing a new claim for IssuedPolicyId: 7
+2026-06-23 09:58:37,839 [15] WARN  InsuranceCompany.Services.Claims.ClaimService - Claim filing blocked: Issued policy with ID 7 not found.
+2026-06-23 09:58:37,861 [15] ERROR InsuranceCompany.Services.Claims.ClaimService - Error occurred while filing claim for User 6
+System.Collections.Generic.KeyNotFoundException: Issued policy not found.
+   at InsuranceCompany.Services.Claims.ClaimService.FileClaimAsync(Int32 userId, ClaimFileDto dto) in D:\c#\InsuranceCompany\InsuranceCompany\Services\Claims\ClaimService.cs:line 32
+2026-06-23 09:58:37,903 [15] ERROR InsuranceCompany.Controllers.Operations.ClaimController - Error occurred while filing claim.
+System.Collections.Generic.KeyNotFoundException: Issued policy not found.
+   at InsuranceCompany.Services.Claims.ClaimService.FileClaimAsync(Int32 userId, ClaimFileDto dto) in D:\c#\InsuranceCompany\InsuranceCompany\Services\Claims\ClaimService.cs:line 32
+   at InsuranceCompany.Controllers.Operations.ClaimController.FileClaim(ClaimFileDto dto) in D:\c#\InsuranceCompany\InsuranceCompany\Controllers\Operations\ClaimController.cs:line 50
+2026-06-23 09:59:28,257 [13] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 6
+2026-06-23 09:59:28,259 [13] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 6
+2026-06-23 09:59:28,263 [13] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 6
+2026-06-23 10:00:20,801 [14] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to file claim for PolicyId: 8
+2026-06-23 10:00:20,802 [14] INFO  InsuranceCompany.Services.Claims.ClaimService - User 6 is filing a new claim for IssuedPolicyId: 8
+2026-06-23 10:00:20,892 [18] WARN  InsuranceCompany.Services.Claims.ClaimService - Claim filing blocked: Issued policy with ID 8 not found.
+2026-06-23 10:00:20,919 [18] ERROR InsuranceCompany.Services.Claims.ClaimService - Error occurred while filing claim for User 6
+System.Collections.Generic.KeyNotFoundException: Issued policy not found.
+   at InsuranceCompany.Services.Claims.ClaimService.FileClaimAsync(Int32 userId, ClaimFileDto dto) in D:\c#\InsuranceCompany\InsuranceCompany\Services\Claims\ClaimService.cs:line 32
+2026-06-23 10:00:20,955 [18] ERROR InsuranceCompany.Controllers.Operations.ClaimController - Error occurred while filing claim.
+System.Collections.Generic.KeyNotFoundException: Issued policy not found.
+   at InsuranceCompany.Services.Claims.ClaimService.FileClaimAsync(Int32 userId, ClaimFileDto dto) in D:\c#\InsuranceCompany\InsuranceCompany\Services\Claims\ClaimService.cs:line 32
+   at InsuranceCompany.Controllers.Operations.ClaimController.FileClaim(ClaimFileDto dto) in D:\c#\InsuranceCompany\InsuranceCompany\Controllers\Operations\ClaimController.cs:line 50
+2026-06-23 11:10:13,492 [2] INFO  Program - Starting Vehicle Insurance API application...
+2026-06-23 11:10:14,216 [2] INFO  Program - Database connection check successful.
+2026-06-23 11:10:14,419 [2] INFO  Program - Application initialized completely. Listening for web requests...
+2026-06-23 11:11:16,514 [13] INFO  InsuranceCompany.Controllers.AuthController - Login authentication verification .
+2026-06-23 11:11:20,210 [21] INFO  InsuranceCompany.Controllers.AuthController - User Login successful.
+2026-06-23 11:11:40,698 [20] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-06-23 11:11:40,699 [20] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 6
+2026-06-23 11:11:40,701 [20] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 6
+2026-06-23 11:11:40,951 [27] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 6
+2026-06-23 11:11:50,942 [25] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-06-23 11:11:50,942 [25] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 6
+2026-06-23 11:11:50,942 [25] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 6
+2026-06-23 11:11:51,188 [27] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 6
+2026-06-23 11:12:09,450 [25] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to file claim for PolicyId: 4
+2026-06-23 11:12:09,454 [25] INFO  InsuranceCompany.Services.Claims.ClaimService - User 6 is filing a new claim for IssuedPolicyId: 4
+2026-06-23 11:12:09,578 [27] WARN  InsuranceCompany.Services.Claims.ClaimService - Claim filing blocked: Issued policy with ID 4 not found.
+2026-06-23 11:12:09,633 [27] ERROR InsuranceCompany.Services.Claims.ClaimService - Error occurred while filing claim for User 6
+System.Collections.Generic.KeyNotFoundException: Issued policy not found.
+   at InsuranceCompany.Services.Claims.ClaimService.FileClaimAsync(Int32 userId, ClaimFileDto dto) in D:\c#\InsuranceCompany\InsuranceCompany\Services\Claims\ClaimService.cs:line 32
+2026-06-23 11:12:09,723 [27] ERROR InsuranceCompany.Controllers.Operations.ClaimController - Error occurred while filing claim.
+System.Collections.Generic.KeyNotFoundException: Issued policy not found.
+   at InsuranceCompany.Services.Claims.ClaimService.FileClaimAsync(Int32 userId, ClaimFileDto dto) in D:\c#\InsuranceCompany\InsuranceCompany\Services\Claims\ClaimService.cs:line 32
+   at InsuranceCompany.Controllers.Operations.ClaimController.FileClaim(ClaimFileDto dto) in D:\c#\InsuranceCompany\InsuranceCompany\Controllers\Operations\ClaimController.cs:line 50
+2026-06-23 11:12:44,057 [27] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to file claim for PolicyId: 4
+2026-06-23 11:12:44,057 [27] INFO  InsuranceCompany.Services.Claims.ClaimService - User 6 is filing a new claim for IssuedPolicyId: 4
+2026-06-23 11:12:44,148 [22] WARN  InsuranceCompany.Services.Claims.ClaimService - Claim filing blocked: Issued policy with ID 4 not found.
+2026-06-23 11:12:44,167 [22] ERROR InsuranceCompany.Services.Claims.ClaimService - Error occurred while filing claim for User 6
+System.Collections.Generic.KeyNotFoundException: Issued policy not found.
+   at InsuranceCompany.Services.Claims.ClaimService.FileClaimAsync(Int32 userId, ClaimFileDto dto) in D:\c#\InsuranceCompany\InsuranceCompany\Services\Claims\ClaimService.cs:line 32
+2026-06-23 11:12:44,200 [22] ERROR InsuranceCompany.Controllers.Operations.ClaimController - Error occurred while filing claim.
+System.Collections.Generic.KeyNotFoundException: Issued policy not found.
+   at InsuranceCompany.Services.Claims.ClaimService.FileClaimAsync(Int32 userId, ClaimFileDto dto) in D:\c#\InsuranceCompany\InsuranceCompany\Services\Claims\ClaimService.cs:line 32
+   at InsuranceCompany.Controllers.Operations.ClaimController.FileClaim(ClaimFileDto dto) in D:\c#\InsuranceCompany\InsuranceCompany\Controllers\Operations\ClaimController.cs:line 50
+2026-06-23 11:16:59,271 [2] INFO  Program - Starting Vehicle Insurance API application...
+2026-06-23 11:16:59,707 [2] INFO  Program - Database connection check successful.
+2026-06-23 11:16:59,819 [2] INFO  Program - Application initialized completely. Listening for web requests...
+2026-06-23 11:17:33,495 [21] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 6
+2026-06-23 11:17:33,498 [21] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 6
+2026-06-23 11:17:33,505 [21] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 6
+2026-06-23 11:18:14,488 [21] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to file claim for PolicyId: 7
+2026-06-23 11:18:14,491 [21] INFO  InsuranceCompany.Services.Claims.ClaimService - User 6 is filing a new claim for IssuedPolicyId: 7
+2026-06-23 11:18:14,641 [25] WARN  InsuranceCompany.Services.Claims.ClaimService - Claim filing blocked: Issued policy with ID 7 not found.
+2026-06-23 11:18:14,682 [25] ERROR InsuranceCompany.Services.Claims.ClaimService - Error occurred while filing claim for User 6
+System.Collections.Generic.KeyNotFoundException: Issued policy not found.
+   at InsuranceCompany.Services.Claims.ClaimService.FileClaimAsync(Int32 userId, ClaimFileDto dto) in D:\c#\InsuranceCompany\InsuranceCompany\Services\Claims\ClaimService.cs:line 32
+2026-06-23 11:18:33,749 [25] ERROR InsuranceCompany.Middlewares.GlobalExceptionMiddleware - Unhandled exception occurred while processing request to /api/Claim/file
+System.Collections.Generic.KeyNotFoundException: Issued policy not found.
+   at InsuranceCompany.Services.Claims.ClaimService.FileClaimAsync(Int32 userId, ClaimFileDto dto) in D:\c#\InsuranceCompany\InsuranceCompany\Services\Claims\ClaimService.cs:line 32
+   at InsuranceCompany.Controllers.Operations.ClaimController.FileClaim(ClaimFileDto dto) in D:\c#\InsuranceCompany\InsuranceCompany\Controllers\Operations\ClaimController.cs:line 48
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at InsuranceCompany.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in D:\c#\InsuranceCompany\InsuranceCompany\Middlewares\GlobalExceptionMiddleware.cs:line 28
+2026-06-23 11:20:43,970 [2] INFO  Program - Starting Vehicle Insurance API application...
+2026-06-23 11:20:44,689 [2] INFO  Program - Database connection check successful.
+2026-06-23 11:20:44,838 [2] INFO  Program - Application initialized completely. Listening for web requests...
+2026-06-23 11:20:49,649 [13] INFO  InsuranceCompany.Controllers.AuthController - Login authentication verification .
+2026-06-23 11:20:53,020 [6] WARN  InsuranceCompany.Controllers.AuthController - Authentication Failed.
+2026-06-23 11:21:00,795 [17] INFO  InsuranceCompany.Controllers.AuthController - Login authentication verification .
+2026-06-23 11:21:01,356 [13] WARN  InsuranceCompany.Controllers.AuthController - Authentication Failed.
+2026-06-23 11:21:07,984 [17] INFO  InsuranceCompany.Controllers.AuthController - Login authentication verification .
+2026-06-23 11:21:08,414 [13] WARN  InsuranceCompany.Controllers.AuthController - Authentication Failed.
+2026-06-23 11:21:14,818 [13] INFO  InsuranceCompany.Controllers.AuthController - Login authentication verification .
+2026-06-23 11:21:15,142 [13] INFO  InsuranceCompany.Controllers.AuthController - User Login successful.
+2026-06-23 11:21:52,576 [17] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-06-23 11:21:52,576 [17] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-06-23 11:21:52,578 [17] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-06-23 11:21:52,839 [13] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-06-23 11:23:08,120 [13] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-06-23 11:23:08,123 [13] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-06-23 11:23:08,128 [13] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
