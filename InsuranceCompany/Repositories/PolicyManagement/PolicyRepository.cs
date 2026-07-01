@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using InsuranceCompany.Data;
 using InsuranceCompany.Models.PolicyManagement;
 using log4net;
@@ -20,7 +20,10 @@ namespace InsuranceCompany.Repositories.PolicyManagement
             try
             {
                 _log.Info("Fetching all policies from the database.");
-                return await _context.InsurancePolicies.ToListAsync();
+                return await _context.InsurancePolicies
+                    .Include(p => p.PolicyAddOns)
+                        .ThenInclude(pa => pa.AddOn)
+                    .ToListAsync();
             }
             catch (Exception ex)
             {
@@ -34,7 +37,10 @@ namespace InsuranceCompany.Repositories.PolicyManagement
             try
             {
                 _log.Info($"Fetching policy with ID: {id}");
-                return await _context.InsurancePolicies.FindAsync(id);
+                return await _context.InsurancePolicies
+                    .Include(p => p.PolicyAddOns)
+                        .ThenInclude(pa => pa.AddOn)
+                    .FirstOrDefaultAsync(p => p.PolicyId == id);
             }
             catch (Exception ex)
             {

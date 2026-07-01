@@ -1,4 +1,4 @@
-﻿using InsuranceCompany.Data;
+using InsuranceCompany.Data;
 using InsuranceCompany.Models.Proposals;
 using Microsoft.EntityFrameworkCore;
 using log4net;
@@ -24,6 +24,7 @@ namespace InsuranceCompany.Repositories.Proposals
                     .Include(p => p.User)
                     .Include(p => p.InsurancePolicy)
                     .Include(p => p.ProposalAddOns)
+                        .ThenInclude(pa => pa.AddOn)
                     .Include(p => p.Quote)
                     .FirstOrDefaultAsync(p => p.ProposalId == id);
             }
@@ -42,6 +43,8 @@ namespace InsuranceCompany.Repositories.Proposals
                 return await _context.Proposals
                     .Include(p => p.InsurancePolicy)
                     .Include(p => p.Quote)
+                    .Include(p => p.ProposalAddOns)
+                        .ThenInclude(pa => pa.AddOn)
                     .Where(p => p.UserId == userId)
                     .ToListAsync();
             }
@@ -60,6 +63,8 @@ namespace InsuranceCompany.Repositories.Proposals
                 return await _context.Proposals
                     .Include(p => p.User)
                     .Include(p => p.InsurancePolicy)
+                    .Include(p => p.ProposalAddOns)
+                        .ThenInclude(pa => pa.AddOn)
                     .ToListAsync();
             }
             catch (Exception ex)

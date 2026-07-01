@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace InsuranceCompany.DTOs.PolicyManagement
 {
@@ -27,5 +28,7 @@ namespace InsuranceCompany.DTOs.PolicyManagement
 
         [Required(ErrorMessage = "Category ID is required")]
         public int CategoryId { get; set; }
+
+        public List<int>? AssociatedAddOnIds { get; set; } = new List<int>();
     }
 }

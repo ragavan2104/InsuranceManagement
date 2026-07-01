@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace InsuranceCompany.DTOs.PolicyManagement
 {
@@ -22,5 +23,7 @@ namespace InsuranceCompany.DTOs.PolicyManagement
 
         public bool IsActive { get; set; } = true;
         public int CategoryId { get; set; }
+
+        public List<int>? AssociatedAddOnIds { get; set; } = new List<int>();
     }
 }

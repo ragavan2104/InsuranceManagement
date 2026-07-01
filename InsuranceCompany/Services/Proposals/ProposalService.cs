@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -60,9 +60,37 @@ namespace InsuranceCompany.Services.Proposals
                     VehicleModel = dto.VehicleModel,
                     VehicleYear = dto.VehicleYear,
                     VehicleAge = CalculatedVehicleAge,
+                    EngineNumber = dto.EngineNumber,
+                    ChassisNumber = dto.ChassisNumber,
                     Status = "Pending",
                     SubmittedAt = DateTime.Now,
                 };
+
+                if (dto.SelectedAddOnIds != null && dto.SelectedAddOnIds.Any())
+                {
+                    // Validate that all selected Add-Ons are associated with this policy
+                    var policyAddOnIds = policy.PolicyAddOns.Select(pa => pa.AddOnId).ToHashSet();
+                    foreach (var addOnId in dto.SelectedAddOnIds)
+                    {
+                        if (!policyAddOnIds.Contains(addOnId))
+                        {
+                            _log.Warn($"Selected Add-On ID {addOnId} is not associated with Policy ID {dto.PolicyId}.");
+                            throw new ArgumentException($"Add-On with ID {addOnId} is not associated with this policy.");
+                        }
+                    }
+
+                    ProposalEntity.ProposalAddOns = dto.SelectedAddOnIds.Select(id => new ProposalAddOn
+                    {
+                        AddOnId = id
+                    }).ToList();
+
+                    // Calculate total additional cost of selected Add-Ons
+                    decimal addOnTotalCost = policy.PolicyAddOns
+                        .Where(pa => dto.SelectedAddOnIds.Contains(pa.AddOnId) && pa.AddOn != null)
+                        .Sum(pa => pa.AddOn!.AdditionalCost);
+
+                    finalPremium += addOnTotalCost;
+                }
 
                 var ageProperty = typeof(Proposal).GetProperty("VehicleAge");
                 if (ageProperty != null)
@@ -74,22 +102,29 @@ namespace InsuranceCompany.Services.Proposals
 
                 _log.Info($"Successfully created proposal with ID: {createdProposal.ProposalId} for UserId: {userId}");
 
+                var savedProposal = await _proposalRepository.GetProposalByIdAsync(createdProposal.ProposalId);
+                if (savedProposal == null)
+                {
+                    throw new Exception("Error retrieving the created proposal.");
+                }
+
                 return new ProposalResponseDto
                 {
-                    ProposalId = createdProposal.ProposalId,
-                    UserId = createdProposal.UserId,
-                    PolicyId = createdProposal.PolicyId,
-                    PolicyName = policy.PolicyName,
-                    PolicyType = policy.PolicyType,
-                    VehicleNumber = createdProposal.VehicleNumber,
-                    VehicleMake = createdProposal.VehicleMake,
-                    VehicleModel = createdProposal.VehicleModel,
-                    VehicleYear = createdProposal.VehicleYear,
-                    VehicleAge = CalculatedVehicleAge,
-                    Status = createdProposal.Status,
-                    SubmittedAt = createdProposal.SubmittedAt,
+                    ProposalId = savedProposal.ProposalId,
+                    UserId = savedProposal.UserId,
+                    PolicyId = savedProposal.PolicyId,
+                    PolicyName = savedProposal.InsurancePolicy?.PolicyName ?? policy.PolicyName,
+                    PolicyType = savedProposal.InsurancePolicy?.PolicyType ?? policy.PolicyType,
+                    VehicleNumber = savedProposal.VehicleNumber,
+                    VehicleMake = savedProposal.VehicleMake,
+                    VehicleModel = savedProposal.VehicleModel,
+                    VehicleYear = savedProposal.VehicleYear,
+                    VehicleAge = savedProposal.VehicleAge,
+                    Status = savedProposal.Status,
+                    SubmittedAt = savedProposal.SubmittedAt,
                     TotalCalculatedPremium = finalPremium,
-                    FinalInsuredDeclaredValue = policy.CoverageAmount
+                    FinalInsuredDeclaredValue = savedProposal.InsurancePolicy?.CoverageAmount ?? policy.CoverageAmount,
+                    AppliedAddOnName = savedProposal.ProposalAddOns?.Select(pa => pa.AddOn?.AddOnName ?? string.Empty).Where(name => !string.IsNullOrEmpty(name)).ToList() ?? new List<string>()
                 };
             }
             catch (KeyNotFoundException ex)
@@ -121,6 +156,13 @@ namespace InsuranceCompany.Services.Proposals
                     else if (p.VehicleAge > 2)
                         calculatedPremium += basePremium * 0.05m;
 
+                    if (p.ProposalAddOns != null && p.ProposalAddOns.Any())
+                    {
+                        calculatedPremium += p.ProposalAddOns
+                            .Where(pa => pa.AddOn != null)
+                            .Sum(pa => pa.AddOn!.AdditionalCost);
+                    }
+
                     return new ProposalResponseDto
                     {
                         ProposalId = p.ProposalId,
@@ -135,7 +177,8 @@ namespace InsuranceCompany.Services.Proposals
                         VehicleAge = p.VehicleAge,
                         Status = p.Status,
                         SubmittedAt = p.SubmittedAt,
-                        TotalCalculatedPremium = p.Quote?.TotalPremium > 0 ? p.Quote.TotalPremium : calculatedPremium
+                        TotalCalculatedPremium = p.Quote?.TotalPremium > 0 ? p.Quote.TotalPremium : calculatedPremium,
+                        AppliedAddOnName = p.ProposalAddOns?.Select(pa => pa.AddOn?.AddOnName ?? string.Empty).Where(name => !string.IsNullOrEmpty(name)).ToList() ?? new List<string>()
                     };
                 }).ToList();
             }
@@ -166,6 +209,13 @@ namespace InsuranceCompany.Services.Proposals
                 else if (p.VehicleAge > 2)
                     calculatedPremium += basePremium * 0.05m;
 
+                if (p.ProposalAddOns != null && p.ProposalAddOns.Any())
+                {
+                    calculatedPremium += p.ProposalAddOns
+                        .Where(pa => pa.AddOn != null)
+                        .Sum(pa => pa.AddOn!.AdditionalCost);
+                }
+
                 return new ProposalResponseDto
                 {
                     ProposalId = p.ProposalId,
@@ -184,7 +234,8 @@ namespace InsuranceCompany.Services.Proposals
                     AssignedOfficerId = p.AssignedOfficerId,
                     SubmittedAt = p.SubmittedAt,
                     TotalCalculatedPremium = p.Quote?.TotalPremium > 0 ? p.Quote.TotalPremium : calculatedPremium,
-                    FinalInsuredDeclaredValue = p.InsurancePolicy?.CoverageAmount ?? 0
+                    FinalInsuredDeclaredValue = p.InsurancePolicy?.CoverageAmount ?? 0,
+                    AppliedAddOnName = p.ProposalAddOns?.Select(pa => pa.AddOn?.AddOnName ?? string.Empty).Where(name => !string.IsNullOrEmpty(name)).ToList() ?? new List<string>()
                 };
             }
             catch (Exception ex)
@@ -254,6 +305,13 @@ namespace InsuranceCompany.Services.Proposals
                         else if (p.VehicleAge > 2)
                             calculatedPremium += basePremium * 0.05m;
 
+                        if (p.ProposalAddOns != null && p.ProposalAddOns.Any())
+                        {
+                            calculatedPremium += p.ProposalAddOns
+                                .Where(pa => pa.AddOn != null)
+                                .Sum(pa => pa.AddOn!.AdditionalCost);
+                        }
+
                         return new ProposalResponseDto
                         {
                             ProposalId = p.ProposalId,
@@ -269,7 +327,8 @@ namespace InsuranceCompany.Services.Proposals
                             VehicleAge = p.VehicleAge,
                             Status = p.Status,
                             SubmittedAt = p.SubmittedAt,
-                            TotalCalculatedPremium = p.Quote?.TotalPremium > 0 ? p.Quote.TotalPremium : calculatedPremium
+                            TotalCalculatedPremium = p.Quote?.TotalPremium > 0 ? p.Quote.TotalPremium : calculatedPremium,
+                            AppliedAddOnName = p.ProposalAddOns?.Select(pa => pa.AddOn?.AddOnName ?? string.Empty).Where(name => !string.IsNullOrEmpty(name)).ToList() ?? new List<string>()
                         };
                     }).ToList();
             }

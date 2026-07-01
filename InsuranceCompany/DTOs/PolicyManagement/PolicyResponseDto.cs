@@ -1,4 +1,6 @@
-﻿namespace InsuranceCompany.DTOs.PolicyManagement
+using System.Collections.Generic;
+
+namespace InsuranceCompany.DTOs.PolicyManagement
 {
     public class PolicyResponseDto
     {
@@ -13,5 +15,7 @@
 
         public bool IsActive { get; set; }
         public DateTime CreatedAt { get; set; }
+
+        public List<AddOnResponseDto> AssociatedAddOns { get; set; } = new List<AddOnResponseDto>();
     }
 }

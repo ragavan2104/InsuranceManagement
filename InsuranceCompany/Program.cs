@@ -45,6 +45,8 @@ builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IPolicyService, PolicyService>();
 builder.Services.AddScoped<IPolicyRepository, PolicyRepository>(); 
+builder.Services.AddScoped<IAddOnService, AddOnService>();
+builder.Services.AddScoped<IAddOnRepository, AddOnRepository>();
 builder.Services.AddScoped<IProposalService, ProposalService>();
 builder.Services.AddScoped<IProposalRepository, ProposalRepository>();
 builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
