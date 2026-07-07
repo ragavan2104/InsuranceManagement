@@ -10,6 +10,8 @@ using InsuranceCompany.Services.Claims;
 using InsuranceCompany.Services.Payments;
 using InsuranceCompany.Services.PolicyManagement;
 using InsuranceCompany.Services.Proposals;
+using InsuranceCompany.Repositories.Users;
+using InsuranceCompany.Services.Users;
 using InsuranceCompany.Validators.Authentication;
 using log4net;
 using log4net.Config;
@@ -36,11 +38,9 @@ builder.Services.AddControllers()
 // Fluent Validation
 builder.Services.AddValidatorsFromAssemblyContaining<UserValidator>();
 
-// Database Context Setup
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Dependency Injection Setup
 builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IPolicyService, PolicyService>();
@@ -53,6 +53,8 @@ builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
 builder.Services.AddScoped<IPaymentService, PaymentService>();
 builder.Services.AddScoped<IClaimRepository, ClaimRepository>();
 builder.Services.AddScoped<IClaimService, ClaimService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 // JWT Authentication Setup
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -69,8 +71,17 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JwtSettings:SecretKey"]!))
         };
     });
-
 builder.Services.AddAuthorization();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactApp",
+        builder =>
+        {
+            builder.WithOrigins("http://localhost:5173")
+                   .AllowAnyMethod()
+                   .AllowAnyHeader();
+        });
+});
 
 // Swagger Documentation Generation
 builder.Services.AddEndpointsApiExplorer();
@@ -121,10 +132,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
 app.UseHttpsRedirection();
-
 app.UseMiddleware<GlobalExceptionMiddleware>();
+app.UseCors("AllowReactApp");
 
 app.UseAuthentication();
 app.UseAuthorization();

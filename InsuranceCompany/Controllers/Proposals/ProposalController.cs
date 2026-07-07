@@ -1,4 +1,4 @@
-﻿using InsuranceCompany.DTOs.Proposals;
+using InsuranceCompany.DTOs.Proposals;
 using InsuranceCompany.Services.Proposals;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
@@ -180,6 +180,23 @@ namespace InsuranceCompany.Controllers.Proposals
             catch (Exception ex)
             {
                 _log.Error("Error occurred while fetching pending proposals.", ex);
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while processing your request.");
+            }
+        }
+
+        [HttpGet("History")]
+        [Authorize(Roles = "Admin,Officer")]
+        public async Task<IActionResult> GetAllProposalsHistory()
+        {
+            try
+            {
+                _log.Info("Fetching all proposals history.");
+                var proposals = await _proposalService.GetAllProposalsHistoryAsync();
+                return Ok(proposals);
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Error occurred while fetching all proposals history.", ex);
                 return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while processing your request.");
             }
         }

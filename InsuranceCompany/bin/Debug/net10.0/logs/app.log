@@ -1502,3 +1502,1092 @@ System.Collections.Generic.KeyNotFoundException: Issued policy not found.
 2026-06-23 11:23:08,120 [13] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
 2026-06-23 11:23:08,123 [13] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
 2026-06-23 11:23:08,128 [13] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-02 15:44:29,233 [2] INFO  Program - Starting Vehicle Insurance API application...
+2026-07-02 15:44:31,150 [2] INFO  Program - Database connection check successful.
+2026-07-02 15:44:31,285 [2] INFO  Program - Application initialized completely. Listening for web requests...
+2026-07-02 15:47:46,121 [2] INFO  Program - Starting Vehicle Insurance API application...
+2026-07-02 15:47:46,743 [2] INFO  Program - Database connection check successful.
+2026-07-02 15:47:47,487 [2] INFO  Program - Application initialized completely. Listening for web requests...
+2026-07-03 09:18:56,475 [2] INFO  Program - Starting Vehicle Insurance API application...
+2026-07-03 09:18:58,091 [2] INFO  Program - Database connection check successful.
+2026-07-03 09:18:58,214 [2] INFO  Program - Application initialized completely. Listening for web requests...
+2026-07-03 09:19:54,933 [16] INFO  InsuranceCompany.Controllers.AuthController - Login authentication verification .
+2026-07-03 09:20:00,049 [19] WARN  InsuranceCompany.Controllers.AuthController - Authentication Failed.
+2026-07-05 22:20:36,690 [2] INFO  Program - Starting Vehicle Insurance API application...
+2026-07-05 22:20:38,493 [2] INFO  Program - Database connection check successful.
+2026-07-05 22:20:38,991 [2] INFO  Program - Application initialized completely. Listening for web requests...
+2026-07-05 22:20:46,480 [10] INFO  InsuranceCompany.Controllers.AuthController - Login authentication verification .
+2026-07-05 22:20:49,374 [10] WARN  InsuranceCompany.Controllers.AuthController - Authentication failed
+2026-07-05 22:21:46,814 [15] INFO  InsuranceCompany.Controllers.AuthController - Login authentication verification .
+2026-07-05 22:21:47,694 [17] WARN  InsuranceCompany.Controllers.AuthController - Authentication Failed.
+2026-07-05 22:22:20,046 [15] INFO  InsuranceCompany.Controllers.AuthController - Login authentication verification .
+2026-07-05 22:22:20,709 [17] INFO  InsuranceCompany.Controllers.AuthController - User Login successful.
+2026-07-05 22:22:20,938 [21] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-05 22:22:20,938 [21] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-05 22:22:20,939 [17] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-05 22:22:20,941 [21] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-05 22:22:20,942 [17] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-05 22:22:20,945 [17] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-05 22:22:21,229 [21] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-05 22:22:21,356 [17] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-05 22:22:21,356 [17] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-05 22:22:21,356 [17] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-05 22:22:21,392 [15] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-05 22:22:21,393 [15] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-05 22:22:21,393 [15] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-05 22:22:21,451 [21] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-05 22:22:35,512 [21] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-05 22:22:35,512 [20] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-05 22:22:35,512 [21] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-05 22:22:35,512 [20] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-05 22:22:35,512 [20] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-05 22:22:35,512 [21] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-05 22:22:35,590 [21] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-05 22:22:35,594 [24] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-05 22:22:35,595 [24] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-05 22:22:35,595 [24] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-05 22:22:35,602 [17] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-05 22:22:35,602 [17] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-05 22:22:35,602 [17] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-05 22:22:35,619 [20] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-05 22:22:45,903 [17] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-05 22:22:45,905 [17] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-05 22:22:45,908 [17] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-05 22:22:46,047 [20] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-05 22:22:46,047 [20] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-05 22:22:46,048 [20] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-05 22:22:54,900 [21] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-05 22:22:54,900 [21] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-05 22:22:54,900 [21] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-05 22:22:54,900 [24] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-05 22:22:54,901 [24] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-05 22:22:54,901 [24] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-05 22:22:55,001 [24] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-05 22:22:55,009 [20] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-05 22:22:55,010 [20] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-05 22:22:55,010 [20] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-05 22:22:55,029 [15] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-05 22:22:55,039 [20] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-05 22:22:55,039 [20] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-05 22:22:55,039 [20] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-05 22:22:56,962 [24] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-05 22:22:56,963 [24] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-05 22:22:56,963 [24] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-05 22:22:57,003 [20] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-05 22:22:57,003 [20] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-05 22:22:57,003 [20] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-05 22:25:03,050 [20] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-05 22:25:03,050 [20] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-05 22:25:03,050 [33] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-05 22:25:03,050 [33] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-05 22:25:03,050 [20] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-05 22:25:03,050 [33] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-05 22:25:03,134 [33] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-05 22:25:03,141 [31] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-05 22:25:03,141 [31] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-05 22:25:03,141 [31] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-05 22:25:03,145 [20] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-05 22:25:03,145 [20] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-05 22:25:03,145 [20] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-05 22:25:03,215 [31] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-05 22:25:12,649 [33] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-05 22:25:12,651 [33] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-05 22:25:12,651 [33] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-05 22:25:12,652 [35] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-05 22:25:12,653 [35] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-05 22:25:12,653 [35] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-05 22:25:12,722 [36] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-05 22:25:12,722 [36] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-05 22:25:12,722 [36] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-05 22:25:12,773 [35] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-05 22:25:12,781 [32] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-05 22:25:12,782 [32] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-05 22:25:12,782 [32] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-05 22:25:12,854 [31] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 09:31:33,850 [2] INFO  Program - Starting Vehicle Insurance API application...
+2026-07-06 09:31:35,013 [2] INFO  Program - Database connection check successful.
+2026-07-06 09:31:35,351 [2] INFO  Program - Application initialized completely. Listening for web requests...
+2026-07-06 09:35:34,134 [11] INFO  InsuranceCompany.Controllers.AuthController - Login authentication verification .
+2026-07-06 09:35:37,648 [8] INFO  InsuranceCompany.Controllers.AuthController - User Login successful.
+2026-07-06 09:35:37,756 [9] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 09:35:37,759 [9] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 09:35:37,890 [8] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 09:35:37,890 [8] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 09:35:42,299 [10] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 09:35:42,302 [10] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 09:35:42,306 [10] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 09:35:42,308 [8] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 09:35:42,310 [8] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 09:35:42,349 [8] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 09:35:42,546 [24] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 09:35:43,619 [11] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 09:35:43,619 [11] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 09:35:43,619 [11] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 09:35:43,713 [10] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 09:35:56,214 [24] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 09:35:56,214 [24] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 09:35:57,032 [9] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 09:35:57,032 [9] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 09:35:57,032 [9] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 09:35:57,041 [8] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 09:35:57,041 [8] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 09:35:57,041 [8] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 09:35:57,174 [9] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 09:35:58,513 [10] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 09:35:58,513 [10] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 09:36:00,822 [24] INFO  InsuranceCompany.Services.Users.UserService - Fetching user with ID: 3
+2026-07-06 09:36:00,824 [24] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching user with ID: 3
+2026-07-06 09:36:06,098 [8] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 09:36:06,099 [8] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 09:36:06,099 [8] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 09:36:06,224 [10] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 09:36:07,292 [24] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 09:36:07,292 [24] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 09:36:07,292 [24] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 09:36:07,296 [10] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 09:36:07,296 [10] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 09:36:07,296 [10] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 09:36:07,403 [24] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 09:36:08,029 [24] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 09:36:08,029 [24] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 09:40:41,410 [34] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 09:40:41,410 [34] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 09:42:05,296 [39] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Officer fetching pending claims dashboard workbench queue.
+2026-07-06 09:42:05,302 [39] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching all pending claims.
+2026-07-06 09:42:05,517 [37] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched all pending claims.
+2026-07-06 09:42:07,480 [37] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching all pending proposals.
+2026-07-06 09:42:07,484 [37] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching all pending and submitted proposals.
+2026-07-06 09:42:07,488 [37] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching all proposals from the database.
+2026-07-06 09:42:21,819 [33] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Officer 2 is reviewing proposal ID: 1
+2026-07-06 09:42:21,822 [33] INFO  InsuranceCompany.Services.Proposals.ProposalService - Officer 2 is reviewing Proposal ID: 1 with status: Rejected
+2026-07-06 09:42:21,825 [33] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposal with ID: 1
+2026-07-06 09:42:22,016 [39] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Updating proposal in the database.
+2026-07-06 09:42:22,473 [39] INFO  InsuranceCompany.Services.Proposals.ProposalService - Successfully updated review status for Proposal ID: 1
+2026-07-06 09:42:22,473 [39] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Proposal ID 1 successfully marked as Rejected.
+2026-07-06 09:42:22,487 [41] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching all pending proposals.
+2026-07-06 09:42:22,488 [41] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching all pending and submitted proposals.
+2026-07-06 09:42:22,488 [41] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching all proposals from the database.
+2026-07-06 09:42:25,914 [41] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Officer fetching pending claims dashboard workbench queue.
+2026-07-06 09:42:25,915 [41] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching all pending claims.
+2026-07-06 09:42:26,055 [33] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched all pending claims.
+2026-07-06 09:42:27,162 [37] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching all pending proposals.
+2026-07-06 09:42:27,162 [37] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching all pending and submitted proposals.
+2026-07-06 09:42:27,163 [37] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching all proposals from the database.
+2026-07-06 09:42:28,317 [33] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 09:42:28,317 [33] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 09:42:28,317 [33] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 09:42:28,429 [37] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 09:42:29,646 [39] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 09:42:29,646 [39] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 09:42:29,646 [39] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 09:42:29,647 [33] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 09:42:29,647 [33] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 09:42:29,647 [33] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 09:42:29,784 [41] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 09:42:30,917 [41] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching all pending proposals.
+2026-07-06 09:42:30,917 [41] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching all pending and submitted proposals.
+2026-07-06 09:42:30,917 [41] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching all proposals from the database.
+2026-07-06 09:42:47,827 [39] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Officer 2 is reviewing proposal ID: 2
+2026-07-06 09:42:47,827 [39] INFO  InsuranceCompany.Services.Proposals.ProposalService - Officer 2 is reviewing Proposal ID: 2 with status: Approved
+2026-07-06 09:42:47,827 [39] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposal with ID: 2
+2026-07-06 09:42:47,952 [41] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Updating proposal in the database.
+2026-07-06 09:42:47,975 [39] INFO  InsuranceCompany.Services.Proposals.ProposalService - Successfully updated review status for Proposal ID: 2
+2026-07-06 09:42:47,975 [39] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Proposal ID 2 successfully marked as Approved.
+2026-07-06 09:42:47,981 [37] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching all pending proposals.
+2026-07-06 09:42:47,981 [37] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching all pending and submitted proposals.
+2026-07-06 09:42:47,981 [37] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching all proposals from the database.
+2026-07-06 09:45:15,355 [60] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 09:45:15,355 [60] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 09:54:12,311 [36] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 09:54:12,311 [36] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 09:54:12,619 [36] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 09:54:12,619 [36] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 09:54:15,574 [36] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 09:54:15,574 [36] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 09:54:15,677 [53] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 09:54:15,677 [53] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 09:57:45,805 [44] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 09:57:45,805 [44] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 09:57:45,956 [52] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 09:57:45,956 [52] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 09:59:58,680 [33] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 09:59:58,680 [33] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 09:59:58,804 [37] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 09:59:58,804 [37] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 10:00:00,803 [38] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 10:00:00,803 [38] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 10:00:00,803 [38] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 10:00:00,894 [37] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 10:00:00,898 [37] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 10:00:00,898 [37] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 10:00:00,898 [37] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 10:00:00,916 [43] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 10:00:01,944 [38] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Officer fetching pending claims dashboard workbench queue.
+2026-07-06 10:00:01,944 [38] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching all pending claims.
+2026-07-06 10:00:02,060 [37] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched all pending claims.
+2026-07-06 10:00:02,063 [37] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Officer fetching pending claims dashboard workbench queue.
+2026-07-06 10:00:02,063 [37] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching all pending claims.
+2026-07-06 10:00:02,074 [37] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched all pending claims.
+2026-07-06 10:00:03,211 [43] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 10:00:03,211 [43] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 10:00:03,211 [43] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 10:00:03,309 [38] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 10:00:03,337 [26] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 10:00:03,337 [26] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 10:00:03,337 [26] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 10:00:03,351 [26] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 10:00:04,573 [33] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 10:00:04,573 [33] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 10:00:04,573 [33] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 10:00:04,577 [27] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 10:00:04,577 [27] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 10:00:04,577 [27] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 10:00:04,697 [26] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 10:00:04,700 [37] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 10:00:04,700 [37] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 10:00:04,700 [37] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 10:00:04,744 [37] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 10:00:04,745 [37] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 10:00:04,745 [37] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 10:00:04,750 [27] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 11:42:29,044 [3] INFO  InsuranceCompany.Controllers.AuthController - Login authentication verification .
+2026-07-06 11:42:29,481 [3] WARN  InsuranceCompany.Controllers.AuthController - Authentication Failed.
+2026-07-06 11:42:32,517 [3] INFO  InsuranceCompany.Controllers.AuthController - Login authentication verification .
+2026-07-06 11:42:32,855 [35] INFO  InsuranceCompany.Controllers.AuthController - User Login successful.
+2026-07-06 11:42:32,956 [14] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 11:42:32,957 [3] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 11:42:32,957 [14] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 11:42:32,957 [3] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 11:42:32,961 [3] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 11:42:32,962 [14] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 11:42:33,151 [14] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 11:42:33,151 [14] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 11:42:33,151 [14] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 11:42:33,211 [3] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 11:42:33,264 [14] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 11:42:33,264 [14] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 11:42:33,265 [14] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 11:42:33,279 [3] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 11:42:36,057 [3] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 11:42:36,057 [3] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 11:42:36,057 [3] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 11:42:36,201 [35] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 11:42:36,201 [35] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 11:42:36,201 [35] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 11:43:43,327 [19] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 11:43:43,327 [19] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 11:43:43,327 [19] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 11:45:04,791 [45] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 11:45:04,791 [45] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 11:45:04,791 [45] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 11:45:04,908 [43] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 11:45:04,908 [43] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 11:45:04,908 [43] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 11:46:09,882 [47] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 11:46:09,883 [47] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 11:46:09,883 [47] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 11:46:09,883 [44] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 11:46:09,883 [44] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 11:46:09,883 [44] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 11:46:10,018 [47] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 11:46:10,022 [43] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 11:46:10,022 [43] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 11:46:10,022 [43] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 11:46:10,063 [51] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 11:46:10,063 [51] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 11:46:10,063 [51] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 11:46:10,127 [45] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 12:14:51,720 [8] INFO  InsuranceCompany.Controllers.AuthController - Login authentication verification .
+2026-07-06 12:14:52,096 [9] INFO  InsuranceCompany.Controllers.AuthController - User Login successful.
+2026-07-06 12:14:52,149 [8] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 12:14:52,150 [8] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 12:14:52,150 [8] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 12:14:52,150 [9] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 12:14:52,150 [9] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 12:14:52,150 [9] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 12:14:52,320 [8] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 12:14:52,361 [10] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 12:14:52,363 [10] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 12:14:52,363 [10] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 12:14:52,363 [9] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 12:14:52,363 [9] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 12:14:52,363 [9] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 12:14:52,415 [9] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 12:14:57,947 [36] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 12:14:57,947 [36] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 12:14:57,947 [36] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 12:14:58,066 [8] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 12:14:58,066 [8] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 12:14:58,066 [8] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 12:15:09,915 [9] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 12:15:09,915 [9] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 12:15:09,915 [9] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 12:15:09,918 [8] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 12:15:09,918 [8] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 12:15:09,918 [8] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 12:15:10,056 [36] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 12:15:10,060 [10] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 12:15:10,060 [10] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 12:15:10,060 [10] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 12:15:10,066 [36] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 12:15:10,066 [36] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 12:15:10,066 [36] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 12:15:10,076 [9] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 12:15:28,048 [9] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 12:15:28,049 [9] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 12:15:28,049 [9] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 12:15:28,150 [10] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 12:15:28,150 [10] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 12:15:28,150 [10] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 12:15:49,091 [36] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 12:15:49,091 [36] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 12:15:49,091 [36] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 12:15:49,094 [10] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 12:15:49,094 [10] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 12:15:49,094 [10] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 12:15:49,226 [10] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 12:15:49,229 [8] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 12:15:49,229 [8] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 12:15:49,229 [8] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 12:15:49,265 [8] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 12:15:49,265 [8] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 12:15:49,265 [8] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 12:15:49,276 [9] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 12:16:01,678 [36] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 12:16:01,678 [36] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 12:16:01,678 [36] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 12:16:01,785 [8] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 12:16:01,785 [8] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 12:16:01,785 [8] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 12:16:03,837 [10] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 12:16:03,837 [8] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 12:16:03,837 [8] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 12:16:03,837 [10] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 12:16:03,837 [8] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 12:16:03,837 [10] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 12:16:03,994 [8] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 12:16:03,994 [8] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 12:16:03,994 [8] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 12:16:04,001 [36] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 12:16:04,005 [8] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 12:16:04,005 [8] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 12:16:04,005 [8] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 12:16:04,052 [10] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 12:19:03,084 [41] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 12:19:03,084 [41] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 12:19:03,084 [41] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 12:19:03,217 [31] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 12:19:03,217 [31] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 12:19:03,217 [31] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 12:19:05,045 [31] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 12:19:05,045 [31] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 12:19:05,045 [31] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 12:19:05,050 [34] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 12:19:05,050 [34] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 12:19:05,050 [34] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 12:19:05,148 [41] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 12:19:05,151 [39] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 12:19:05,152 [39] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 12:19:05,152 [39] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 12:19:05,155 [34] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 12:19:05,155 [34] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 12:19:05,155 [34] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 12:19:05,191 [41] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 12:21:27,864 [42] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 12:21:27,865 [42] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 12:21:27,865 [42] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 12:21:27,870 [19] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 12:21:27,870 [19] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 12:21:27,870 [19] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 12:21:28,321 [24] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 12:21:28,326 [24] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 12:21:28,326 [24] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 12:21:28,326 [24] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 12:21:28,355 [19] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 12:21:28,356 [19] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 12:21:28,356 [19] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 12:21:28,418 [56] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 12:23:18,512 [36] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 12:23:18,512 [36] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 12:23:18,512 [36] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 12:23:18,660 [25] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 12:23:18,661 [25] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 12:23:18,661 [25] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 12:25:32,498 [49] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 12:25:32,499 [49] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 12:25:32,499 [49] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 12:25:32,499 [42] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 12:25:32,499 [42] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 12:25:32,499 [42] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 12:25:32,616 [42] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 12:25:32,621 [49] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 12:25:32,621 [49] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 12:25:32,621 [49] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 12:25:32,625 [36] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 12:25:32,625 [36] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 12:25:32,625 [36] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 12:25:32,669 [24] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 14:46:33,707 [51] INFO  InsuranceCompany.Controllers.AuthController - Login authentication verification .
+2026-07-06 14:46:34,138 [51] WARN  InsuranceCompany.Controllers.AuthController - Authentication Failed.
+2026-07-06 14:46:40,732 [46] INFO  InsuranceCompany.Controllers.AuthController - Login authentication verification .
+2026-07-06 14:46:41,043 [43] WARN  InsuranceCompany.Controllers.AuthController - Authentication Failed.
+2026-07-06 14:46:44,829 [34] INFO  InsuranceCompany.Controllers.AuthController - Login authentication verification .
+2026-07-06 14:46:45,153 [46] WARN  InsuranceCompany.Controllers.AuthController - Authentication Failed.
+2026-07-06 14:46:55,358 [43] INFO  InsuranceCompany.Controllers.AuthController - Login authentication verification .
+2026-07-06 14:46:55,780 [46] WARN  InsuranceCompany.Controllers.AuthController - Authentication Failed.
+2026-07-06 14:47:01,903 [34] INFO  InsuranceCompany.Controllers.AuthController - Login authentication verification .
+2026-07-06 14:47:02,237 [43] INFO  InsuranceCompany.Controllers.AuthController - User Login successful.
+2026-07-06 14:47:02,286 [34] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 14:47:02,286 [34] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 14:47:02,392 [34] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 14:47:02,392 [34] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 14:47:07,918 [46] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Officer fetching pending claims dashboard workbench queue.
+2026-07-06 14:47:07,918 [46] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching all pending claims.
+2026-07-06 14:47:08,017 [51] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched all pending claims.
+2026-07-06 14:47:08,020 [51] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Officer fetching pending claims dashboard workbench queue.
+2026-07-06 14:47:08,020 [51] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching all pending claims.
+2026-07-06 14:47:08,059 [51] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched all pending claims.
+2026-07-06 14:47:09,322 [51] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching all pending proposals.
+2026-07-06 14:47:09,322 [51] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching all pending and submitted proposals.
+2026-07-06 14:47:09,322 [51] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching all proposals from the database.
+2026-07-06 14:47:09,424 [46] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching all pending proposals.
+2026-07-06 14:47:09,424 [46] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching all pending and submitted proposals.
+2026-07-06 14:47:09,424 [46] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching all proposals from the database.
+2026-07-06 14:47:10,616 [43] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 14:47:10,616 [43] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 14:47:10,616 [43] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 14:47:10,690 [43] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 14:47:10,692 [51] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 14:47:10,692 [51] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 14:47:10,693 [51] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 14:47:10,705 [51] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 14:47:11,861 [46] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 14:47:11,861 [46] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 14:47:11,861 [46] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 14:47:11,864 [9] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 14:47:11,864 [9] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 14:47:11,864 [9] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 14:47:11,965 [34] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 14:47:11,967 [51] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 14:47:11,967 [51] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 14:47:11,967 [51] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 14:47:12,035 [43] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 14:47:12,038 [46] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 14:47:12,038 [46] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 14:47:12,038 [46] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 14:47:14,414 [51] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 14:47:14,414 [51] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 14:47:14,507 [46] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 14:47:14,507 [46] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 14:47:22,156 [51] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Officer fetching pending claims dashboard workbench queue.
+2026-07-06 14:47:22,156 [51] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching all pending claims.
+2026-07-06 14:47:22,275 [43] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched all pending claims.
+2026-07-06 14:47:22,277 [43] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Officer fetching pending claims dashboard workbench queue.
+2026-07-06 14:47:22,277 [43] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching all pending claims.
+2026-07-06 14:47:22,294 [43] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched all pending claims.
+2026-07-06 14:47:23,438 [43] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching all pending proposals.
+2026-07-06 14:47:23,438 [43] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching all pending and submitted proposals.
+2026-07-06 14:47:23,438 [43] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching all proposals from the database.
+2026-07-06 14:47:23,566 [51] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching all pending proposals.
+2026-07-06 14:47:23,567 [51] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching all pending and submitted proposals.
+2026-07-06 14:47:23,567 [51] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching all proposals from the database.
+2026-07-06 14:47:25,228 [51] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 14:47:25,228 [51] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 14:47:25,228 [51] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 14:47:25,312 [46] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 14:47:25,316 [46] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 14:47:25,316 [46] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 14:47:25,316 [46] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 14:47:25,328 [51] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 14:47:27,821 [51] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 14:47:27,821 [51] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 14:47:27,821 [51] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 14:47:27,848 [34] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 14:47:27,848 [34] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 14:47:27,848 [34] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 14:47:27,925 [51] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 14:47:27,928 [51] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 14:47:27,928 [51] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 14:47:27,928 [51] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 14:47:27,940 [9] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 14:47:27,943 [43] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 14:47:27,944 [43] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 14:47:27,944 [43] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 14:47:30,214 [52] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching all pending proposals.
+2026-07-06 14:47:30,214 [52] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching all pending and submitted proposals.
+2026-07-06 14:47:30,214 [52] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching all proposals from the database.
+2026-07-06 14:47:30,357 [34] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching all pending proposals.
+2026-07-06 14:47:30,357 [34] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching all pending and submitted proposals.
+2026-07-06 14:47:30,357 [34] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching all proposals from the database.
+2026-07-06 14:47:31,180 [43] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 14:47:31,180 [43] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 14:47:31,423 [43] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 14:47:31,423 [43] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 14:47:31,935 [9] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 14:47:31,935 [9] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 14:47:31,935 [9] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 14:47:31,940 [43] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 14:47:31,940 [43] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 14:47:31,940 [43] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 14:47:32,057 [34] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 14:47:32,057 [51] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 14:47:32,058 [51] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 14:47:32,058 [51] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 14:47:32,060 [34] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 14:47:32,060 [34] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 14:47:32,060 [34] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 14:47:32,110 [34] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 14:47:33,786 [34] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 14:47:33,786 [34] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 14:47:33,786 [34] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 14:47:33,887 [43] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 14:47:33,890 [51] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 14:47:33,890 [51] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 14:47:33,890 [51] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 14:47:33,903 [52] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 14:47:34,766 [34] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching all pending proposals.
+2026-07-06 14:47:34,766 [34] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching all pending and submitted proposals.
+2026-07-06 14:47:34,766 [34] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching all proposals from the database.
+2026-07-06 14:47:34,865 [46] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching all pending proposals.
+2026-07-06 14:47:34,865 [46] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching all pending and submitted proposals.
+2026-07-06 14:47:34,865 [46] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching all proposals from the database.
+2026-07-06 14:47:35,528 [34] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Officer fetching pending claims dashboard workbench queue.
+2026-07-06 14:47:35,528 [34] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching all pending claims.
+2026-07-06 14:47:35,629 [51] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched all pending claims.
+2026-07-06 14:47:35,631 [51] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Officer fetching pending claims dashboard workbench queue.
+2026-07-06 14:47:35,631 [51] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching all pending claims.
+2026-07-06 14:47:35,677 [51] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched all pending claims.
+2026-07-06 14:47:37,758 [43] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 14:47:37,758 [43] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 14:47:37,865 [43] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 14:47:37,865 [43] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 14:47:38,370 [34] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 14:47:38,370 [34] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 14:47:38,370 [34] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 14:47:38,370 [9] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 14:47:38,370 [9] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 14:47:38,370 [9] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 14:47:38,484 [51] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 14:47:38,487 [51] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 14:47:38,487 [51] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 14:47:38,487 [51] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 14:47:38,500 [52] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 14:47:38,503 [43] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 14:47:38,503 [43] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 14:47:38,503 [43] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 14:48:09,474 [29] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received POST request to create a new policy: 'premium auto care'
+2026-07-06 14:48:09,478 [29] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Attempting to create a new policy: premium auto care
+2026-07-06 14:48:09,482 [29] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Adding policy to the database.
+2026-07-06 14:48:09,789 [29] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Successfully created policy 'premium auto care' with ID: 9
+2026-07-06 14:48:09,791 [29] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching policy with ID: 9
+2026-07-06 14:48:09,863 [51] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Successfully created policy with ID: 9
+2026-07-06 14:48:09,954 [51] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 14:48:09,954 [51] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 14:48:09,954 [51] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 14:48:16,311 [43] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 14:48:16,311 [43] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 14:48:16,407 [29] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 14:48:16,407 [29] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 14:48:29,436 [29] INFO  InsuranceCompany.Controllers.AuthController - Login authentication verification .
+2026-07-06 14:48:29,781 [51] WARN  InsuranceCompany.Controllers.AuthController - Authentication Failed.
+2026-07-06 14:48:35,538 [29] INFO  InsuranceCompany.Controllers.AuthController - Login authentication verification .
+2026-07-06 14:48:35,844 [29] INFO  InsuranceCompany.Controllers.AuthController - User Login successful.
+2026-07-06 14:48:35,884 [51] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 14:48:35,884 [51] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 14:48:35,884 [51] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 14:48:35,914 [43] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 14:48:35,914 [43] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 14:48:35,914 [43] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 14:48:36,029 [29] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 14:48:36,029 [29] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 14:48:36,029 [29] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 14:48:36,038 [29] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 14:48:36,100 [29] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 14:48:36,100 [29] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 14:48:36,100 [29] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 14:48:36,104 [29] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 14:48:36,105 [29] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 14:48:36,105 [29] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 14:48:36,147 [43] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 14:48:36,151 [33] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 14:48:36,152 [33] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 14:48:36,152 [33] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 14:48:36,152 [34] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 14:48:36,152 [34] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 14:48:36,152 [34] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 14:48:36,196 [34] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 14:48:36,199 [47] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 14:48:36,199 [47] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 14:48:36,199 [47] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 14:48:36,333 [51] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 14:48:40,556 [29] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 14:48:40,556 [29] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 14:48:40,556 [29] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 14:48:40,663 [33] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 14:48:40,663 [33] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 14:48:40,663 [33] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 14:49:11,013 [47] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Creating proposal for User ID: 5
+2026-07-06 14:49:11,019 [47] INFO  InsuranceCompany.Services.Proposals.ProposalService - Attempting to create proposal for UserId: 5, PolicyId: 8
+2026-07-06 14:49:11,020 [47] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching policy with ID: 8
+2026-07-06 14:49:11,200 [34] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Adding proposal to the database.
+2026-07-06 14:49:11,270 [47] INFO  InsuranceCompany.Services.Proposals.ProposalService - Successfully created proposal with ID: 5 for UserId: 5
+2026-07-06 14:49:11,270 [47] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposal with ID: 5
+2026-07-06 14:49:11,326 [33] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Proposal created successfully with ID: 5
+2026-07-06 14:49:14,389 [47] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 14:49:14,389 [47] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 14:49:14,389 [47] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 14:49:14,390 [29] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 14:49:14,390 [29] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 14:49:14,390 [29] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 14:49:14,819 [47] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 14:49:14,820 [34] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 14:49:14,820 [34] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 14:49:14,820 [34] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 14:49:14,824 [33] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 14:49:14,824 [33] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 14:49:14,824 [33] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 14:49:14,868 [29] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 14:49:46,130 [30] INFO  InsuranceCompany.Controllers.AuthController - Login authentication verification .
+2026-07-06 14:49:46,446 [42] WARN  InsuranceCompany.Controllers.AuthController - Authentication Failed.
+2026-07-06 14:49:51,594 [42] INFO  InsuranceCompany.Controllers.AuthController - Login authentication verification .
+2026-07-06 14:49:51,918 [33] WARN  InsuranceCompany.Controllers.AuthController - Authentication Failed.
+2026-07-06 14:49:54,829 [33] INFO  InsuranceCompany.Controllers.AuthController - Login authentication verification .
+2026-07-06 14:49:55,152 [42] INFO  InsuranceCompany.Controllers.AuthController - User Login successful.
+2026-07-06 14:49:55,196 [30] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 14:49:55,196 [30] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 14:49:55,196 [42] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 14:49:55,196 [42] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 14:49:55,196 [30] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 14:49:55,196 [42] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 14:49:55,322 [30] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 14:49:55,326 [47] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 14:49:55,326 [47] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 14:49:55,326 [47] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 14:49:55,365 [19] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 14:49:55,365 [19] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 14:49:55,365 [19] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 14:49:55,376 [30] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 14:50:09,231 [51] INFO  InsuranceCompany.Controllers.AuthController - Login authentication verification .
+2026-07-06 14:50:09,545 [19] WARN  InsuranceCompany.Controllers.AuthController - Authentication Failed.
+2026-07-06 14:50:11,702 [51] INFO  InsuranceCompany.Controllers.AuthController - Login authentication verification .
+2026-07-06 14:50:12,010 [47] INFO  InsuranceCompany.Controllers.AuthController - User Login successful.
+2026-07-06 14:50:12,116 [51] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 14:50:12,116 [51] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 14:50:12,206 [19] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 14:50:12,206 [19] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 14:50:14,001 [42] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 14:50:14,001 [42] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 14:50:14,001 [51] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 14:50:14,001 [51] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 14:50:14,001 [42] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 14:50:14,001 [51] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 14:50:14,165 [19] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 14:50:14,168 [19] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 14:50:14,168 [19] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 14:50:14,168 [19] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 14:50:14,210 [30] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 14:50:14,214 [51] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 14:50:14,214 [51] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 14:50:14,214 [51] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 14:50:15,387 [42] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 14:50:15,387 [42] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 14:50:15,387 [42] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 14:50:15,477 [30] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 14:50:15,480 [19] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 14:50:15,480 [19] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 14:50:15,480 [19] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 14:50:15,499 [51] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 14:50:16,883 [19] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching all pending proposals.
+2026-07-06 14:50:16,884 [19] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching all pending and submitted proposals.
+2026-07-06 14:50:16,884 [19] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching all proposals from the database.
+2026-07-06 14:50:16,979 [51] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching all pending proposals.
+2026-07-06 14:50:16,979 [51] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching all pending and submitted proposals.
+2026-07-06 14:50:16,979 [51] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching all proposals from the database.
+2026-07-06 14:50:29,670 [42] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Officer 2 is reviewing proposal ID: 5
+2026-07-06 14:50:29,670 [42] INFO  InsuranceCompany.Services.Proposals.ProposalService - Officer 2 is reviewing Proposal ID: 5 with status: Approved
+2026-07-06 14:50:29,670 [42] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposal with ID: 5
+2026-07-06 14:50:29,789 [51] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Updating proposal in the database.
+2026-07-06 14:50:29,855 [42] INFO  InsuranceCompany.Services.Proposals.ProposalService - Successfully updated review status for Proposal ID: 5
+2026-07-06 14:50:29,855 [42] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Proposal ID 5 successfully marked as Approved.
+2026-07-06 14:50:29,861 [42] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching all pending proposals.
+2026-07-06 14:50:29,862 [42] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching all pending and submitted proposals.
+2026-07-06 14:50:29,862 [42] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching all proposals from the database.
+2026-07-06 14:50:34,539 [51] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 14:50:34,539 [51] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 14:50:34,539 [51] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 14:50:34,539 [19] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 14:50:34,540 [19] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 14:50:34,540 [19] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 14:50:34,681 [51] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 14:50:34,685 [51] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 14:50:34,685 [51] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 14:50:34,685 [51] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 14:50:34,712 [42] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 14:50:34,712 [42] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 14:50:34,712 [42] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 14:50:34,774 [30] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 14:50:39,490 [19] INFO  InsuranceCompany.Services.Payments.PaymentService - Initiating payment processing for UserId: 5, ProposalId: 5
+2026-07-06 14:50:39,490 [19] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposal with ID: 5
+2026-07-06 14:50:39,600 [51] INFO  InsuranceCompany.Repositories.Payments.PaymentRepository - Adding payment to the database.
+2026-07-06 14:50:39,715 [19] INFO  InsuranceCompany.Services.Payments.PaymentService - Payment registered successfully. PaymentId: 3, TransactionId: TXN-29637447
+2026-07-06 14:50:39,715 [19] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Updating proposal in the database.
+2026-07-06 14:50:39,738 [19] INFO  InsuranceCompany.Repositories.Payments.PaymentRepository - Saving issued policy to the database.
+2026-07-06 14:50:39,838 [47] INFO  InsuranceCompany.Services.Payments.PaymentService - Policy generation successful. Policy Number: POL-2026-FB98762F issued for ProposalId: 5
+2026-07-06 14:50:41,688 [42] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 14:50:41,688 [42] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 14:50:41,688 [42] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 14:50:41,688 [19] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 14:50:41,688 [19] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 14:50:41,688 [19] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 14:50:41,823 [30] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 14:50:41,824 [51] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 14:50:41,824 [51] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 14:50:41,824 [51] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 14:50:41,827 [42] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 14:50:41,827 [42] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 14:50:41,827 [42] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 14:50:41,864 [51] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 14:51:06,438 [51] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to file claim for PolicyId: 5
+2026-07-06 14:51:06,441 [51] INFO  InsuranceCompany.Services.Claims.ClaimService - User 5 is filing a new claim for IssuedPolicyId: 5
+2026-07-06 14:51:06,584 [51] WARN  InsuranceCompany.Services.Claims.ClaimService - Claim filing blocked: Issued policy with ID 5 not found.
+2026-07-06 14:51:06,698 [51] ERROR InsuranceCompany.Services.Claims.ClaimService - Error occurred while filing claim for User 5
+System.Collections.Generic.KeyNotFoundException: Issued policy not found.
+   at InsuranceCompany.Services.Claims.ClaimService.FileClaimAsync(Int32 userId, ClaimFileDto dto) in D:\c#\InsuranceCompany\InsuranceCompany\Services\Claims\ClaimService.cs:line 32
+2026-07-06 15:03:42,334 [2] INFO  Program - Starting Vehicle Insurance API application...
+2026-07-06 15:03:43,947 [2] INFO  Program - Database connection check successful.
+2026-07-06 15:03:44,266 [2] INFO  Program - Application initialized completely. Listening for web requests...
+2026-07-06 15:03:52,360 [8] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 15:03:52,365 [8] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 15:03:56,776 [13] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 15:03:56,777 [13] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 15:04:01,343 [12] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 15:04:01,345 [12] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 15:04:01,346 [12] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 15:04:01,561 [9] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 15:04:01,572 [13] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 15:04:01,572 [13] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 15:04:01,572 [13] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 15:04:01,612 [18] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 15:04:02,552 [13] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching all pending proposals.
+2026-07-06 15:04:02,556 [13] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching all pending and submitted proposals.
+2026-07-06 15:04:02,558 [13] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching all proposals from the database.
+2026-07-06 15:04:03,371 [9] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching all pending proposals.
+2026-07-06 15:04:03,371 [9] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching all pending and submitted proposals.
+2026-07-06 15:04:03,371 [9] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching all proposals from the database.
+2026-07-06 15:04:04,210 [13] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Officer fetching pending claims dashboard workbench queue.
+2026-07-06 15:04:04,211 [13] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching all pending claims.
+2026-07-06 15:04:04,391 [18] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched all pending claims.
+2026-07-06 15:04:04,399 [18] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Officer fetching pending claims dashboard workbench queue.
+2026-07-06 15:04:04,399 [18] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching all pending claims.
+2026-07-06 15:04:04,442 [18] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched all pending claims.
+2026-07-06 15:04:06,209 [18] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching all pending proposals.
+2026-07-06 15:04:06,209 [18] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching all pending and submitted proposals.
+2026-07-06 15:04:06,209 [18] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching all proposals from the database.
+2026-07-06 15:04:06,360 [17] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching all pending proposals.
+2026-07-06 15:04:06,360 [17] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching all pending and submitted proposals.
+2026-07-06 15:04:06,360 [17] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching all proposals from the database.
+2026-07-06 15:04:12,294 [17] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching all proposals history.
+2026-07-06 15:04:12,295 [17] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching all proposals history for admin/officer.
+2026-07-06 15:04:12,295 [17] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching all proposals from the database.
+2026-07-06 15:04:12,421 [12] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching all proposals history.
+2026-07-06 15:04:12,422 [12] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching all proposals history for admin/officer.
+2026-07-06 15:04:12,422 [12] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching all proposals from the database.
+2026-07-06 15:04:22,602 [13] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Admin/Officer request received to fetch all claims history.
+2026-07-06 15:04:22,603 [13] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching all claims for history review.
+2026-07-06 15:04:22,815 [9] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Admin/Officer request received to fetch all claims history.
+2026-07-06 15:04:22,815 [9] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching all claims for history review.
+2026-07-06 15:04:34,558 [13] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to file claim for PolicyId: 5
+2026-07-06 15:04:34,561 [13] INFO  InsuranceCompany.Services.Claims.ClaimService - User 5 is filing a new claim for IssuedPolicyId: 5
+2026-07-06 15:04:34,771 [17] WARN  InsuranceCompany.Services.Claims.ClaimService - Claim filing blocked: Issued policy with ID 5 not found.
+2026-07-06 15:04:34,805 [17] ERROR InsuranceCompany.Services.Claims.ClaimService - Error occurred while filing claim for User 5
+System.Collections.Generic.KeyNotFoundException: Issued policy not found.
+   at InsuranceCompany.Services.Claims.ClaimService.FileClaimAsync(Int32 userId, ClaimFileDto dto) in D:\c#\InsuranceCompany\InsuranceCompany\Services\Claims\ClaimService.cs:line 32
+2026-07-06 15:06:42,332 [17] ERROR InsuranceCompany.Middlewares.GlobalExceptionMiddleware - Unhandled exception occurred while processing request to /api/Claim/file
+System.Collections.Generic.KeyNotFoundException: Issued policy not found.
+   at InsuranceCompany.Services.Claims.ClaimService.FileClaimAsync(Int32 userId, ClaimFileDto dto) in D:\c#\InsuranceCompany\InsuranceCompany\Services\Claims\ClaimService.cs:line 32
+   at InsuranceCompany.Controllers.Operations.ClaimController.FileClaim(ClaimFileDto dto) in D:\c#\InsuranceCompany\InsuranceCompany\Controllers\Operations\ClaimController.cs:line 48
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at InsuranceCompany.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in D:\c#\InsuranceCompany\InsuranceCompany\Middlewares\GlobalExceptionMiddleware.cs:line 28
+2026-07-06 15:07:02,324 [46] INFO  InsuranceCompany.Controllers.AuthController - Login authentication verification .
+2026-07-06 15:07:03,159 [45] WARN  InsuranceCompany.Controllers.AuthController - Authentication Failed.
+2026-07-06 15:07:07,355 [46] INFO  InsuranceCompany.Controllers.AuthController - Login authentication verification .
+2026-07-06 15:07:07,840 [45] INFO  InsuranceCompany.Controllers.AuthController - User Login successful.
+2026-07-06 15:07:07,933 [45] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 15:07:07,933 [45] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 15:07:07,934 [43] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 15:07:07,935 [45] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 15:07:07,936 [43] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 15:07:07,938 [43] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 15:07:08,096 [33] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 15:07:08,121 [45] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 15:07:08,122 [45] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 15:07:08,122 [45] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 15:07:08,175 [45] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 15:07:08,175 [45] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 15:07:08,175 [45] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 15:07:08,190 [44] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 15:07:19,335 [45] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 15:07:19,337 [45] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 15:07:19,339 [45] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 15:07:19,569 [45] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 15:07:19,570 [45] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 15:07:19,570 [45] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 15:07:24,122 [45] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 15:07:24,122 [44] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 15:07:24,122 [44] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 15:07:24,122 [44] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 15:07:24,122 [45] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 15:07:24,122 [45] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 15:07:24,254 [46] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 15:07:24,258 [34] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 15:07:24,258 [44] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 15:07:24,258 [44] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 15:07:24,258 [34] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 15:07:24,258 [34] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 15:07:24,258 [44] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 15:07:24,332 [46] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 15:07:46,358 [44] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 15:07:46,358 [44] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 15:07:46,358 [44] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 15:07:46,474 [45] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 15:07:46,475 [45] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 15:07:46,475 [45] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 15:08:04,295 [34] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 15:08:04,295 [34] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 15:08:04,296 [34] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 15:08:04,297 [44] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 15:08:04,297 [44] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 15:08:04,297 [44] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 15:08:04,477 [46] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 15:08:04,480 [44] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 15:08:04,481 [44] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 15:08:04,481 [44] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 15:08:04,492 [43] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 15:08:04,492 [43] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 15:08:04,492 [43] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 15:08:04,503 [44] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 15:08:30,700 [43] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 15:08:30,701 [43] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 15:08:30,811 [46] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 15:08:30,811 [46] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 15:08:31,772 [44] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 15:08:31,772 [44] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 15:08:31,772 [44] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 15:08:31,777 [43] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 15:08:31,777 [43] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 15:08:31,777 [43] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 15:08:31,892 [43] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 15:08:31,896 [44] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 15:08:31,896 [44] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 15:08:31,896 [44] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 15:08:31,972 [45] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 15:08:31,975 [70] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 15:08:31,976 [70] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 15:08:31,976 [70] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 15:42:43,301 [70] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 15:42:43,301 [70] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 15:42:44,401 [72] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 15:42:44,401 [72] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 15:46:08,943 [2] INFO  Program - Starting Vehicle Insurance API application...
+2026-07-06 15:46:09,763 [2] INFO  Program - Database connection check successful.
+2026-07-06 15:46:09,979 [2] INFO  Program - Application initialized completely. Listening for web requests...
+2026-07-06 15:46:34,921 [14] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 15:46:34,921 [14] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 15:46:34,922 [16] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 15:46:34,923 [14] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 15:46:34,924 [16] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 15:46:34,933 [16] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 15:46:36,800 [9] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 15:46:36,802 [9] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 15:46:36,806 [9] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 15:46:38,419 [17] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 15:46:38,459 [16] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 15:46:38,459 [16] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 15:46:38,459 [16] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 15:46:38,568 [13] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 15:46:38,568 [13] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 15:46:38,568 [13] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 15:46:38,589 [18] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 15:46:38,590 [18] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 15:46:38,590 [18] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 15:46:38,605 [14] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 15:47:05,221 [18] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Creating proposal for User ID: 5
+2026-07-06 15:47:05,225 [18] INFO  InsuranceCompany.Services.Proposals.ProposalService - Attempting to create proposal for UserId: 5, PolicyId: 9
+2026-07-06 15:47:05,227 [18] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching policy with ID: 9
+2026-07-06 15:47:05,408 [17] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Adding proposal to the database.
+2026-07-06 15:47:05,880 [16] INFO  InsuranceCompany.Services.Proposals.ProposalService - Successfully created proposal with ID: 6 for UserId: 5
+2026-07-06 15:47:05,882 [16] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposal with ID: 6
+2026-07-06 15:47:06,163 [18] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Proposal created successfully with ID: 6
+2026-07-06 15:47:09,126 [16] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 15:47:09,126 [16] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 15:47:09,127 [16] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 15:47:09,151 [14] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 15:47:09,153 [14] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 15:47:09,155 [14] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 15:47:09,224 [17] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 15:47:09,236 [14] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 15:47:09,237 [14] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 15:47:09,238 [14] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 15:47:09,243 [13] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 15:47:09,243 [13] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 15:47:09,243 [13] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 15:47:09,287 [18] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 15:47:09,337 [14] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 15:47:09,337 [14] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 15:47:09,337 [14] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 15:47:09,342 [16] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 15:47:09,342 [16] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 15:47:09,343 [16] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 15:47:09,499 [18] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 15:47:09,503 [17] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 15:47:09,503 [17] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 15:47:09,503 [17] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 15:47:09,518 [14] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 15:47:09,529 [18] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 15:47:09,530 [18] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 15:47:09,530 [18] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 15:47:13,992 [14] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching all pending proposals.
+2026-07-06 15:47:13,993 [14] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching all pending and submitted proposals.
+2026-07-06 15:47:13,995 [14] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching all proposals from the database.
+2026-07-06 15:47:14,194 [17] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching all pending proposals.
+2026-07-06 15:47:14,194 [17] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching all pending and submitted proposals.
+2026-07-06 15:47:14,194 [17] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching all proposals from the database.
+2026-07-06 15:47:30,024 [17] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Officer 2 is reviewing proposal ID: 6
+2026-07-06 15:47:30,025 [17] INFO  InsuranceCompany.Services.Proposals.ProposalService - Officer 2 is reviewing Proposal ID: 6 with status: Approved
+2026-07-06 15:47:30,025 [17] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposal with ID: 6
+2026-07-06 15:47:30,126 [18] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Updating proposal in the database.
+2026-07-06 15:47:30,185 [17] INFO  InsuranceCompany.Services.Proposals.ProposalService - Successfully updated review status for Proposal ID: 6
+2026-07-06 15:47:30,185 [17] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Proposal ID 6 successfully marked as Approved.
+2026-07-06 15:47:30,196 [16] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching all pending proposals.
+2026-07-06 15:47:30,196 [16] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching all pending and submitted proposals.
+2026-07-06 15:47:30,196 [16] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching all proposals from the database.
+2026-07-06 15:47:34,757 [18] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 15:47:34,757 [13] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 15:47:34,757 [13] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 15:47:34,757 [13] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 15:47:34,757 [18] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 15:47:34,757 [18] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 15:47:34,882 [18] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 15:47:34,887 [13] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 15:47:34,887 [13] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 15:47:34,887 [13] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 15:47:34,897 [17] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 15:47:34,898 [17] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 15:47:34,898 [17] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 15:47:34,958 [18] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 15:47:46,150 [18] INFO  InsuranceCompany.Services.Payments.PaymentService - Initiating payment processing for UserId: 5, ProposalId: 6
+2026-07-06 15:47:46,150 [18] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposal with ID: 6
+2026-07-06 15:47:46,286 [17] INFO  InsuranceCompany.Repositories.Payments.PaymentRepository - Adding payment to the database.
+2026-07-06 15:47:46,360 [18] INFO  InsuranceCompany.Services.Payments.PaymentService - Payment registered successfully. PaymentId: 4, TransactionId: TXN-33056851
+2026-07-06 15:47:46,360 [18] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Updating proposal in the database.
+2026-07-06 15:47:46,383 [16] INFO  InsuranceCompany.Repositories.Payments.PaymentRepository - Saving issued policy to the database.
+2026-07-06 15:47:46,515 [16] INFO  InsuranceCompany.Services.Payments.PaymentService - Policy generation successful. Policy Number: POL-2026-DA10B9CF issued for ProposalId: 6
+2026-07-06 15:47:47,516 [17] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 15:47:47,516 [16] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 15:47:47,516 [17] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 15:47:47,516 [16] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 15:47:47,516 [17] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 15:47:47,516 [16] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 15:47:47,668 [18] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 15:47:47,672 [13] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 15:47:47,672 [13] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 15:47:47,672 [13] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 15:47:47,673 [16] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 15:47:47,673 [16] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 15:47:47,673 [16] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 15:47:47,718 [18] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 15:48:00,621 [54] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to file claim for PolicyId: 4
+2026-07-06 15:48:00,623 [54] INFO  InsuranceCompany.Services.Claims.ClaimService - User 5 is filing a new claim for IssuedPolicyId: 4
+2026-07-06 15:48:00,812 [54] INFO  InsuranceCompany.Services.Claims.ClaimService - Claim successfully filed with ID: 8 for User: 5
+2026-07-06 15:48:00,812 [54] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Claim ID 8 successfully filed by User ID: 5
+2026-07-06 15:48:04,316 [54] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 15:48:04,316 [54] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 15:48:04,316 [54] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 15:48:04,319 [18] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 15:48:04,319 [18] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 15:48:04,319 [18] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 15:48:04,464 [54] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 15:48:04,469 [13] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 15:48:04,469 [13] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 15:48:04,469 [13] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 15:48:04,483 [13] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 15:48:04,493 [16] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 15:48:04,493 [16] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 15:48:04,493 [16] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 15:48:10,179 [14] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 15:48:10,179 [14] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 15:48:10,179 [14] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 15:48:10,190 [14] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 15:48:10,190 [14] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 15:48:10,190 [14] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 15:48:10,295 [18] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 15:48:10,300 [17] INFO  InsuranceCompany.Controllers.PolicyManagement.AddOnController - Received GET request for all active Add-Ons.
+2026-07-06 15:48:10,301 [17] INFO  InsuranceCompany.Services.PolicyManagement.AddOnService - Fetching all active Add-Ons.
+2026-07-06 15:48:10,301 [17] INFO  InsuranceCompany.Repositories.PolicyManagement.AddOnRepository - Fetching all Add-Ons from the database.
+2026-07-06 15:48:10,345 [54] INFO  InsuranceCompany.Controllers.PolicyManagement.PolicyController - Received GET request for all active policies.
+2026-07-06 15:48:10,345 [54] INFO  InsuranceCompany.Services.PolicyManagement.PolicyService - Fetching all active insurance policies.
+2026-07-06 15:48:10,345 [54] INFO  InsuranceCompany.Repositories.PolicyManagement.PolicyRepository - Fetching all policies from the database.
+2026-07-06 15:48:10,348 [14] WARN  InsuranceCompany.Controllers.PolicyManagement.AddOnController - No active Add-Ons found.
+2026-07-06 15:48:11,221 [18] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching all pending proposals.
+2026-07-06 15:48:11,221 [18] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching all pending and submitted proposals.
+2026-07-06 15:48:11,221 [18] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching all proposals from the database.
+2026-07-06 15:48:11,374 [17] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching all pending proposals.
+2026-07-06 15:48:11,374 [17] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching all pending and submitted proposals.
+2026-07-06 15:48:11,374 [17] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching all proposals from the database.
+2026-07-06 15:48:12,329 [17] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Officer fetching pending claims dashboard workbench queue.
+2026-07-06 15:48:12,331 [17] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching all pending claims.
+2026-07-06 15:48:12,487 [18] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched all pending claims.
+2026-07-06 15:48:12,499 [18] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Officer fetching pending claims dashboard workbench queue.
+2026-07-06 15:48:12,499 [18] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching all pending claims.
+2026-07-06 15:48:12,513 [18] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched all pending claims.
+2026-07-06 15:49:31,014 [3] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 15:49:31,014 [18] INFO  InsuranceCompany.Services.Users.UserService - Fetching all users
+2026-07-06 15:49:31,021 [3] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 15:49:31,022 [18] INFO  InsuranceCompany.Repositories.Users.UserRepository - Fetching all users
+2026-07-06 15:50:54,322 [58] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching all proposals history.
+2026-07-06 15:50:54,322 [3] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching all proposals history.
+2026-07-06 15:50:54,324 [58] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching all proposals history for admin/officer.
+2026-07-06 15:50:54,324 [3] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching all proposals history for admin/officer.
+2026-07-06 15:50:54,324 [3] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching all proposals from the database.
+2026-07-06 15:50:54,324 [58] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching all proposals from the database.
+2026-07-06 15:50:55,468 [3] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Officer fetching pending claims dashboard workbench queue.
+2026-07-06 15:50:55,469 [3] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching all pending claims.
+2026-07-06 15:50:55,469 [57] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Officer fetching pending claims dashboard workbench queue.
+2026-07-06 15:50:55,470 [57] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching all pending claims.
+2026-07-06 15:50:55,643 [54] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched all pending claims.
+2026-07-06 15:50:55,646 [14] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched all pending claims.
+2026-07-06 15:51:03,682 [59] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to review Claim ID: 8
+2026-07-06 15:51:03,685 [59] INFO  InsuranceCompany.Services.Claims.ClaimService - Officer 2 is reviewing Claim ID: 8 with status: Approved
+2026-07-06 15:51:03,911 [14] INFO  InsuranceCompany.Services.Claims.ClaimService - Claim ID 8 successfully reviewed and marked as: Approved
+2026-07-06 15:51:03,911 [14] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Claim ID 8 successfully marked as: Approved
+2026-07-06 15:51:03,920 [57] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Officer fetching pending claims dashboard workbench queue.
+2026-07-06 15:51:03,920 [57] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching all pending claims.
+2026-07-06 15:51:03,945 [3] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched all pending claims.
+2026-07-06 15:51:06,860 [14] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Admin/Officer request received to fetch all claims history.
+2026-07-06 15:51:06,860 [58] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Admin/Officer request received to fetch all claims history.
+2026-07-06 15:51:06,863 [14] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching all claims for history review.
+2026-07-06 15:51:06,863 [58] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching all claims for history review.
+2026-07-06 15:53:05,304 [58] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 15:53:05,304 [58] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 15:53:05,304 [58] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 15:53:05,306 [14] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 15:53:05,306 [14] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 15:53:05,306 [14] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 15:53:05,494 [52] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5
+2026-07-06 15:53:05,504 [57] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Request received to fetch customer claims history.
+2026-07-06 15:53:05,504 [57] INFO  InsuranceCompany.Controllers.Operations.ClaimController - Fetching claims history for User ID: 5
+2026-07-06 15:53:05,504 [57] INFO  InsuranceCompany.Services.Claims.ClaimService - Fetching claims history for User ID: 5
+2026-07-06 15:53:05,570 [57] INFO  InsuranceCompany.Controllers.Proposals.ProposalController - Fetching proposal history for User ID: 5
+2026-07-06 15:53:05,570 [57] INFO  InsuranceCompany.Services.Proposals.ProposalService - Fetching proposal history for UserId: 5
+2026-07-06 15:53:05,570 [57] INFO  InsuranceCompany.Repositories.Proposals.ProposalRepository - Fetching proposals for user ID: 5
+2026-07-06 15:53:05,582 [14] INFO  InsuranceCompany.Services.Claims.ClaimService - Successfully fetched claims for User ID: 5

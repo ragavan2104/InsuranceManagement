@@ -1,4 +1,4 @@
-﻿using InsuranceCompany.Data;
+using InsuranceCompany.Data;
 using InsuranceCompany.DTOs.Authentication;
 using InsuranceCompany.Repositories.Users;
 using InsuranceCompany.Services.Proposals;
@@ -27,6 +27,7 @@ namespace InsuranceCompany.Services.Users
                 {
                     UserId = u.UserId,
                     FullName = u.FullName,
+                    Email = u.Email,
                     Address = u.Address,
                     Phone = u.Phone,
                     AadhaarNumber = u.AadhaarNumber,
@@ -35,7 +36,7 @@ namespace InsuranceCompany.Services.Users
                     DateOfBirth = u.DateOfBirth,
                     RoleId = u.RoleId
                 }).ToList(); 
-    }
+            }
             catch (Exception ex)
             {
                 _log.Error("Error fetching all users", ex);
@@ -57,6 +58,7 @@ namespace InsuranceCompany.Services.Users
                 {
                     UserId = user.UserId,
                     FullName = user.FullName,
+                    Email = user.Email,
                     Address = user.Address,
                     Phone = user.Phone,
                     AadhaarNumber = user.AadhaarNumber,

@@ -1,4 +1,4 @@
-﻿using InsuranceCompany.DTOs.Proposals;
+using InsuranceCompany.DTOs.Proposals;
 
 namespace InsuranceCompany.Services.Proposals
 {
@@ -9,5 +9,6 @@ namespace InsuranceCompany.Services.Proposals
         Task<IEnumerable<ProposalResponseDto>> GetCustomerProposalsHistoryAsync(int userId);
         Task<bool> ReviewProposalAsync(int proposalId, int officerId, ProposalReviewDto dto);
         Task<IEnumerable<ProposalResponseDto>> GetPendingProposalsAsync();
+        Task<IEnumerable<ProposalResponseDto>> GetAllProposalsHistoryAsync();
     }
 }

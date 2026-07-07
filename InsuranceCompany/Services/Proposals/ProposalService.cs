@@ -124,7 +124,8 @@ namespace InsuranceCompany.Services.Proposals
                     SubmittedAt = savedProposal.SubmittedAt,
                     TotalCalculatedPremium = finalPremium,
                     FinalInsuredDeclaredValue = savedProposal.InsurancePolicy?.CoverageAmount ?? policy.CoverageAmount,
-                    AppliedAddOnName = savedProposal.ProposalAddOns?.Select(pa => pa.AddOn?.AddOnName ?? string.Empty).Where(name => !string.IsNullOrEmpty(name)).ToList() ?? new List<string>()
+                    AppliedAddOnName = savedProposal.ProposalAddOns?.Select(pa => pa.AddOn?.AddOnName ?? string.Empty).Where(name => !string.IsNullOrEmpty(name)).ToList() ?? new List<string>(),
+                    IssuedPolicyId = savedProposal.IssuedPolicy?.IssuedPolicyId
                 };
             }
             catch (KeyNotFoundException ex)
@@ -178,7 +179,8 @@ namespace InsuranceCompany.Services.Proposals
                         Status = p.Status,
                         SubmittedAt = p.SubmittedAt,
                         TotalCalculatedPremium = p.Quote?.TotalPremium > 0 ? p.Quote.TotalPremium : calculatedPremium,
-                        AppliedAddOnName = p.ProposalAddOns?.Select(pa => pa.AddOn?.AddOnName ?? string.Empty).Where(name => !string.IsNullOrEmpty(name)).ToList() ?? new List<string>()
+                        AppliedAddOnName = p.ProposalAddOns?.Select(pa => pa.AddOn?.AddOnName ?? string.Empty).Where(name => !string.IsNullOrEmpty(name)).ToList() ?? new List<string>(),
+                        IssuedPolicyId = p.IssuedPolicy?.IssuedPolicyId
                     };
                 }).ToList();
             }
@@ -235,7 +237,8 @@ namespace InsuranceCompany.Services.Proposals
                     SubmittedAt = p.SubmittedAt,
                     TotalCalculatedPremium = p.Quote?.TotalPremium > 0 ? p.Quote.TotalPremium : calculatedPremium,
                     FinalInsuredDeclaredValue = p.InsurancePolicy?.CoverageAmount ?? 0,
-                    AppliedAddOnName = p.ProposalAddOns?.Select(pa => pa.AddOn?.AddOnName ?? string.Empty).Where(name => !string.IsNullOrEmpty(name)).ToList() ?? new List<string>()
+                    AppliedAddOnName = p.ProposalAddOns?.Select(pa => pa.AddOn?.AddOnName ?? string.Empty).Where(name => !string.IsNullOrEmpty(name)).ToList() ?? new List<string>(),
+                    IssuedPolicyId = p.IssuedPolicy?.IssuedPolicyId
                 };
             }
             catch (Exception ex)
@@ -328,13 +331,55 @@ namespace InsuranceCompany.Services.Proposals
                             Status = p.Status,
                             SubmittedAt = p.SubmittedAt,
                             TotalCalculatedPremium = p.Quote?.TotalPremium > 0 ? p.Quote.TotalPremium : calculatedPremium,
-                            AppliedAddOnName = p.ProposalAddOns?.Select(pa => pa.AddOn?.AddOnName ?? string.Empty).Where(name => !string.IsNullOrEmpty(name)).ToList() ?? new List<string>()
+                            AppliedAddOnName = p.ProposalAddOns?.Select(pa => pa.AddOn?.AddOnName ?? string.Empty).Where(name => !string.IsNullOrEmpty(name)).ToList() ?? new List<string>(),
+                            IssuedPolicyId = p.IssuedPolicy?.IssuedPolicyId
                         };
                     }).ToList();
             }
             catch (Exception ex)
             {
                 _log.Error("Internal Error occurred", ex);
+                throw;
+            }
+        }
+
+        public async Task<IEnumerable<ProposalResponseDto>> GetAllProposalsHistoryAsync()
+        {
+            try
+            {
+                _log.Info("Fetching all proposals history for admin/officer.");
+                var proposals = await _proposalRepository.GetAllProposalsAsync();
+                return proposals.Select(p =>
+                {
+                    decimal basePremium = p.InsurancePolicy?.BasePremium ?? 0;
+                    decimal calculatedPremium = basePremium;
+                    if (p.VehicleAge > 5)
+                        calculatedPremium += basePremium * 0.10m;
+                    else if (p.VehicleAge > 2)
+                        calculatedPremium += basePremium * 0.05m;
+                    
+                    return new ProposalResponseDto
+                    {
+                        ProposalId = p.ProposalId,
+                        UserId = p.UserId,
+                        CustomerName = p.User?.FullName ?? "N/A",
+                        PolicyId = p.PolicyId,
+                        PolicyName = p.InsurancePolicy?.PolicyName ?? "Standard Policy",
+                        PolicyType = p.InsurancePolicy?.PolicyType ?? "ThirdParty",
+                        VehicleMake = p.VehicleMake,
+                        VehicleModel = p.VehicleModel,
+                        VehicleNumber = p.VehicleNumber,
+                        Status = p.Status,
+                        SubmittedAt = p.SubmittedAt,
+                        TotalCalculatedPremium = p.Quote?.TotalPremium > 0 ? p.Quote.TotalPremium : calculatedPremium,
+                        AppliedAddOnName = p.ProposalAddOns?.Select(pa => pa.AddOn?.AddOnName ?? string.Empty).Where(name => !string.IsNullOrEmpty(name)).ToList() ?? new List<string>(),
+                        IssuedPolicyId = p.IssuedPolicy?.IssuedPolicyId
+                    };
+                }).ToList();
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Error fetching all proposals", ex);
                 throw;
             }
         }

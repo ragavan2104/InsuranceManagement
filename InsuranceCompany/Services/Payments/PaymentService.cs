@@ -1,4 +1,4 @@
-﻿using InsuranceCompany.Models.Operations;
+using InsuranceCompany.Models.Operations;
 using InsuranceCompany.DTOs.Payments;
 using InsuranceCompany.Repositories.Proposals;
 using InsuranceCompany.Repositories.Payments;
@@ -63,6 +63,8 @@ namespace InsuranceCompany.Services.Payments
                 var certificateEntity = new IssuedPolicy
                 {
                     ProposalId = proposal.ProposalId,
+                    UserId = proposal.UserId,
+                    PolicyId = proposal.PolicyId,
                     PolicyNumber = generatedPolicyNumber,
                     StartDate = startDate,
                     EndDate = EndDate,

@@ -32,10 +32,20 @@ namespace InsuranceCompany.Services.Claims
                     throw new KeyNotFoundException("Issued policy not found.");
                 }
 
-                if (policy.Proposal == null || policy.Proposal.UserId != userId)
+                bool isOwner = (policy.UserId.HasValue && policy.UserId.Value == userId) || 
+                               (policy.Proposal != null && policy.Proposal.UserId == userId);
+
+                if (!isOwner)
                 {
                     _log.Warn($"Claim filing blocked: User {userId} does not own Policy ID {dto.IssuedPolicyId}.");
                     throw new UnauthorizedAccessException("You do not have permission to file a claim for this policy.");
+                }
+
+                decimal maxCoverage = policy.InsurancePolicy?.CoverageAmount ?? 0;
+                if (dto.EstimatedLossAmount > maxCoverage)
+                {
+                    _log.Warn($"Claim filing blocked: Estimated loss amount {dto.EstimatedLossAmount} exceeds maximum coverage {maxCoverage}.");
+                    throw new ArgumentException($"Estimated loss amount cannot exceed the maximum policy coverage of ₹{maxCoverage}.");
                 }
 
                 var claimEntity = new Claim
@@ -138,6 +148,21 @@ namespace InsuranceCompany.Services.Claims
             catch (Exception ex)
             {
                 _log.Error("Error fetching pending claims.", ex);
+                throw;
+            }
+        }
+
+        public async Task<IEnumerable<Claim>> GetAllClaimsHistoryAsync()
+        {
+            try
+            {
+                _log.Info("Fetching all claims for history review.");
+                var claims = await _claimRepository.GetAllClaimsAsync();
+                return claims;
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Error fetching all claims history.", ex);
                 throw;
             }
         }

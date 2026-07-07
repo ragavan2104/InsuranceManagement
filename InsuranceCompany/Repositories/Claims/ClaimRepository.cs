@@ -55,6 +55,16 @@ namespace InsuranceCompany.Repositories.Claims
                 .ToListAsync();
         }
 
+        public async Task<IEnumerable<Claim>> GetAllClaimsAsync()
+        {
+            return await _context.Claims
+                .Include(c => c.IssuedPolicy)
+                    .ThenInclude(p => p!.InsurancePolicy) 
+                .Include(c => c.IssuedPolicy)
+                    .ThenInclude(p => p!.Payment)
+                .ToListAsync();
+        }
+
         public async Task UpdateClaimAsync(Claim claim)
         {
             _context.Claims.Update(claim);
@@ -65,6 +75,7 @@ namespace InsuranceCompany.Repositories.Claims
         {
             return await _context.IssuedPolicies
                 .Include(p => p.Proposal)
+                .Include(p => p.InsurancePolicy)
                 .FirstOrDefaultAsync(p => p.IssuedPolicyId == issuedPolicyId);
         }
     }

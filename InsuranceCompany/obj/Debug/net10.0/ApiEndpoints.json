@@ -1,5 +1,68 @@
 [
   {
+    "ContainingType": "InsuranceCompany.Controllers.PolicyManagement.AddOnController",
+    "Method": "AllAddOn",
+    "RelativePath": "api/AddOn",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InsuranceCompany.Controllers.PolicyManagement.AddOnController",
+    "Method": "GetAddOnById",
+    "RelativePath": "api/AddOn/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InsuranceCompany.Controllers.PolicyManagement.AddOnController",
+    "Method": "CreateAddOn",
+    "RelativePath": "api/AddOn/AddAddOn",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "InsuranceCompany.DTOs.PolicyManagement.AddOnCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InsuranceCompany.Controllers.PolicyManagement.AddOnController",
+    "Method": "UpdateAddOn",
+    "RelativePath": "api/AddOn/UpdateAddOn/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "InsuranceCompany.DTOs.PolicyManagement.AddOnUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "InsuranceCompany.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/login",
@@ -66,6 +129,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InsuranceCompany.Controllers.Operations.ClaimController",
+    "Method": "GetAllClaimsHistory",
+    "RelativePath": "api/Claim/all-history",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -222,6 +295,16 @@
   },
   {
     "ContainingType": "InsuranceCompany.Controllers.Proposals.ProposalController",
+    "Method": "GetAllProposalsHistory",
+    "RelativePath": "api/Proposal/History",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InsuranceCompany.Controllers.Proposals.ProposalController",
     "Method": "GetPendingProposals",
     "RelativePath": "api/Proposal/Pending",
     "HttpMethod": "GET",
@@ -254,6 +337,32 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InsuranceCompany.Controllers.Users.UserController",
+    "Method": "GetAllUsers",
+    "RelativePath": "api/User",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InsuranceCompany.Controllers.Users.UserController",
+    "Method": "GetUserById",
+    "RelativePath": "api/User/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   }
 ]

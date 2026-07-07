@@ -152,6 +152,7 @@ D:\c#\InsuranceCompany\InsuranceCompany\obj\Debug\net10.0\InsuranceCompany.Assem
 D:\c#\InsuranceCompany\InsuranceCompany\obj\Debug\net10.0\InsuranceCompany.csproj.CoreCompileInputs.cache
 D:\c#\InsuranceCompany\InsuranceCompany\obj\Debug\net10.0\InsuranceCompany.MvcApplicationPartsAssemblyInfo.cs
 D:\c#\InsuranceCompany\InsuranceCompany\obj\Debug\net10.0\InsuranceCompany.MvcApplicationPartsAssemblyInfo.cache
+D:\c#\InsuranceCompany\InsuranceCompany\obj\Debug\net10.0\InsuranceCompany.sourcelink.json
 D:\c#\InsuranceCompany\InsuranceCompany\obj\Debug\net10.0\rjimswa.dswa.cache.json
 D:\c#\InsuranceCompany\InsuranceCompany\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
 D:\c#\InsuranceCompany\InsuranceCompany\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
@@ -161,10 +162,10 @@ D:\c#\InsuranceCompany\InsuranceCompany\obj\Debug\net10.0\staticwebassets.build.
 D:\c#\InsuranceCompany\InsuranceCompany\obj\Debug\net10.0\staticwebassets.development.json
 D:\c#\InsuranceCompany\InsuranceCompany\obj\Debug\net10.0\staticwebassets.build.endpoints.json
 D:\c#\InsuranceCompany\InsuranceCompany\obj\Debug\net10.0\swae.build.ex.cache
+D:\c#\InsuranceCompany\InsuranceCompany\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 D:\c#\InsuranceCompany\InsuranceCompany\obj\Debug\net10.0\Insuranc.3CC76C37.Up2Date
 D:\c#\InsuranceCompany\InsuranceCompany\obj\Debug\net10.0\InsuranceCompany.dll
 D:\c#\InsuranceCompany\InsuranceCompany\obj\Debug\net10.0\refint\InsuranceCompany.dll
 D:\c#\InsuranceCompany\InsuranceCompany\obj\Debug\net10.0\InsuranceCompany.pdb
 D:\c#\InsuranceCompany\InsuranceCompany\obj\Debug\net10.0\InsuranceCompany.genruntimeconfig.cache
 D:\c#\InsuranceCompany\InsuranceCompany\obj\Debug\net10.0\ref\InsuranceCompany.dll
-D:\c#\InsuranceCompany\InsuranceCompany\obj\Debug\net10.0\InsuranceCompany.sourcelink.json

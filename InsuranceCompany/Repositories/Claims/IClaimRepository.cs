@@ -10,6 +10,7 @@ namespace InsuranceCompany.Repositories.Claims
         Task<Claim?> GetClaimByIdAsync(int claimId);
         Task<IEnumerable<Claim>> GetClaimsByUserIdAsync(int userId);
         Task<IEnumerable<Claim>> GetAllPendingClaimsAsync();
+        Task<IEnumerable<Claim>> GetAllClaimsAsync();
         Task UpdateClaimAsync(Claim claim);
         Task<IssuedPolicy?> GetIssuedPolicyByIdAsync(int issuedPolicyId);
     }

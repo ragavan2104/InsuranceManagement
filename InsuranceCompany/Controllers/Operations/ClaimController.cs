@@ -45,10 +45,32 @@ namespace InsuranceCompany.Controllers.Operations
             }
 
             int userId = int.Parse(userIdClaim);
-            var createdClaim = await _claimService.FileClaimAsync(userId, dto);
-
-            _log.Info($"Claim ID {createdClaim.ClaimId} successfully filed by User ID: {userId}");
-            return StatusCode(StatusCodes.Status201Created, createdClaim);
+            try
+            {
+                var createdClaim = await _claimService.FileClaimAsync(userId, dto);
+                _log.Info($"Claim ID {createdClaim.ClaimId} successfully filed by User ID: {userId}");
+                return StatusCode(StatusCodes.Status201Created, createdClaim);
+            }
+            catch (ArgumentException ex)
+            {
+                _log.Warn($"Claim validation failed: {ex.Message}");
+                return BadRequest(new { Error = ex.Message });
+            }
+            catch (KeyNotFoundException ex)
+            {
+                _log.Warn($"Policy not found: {ex.Message}");
+                return NotFound(new { Error = ex.Message });
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                _log.Warn($"Unauthorized claim attempt: {ex.Message}");
+                return StatusCode(StatusCodes.Status403Forbidden, new { Error = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unexpected error occurred while filing claim.", ex);
+                return StatusCode(StatusCodes.Status500InternalServerError, new { Error = "An unexpected error occurred." });
+            }
         }
 
         [HttpGet("my-history")]
@@ -70,6 +92,38 @@ namespace InsuranceCompany.Controllers.Operations
             var history = await _claimService.GetCustomerClaimsHistoryAsync(userId);
 
             return Ok(history);
+        }
+
+        [HttpGet("all-history")]
+        [Authorize(Roles = "Officer,Admin")]
+        public async Task<IActionResult> GetAllClaimsHistory()
+        {
+            try
+            {
+                _log.Info("Admin/Officer request received to fetch all claims history.");
+                var claims = await _claimService.GetAllClaimsHistoryAsync();
+                
+                var flatQueue = claims.Select(c => new
+                {
+                    ClaimId = c.ClaimId,
+                    IssuedPolicyId = c.IssuedPolicyId,
+                    PolicyNumber = c.IssuedPolicy?.PolicyNumber ?? "N/A",
+                    PolicyName = c.IssuedPolicy?.InsurancePolicy?.PolicyName ?? "Standard Policy",
+                    EstimatedLossAmount = c.EstimatedLossAmount,
+                    IncidentDescription = c.IncidentDescription,
+                    IncidentDate = c.IncidentDate,
+                    Status = c.Status,
+                    ApprovedSettlementAmount = c.ApprovedSettlementAmount,
+                    OfficerRemarks = c.OfficerRemarks
+                });
+                
+                return Ok(flatQueue);
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Error occurred while fetching all claims history.", ex);
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while processing your request.");
+            }
         }
 
         [HttpGet("pending-queue")]

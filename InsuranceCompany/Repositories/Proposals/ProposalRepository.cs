@@ -26,6 +26,7 @@ namespace InsuranceCompany.Repositories.Proposals
                     .Include(p => p.ProposalAddOns)
                         .ThenInclude(pa => pa.AddOn)
                     .Include(p => p.Quote)
+                    .Include(p => p.IssuedPolicy)
                     .FirstOrDefaultAsync(p => p.ProposalId == id);
             }
             catch (Exception ex)
@@ -45,6 +46,7 @@ namespace InsuranceCompany.Repositories.Proposals
                     .Include(p => p.Quote)
                     .Include(p => p.ProposalAddOns)
                         .ThenInclude(pa => pa.AddOn)
+                    .Include(p => p.IssuedPolicy)
                     .Where(p => p.UserId == userId)
                     .ToListAsync();
             }
@@ -65,6 +67,7 @@ namespace InsuranceCompany.Repositories.Proposals
                     .Include(p => p.InsurancePolicy)
                     .Include(p => p.ProposalAddOns)
                         .ThenInclude(pa => pa.AddOn)
+                    .Include(p => p.IssuedPolicy)
                     .ToListAsync();
             }
             catch (Exception ex)

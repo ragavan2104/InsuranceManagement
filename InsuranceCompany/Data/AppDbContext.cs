@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using InsuranceCompany.Models.Authentication;
 using InsuranceCompany.Models.Proposals;
 using InsuranceCompany.Models.Operations;
@@ -27,5 +27,15 @@ namespace InsuranceCompany.Data
         public DbSet<Claim> Claims { get; set; }
 
         public DbSet<EmailNotification> EmailNotifications { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Proposal>()
+                .HasOne(p => p.IssuedPolicy)
+                .WithOne(i => i.Proposal)
+                .HasForeignKey<IssuedPolicy>(i => i.ProposalId);
+        }
     }
 }

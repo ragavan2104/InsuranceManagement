@@ -1,4 +1,4 @@
-﻿namespace InsuranceCompany.DTOs.Proposals
+namespace InsuranceCompany.DTOs.Proposals
 {
     public class ProposalResponseDto
     {
@@ -20,6 +20,7 @@
         public decimal TotalCalculatedPremium { get; set; }
         public decimal FinalInsuredDeclaredValue { get; set; }
         public List<string> AppliedAddOnName { get; set; } = new List<string>();
+        public int? IssuedPolicyId { get; set; }
 
 
     }
