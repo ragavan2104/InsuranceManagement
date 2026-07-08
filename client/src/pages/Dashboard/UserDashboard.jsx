@@ -4,7 +4,7 @@ import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
 import { getMyProposalHistory } from '../../services/proposalService';
 import { getMyClaimsHistory } from '../../services/claimService';
 import Loader from '../../components/loader';
-import { Layers, Activity, PlusCircle, LogOut, ShieldAlert, User, Menu as MenuIcon, Calculator } from 'lucide-react';
+import { Layers, Activity, PlusCircle, LogOut, ShieldAlert, User, Menu as MenuIcon } from 'lucide-react';
 import { toast, ToastContainer } from 'react-toastify';
 
 import UserStats from '../../components/User/UserStats';
@@ -12,7 +12,7 @@ import DuePayments from '../../components/User/DuePayments';
 import ActiveCoverages from '../../components/User/ActiveCoverages';
 import ProposalsHistory from '../../components/User/ProposalsHistory';
 import ClaimsHistory from '../../components/User/ClaimsHistory';
-import PremiumCalculatorTab from '../../components/Common/PremiumCalculatorTab';
+
 
 const UserDashboard = ({ user = { fullName: "Valued Customer" }, onLogout }) => {
   const navigate = useNavigate();
@@ -129,26 +129,6 @@ const UserDashboard = ({ user = { fullName: "Valued Customer" }, onLogout }) => 
               >
                 My Dashboard
               </MenuItem>
-
-              <MenuItem 
-                active={activeTab === 'calculator'} 
-                icon={<Calculator size={18} />} 
-                onClick={() => { setActiveTab('calculator'); setToggled(false); }}
-                rootStyles={activeTab === 'calculator' ? {
-                  ['.ps-menu-button']: {
-                    backgroundColor: 'rgba(252, 219, 50, 0.15) !important',
-                    color: '#fcdb32 !important',
-                    fontWeight: 'bold',
-                    borderRadius: '12px',
-                  }
-                } : {
-                  ['.ps-menu-button']: {
-                    borderRadius: '12px',
-                  }
-                }}
-              >
-                Premium Calculator
-              </MenuItem>
               
               <div className="my-3 border-t border-white/5 mx-3" />
 
@@ -220,13 +200,10 @@ const UserDashboard = ({ user = { fullName: "Valued Customer" }, onLogout }) => 
             </button>
             <div>
               <h1 className="text-2xl md:text-3xl font-black text-[#141d38] tracking-tight">
-                {activeTab === 'dashboard' ? `Welcome back, ${user.fullName}` : 'Insurance Premium Calculator'}
+                Welcome back, {user.fullName}
               </h1>
               <p className="text-xs md:text-sm text-slate-400 mt-1.5 font-medium leading-relaxed">
-                {activeTab === 'dashboard' 
-                  ? 'Manage active vehicle protection covers, track claims settlements, and review submitted policy schedules.' 
-                  : 'Calculate auto coverage premiums, evaluate risk deductions, and customize liability options.'
-                }
+                Manage active vehicle protection covers, track claims settlements, and review submitted policy schedules.
               </p>
             </div>
           </div>
@@ -251,11 +228,6 @@ const UserDashboard = ({ user = { fullName: "Valued Customer" }, onLogout }) => 
         </header>
 
         {}
-        {activeTab === 'calculator' ? (
-          <div className="animate-in fade-in slide-in-from-bottom-3 duration-300">
-            <PremiumCalculatorTab />
-          </div>
-        ) : (
           <div className="space-y-8 animate-in fade-in slide-in-from-bottom-3 duration-300">
             {/* Status Metrics Cards */}
             <UserStats 
@@ -279,7 +251,6 @@ const UserDashboard = ({ user = { fullName: "Valued Customer" }, onLogout }) => 
               <ClaimsHistory claims={claims} />
             </div>
           </div>
-        )}
       </main>
     </div>
   );

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Eye, Info, Check, ShieldAlert, FileText, Calendar, IndianRupee } from 'lucide-react';
+import { Eye, Info, Check, ShieldAlert, FileText, Calendar, IndianRupee, AlertCircle } from 'lucide-react';
 import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // ============================================================================
 // ⚠️ LOCAL PROJECT INSTRUCTIONS ⚠️
@@ -22,17 +23,9 @@ const ReviewClaimsTab = () => {
     officerRemarks: ''
   });
 
+  const [errors, setErrors] = useState({});
+
   useEffect(() => {
-    // Dynamically loading Toastify CSS so the online preview doesn't crash.
-    // (You can remove this if you uncomment the CSS import at the top locally).
-    if (!document.getElementById('toastify-css')) {
-      const link = document.createElement('link');
-      link.id = 'toastify-css';
-      link.rel = 'stylesheet';
-      link.href = 'https://cdn.jsdelivr.net/npm/react-toastify/dist/ReactToastify.min.css';
-      document.head.appendChild(link);
-    }
-    
     fetchQueueData();
   }, []);
 
@@ -52,6 +45,31 @@ const ReviewClaimsTab = () => {
   const handleClaimReviewSubmit = async (e) => {
     e.preventDefault();
     if (!selectedClaim) return;
+
+    const newErrors = {};
+    if (claimReviewData.status === 'Approved') {
+      if (!claimReviewData.approvedSettlementAmount) {
+        newErrors.approvedSettlementAmount = 'Approved settlement amount is required.';
+      } else {
+        const amt = parseFloat(claimReviewData.approvedSettlementAmount);
+        if (isNaN(amt) || amt < 0) {
+          newErrors.approvedSettlementAmount = 'Settlement amount must be a positive number.';
+        } else if (amt > selectedClaim.estimatedLossAmount) {
+          newErrors.approvedSettlementAmount = `Amount cannot exceed the estimated loss limit (₹${selectedClaim.estimatedLossAmount.toLocaleString('en-IN')}).`;
+        }
+      }
+    }
+
+    if (!claimReviewData.officerRemarks || !claimReviewData.officerRemarks.trim()) {
+      newErrors.officerRemarks = 'Auditing remarks/notes are required.';
+    }
+
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length > 0) {
+      toast.error('Please fill in all required fields.');
+      return;
+    }
 
     try {
       setLoading(true);
@@ -259,16 +277,24 @@ const ReviewClaimsTab = () => {
                       </div>
                       <input 
                         type="number"
-                        required
                         min="0"
                         step="0.01"
                         max={selectedClaim.estimatedLossAmount}
                         placeholder={`${selectedClaim.estimatedLossAmount}`}
                         value={claimReviewData.approvedSettlementAmount}
-                        onChange={e => setClaimReviewData({...claimReviewData, approvedSettlementAmount: e.target.value})}
+                        onChange={e => {
+                          setClaimReviewData({...claimReviewData, approvedSettlementAmount: e.target.value});
+                          if (errors.approvedSettlementAmount) setErrors({...errors, approvedSettlementAmount: null});
+                        }}
                         className="w-full pl-10 pr-4 py-2.5 border border-bigstone/20 rounded-xl text-bigstone bg-bigstone/5 focus:bg-white focus:outline-none focus:border-brightsun focus:ring-4 focus:ring-brightsun/20 transition duration-200 font-bold"
                       />
                     </div>
+                    {errors.approvedSettlementAmount && (
+                      <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1 mt-1">
+                        <AlertCircle size={12} />
+                        {errors.approvedSettlementAmount}
+                      </p>
+                    )}
                     <span className="text-[11px] font-semibold text-bigstone/50 bg-bigstone/5 px-2 py-1 rounded-md mt-1 border border-bigstone/5">
                       Max Liability: <strong className="text-bigstone/70">₹{parseFloat(selectedClaim.estimatedLossAmount || 0).toLocaleString('en-IN')}</strong>
                     </span>
@@ -278,14 +304,22 @@ const ReviewClaimsTab = () => {
                 <div className="flex flex-col gap-1.5">
                   <label className="text-xs font-bold text-bigstone/70 uppercase tracking-wider">Auditing Notes / Remarks</label>
                   <textarea 
-                    required
                     rows="3"
                     maxLength="500"
                     placeholder="Provide details explaining the approval amount or rejection cause..."
                     value={claimReviewData.officerRemarks}
-                    onChange={e => setClaimReviewData({...claimReviewData, officerRemarks: e.target.value})}
+                    onChange={e => {
+                      setClaimReviewData({...claimReviewData, officerRemarks: e.target.value});
+                      if (errors.officerRemarks) setErrors({...errors, officerRemarks: null});
+                    }}
                     className="w-full px-4 py-2.5 border border-bigstone/20 rounded-xl text-bigstone bg-bigstone/5 focus:bg-white focus:outline-none focus:border-brightsun focus:ring-4 focus:ring-brightsun/20 transition duration-200 text-sm resize-none"
                   />
+                  {errors.officerRemarks && (
+                    <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1 mt-1">
+                      <AlertCircle size={12} />
+                      {errors.officerRemarks}
+                    </p>
+                  )}
                 </div>
 
                 <button 

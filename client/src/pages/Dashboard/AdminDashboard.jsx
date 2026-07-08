@@ -11,7 +11,6 @@ import {
   ShieldAlert,
   User,
   Menu as MenuIcon,
-  Calculator,
   Activity
 } from 'lucide-react';
 import { toast, ToastContainer } from 'react-toastify';
@@ -23,7 +22,6 @@ import ReviewProposalsTab from '../../components/Admin/ReviewProposalsTab';
 import ReviewClaimsTab from '../../components/Admin/ReviewClaimsTab';
 import AllProposalsHistoryTab from '../../components/Admin/AllProposalsHistoryTab';
 import AllClaimsHistoryTab from '../../components/Admin/AllClaimsHistoryTab';
-import PremiumCalculatorTab from '../../components/Common/PremiumCalculatorTab';
 import Loader from '../../components/loader';
 
 const AdminDashboard = ({ user = { fullName: "System Admin", roleName: "Admin" }, onLogout }) => {
@@ -191,14 +189,6 @@ const AdminDashboard = ({ user = { fullName: "System Admin", roleName: "Admin" }
             </MenuItem>
 
             <MenuItem 
-              active={activeTab === 'calculator'} 
-              icon={<Calculator size={16} />} 
-              onClick={() => handleTabChange('calculator', 'Premium Calculator')}
-            >
-              Premium Calculator
-            </MenuItem>
-
-            <MenuItem 
               icon={<User size={16} />} 
               onClick={() => {
                 toast.info("Navigating to secure profile panel...");
@@ -217,7 +207,7 @@ const AdminDashboard = ({ user = { fullName: "System Admin", roleName: "Admin" }
             className="w-full flex items-center justify-center gap-2 bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 font-bold py-3 rounded-xl border border-rose-500/10 transition-all duration-200 text-xs tracking-widest uppercase cursor-pointer active:scale-[0.98]"
           >
             <LogOut size={14} />
-            <span>Sign Out Control</span>
+            <span>Sign Out </span>
           </button>
         </div>
       </Sidebar>
@@ -243,7 +233,6 @@ const AdminDashboard = ({ user = { fullName: "System Admin", roleName: "Admin" }
                 {activeTab === 'claims' && 'Underwriting Settlements Desk'}
                 {activeTab === 'all-proposals' && 'Proposals History Catalog'}
                 {activeTab === 'all-claims' && 'Claims Settlement History'}
-                {activeTab === 'calculator' && 'Estimate Premium Matrix'}
               </h1>
               <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider block mt-0.5">
                 {activeTab === 'users' && 'Manage authorizations, statuses, and credentials verification'}
@@ -253,7 +242,6 @@ const AdminDashboard = ({ user = { fullName: "System Admin", roleName: "Admin" }
                 {activeTab === 'claims' && 'Audit claimed physical damage and approve paid settlements'}
                 {activeTab === 'all-proposals' && 'Explore all user-submitted vehicle coverage applications'}
                 {activeTab === 'all-claims' && 'Track historical claim events, incidents, and total settled losses'}
-                {activeTab === 'calculator' && 'Compute vehicle risk parameters under mathematical models'}
               </span>
             </div>
           </div>
@@ -275,7 +263,6 @@ const AdminDashboard = ({ user = { fullName: "System Admin", roleName: "Admin" }
           {activeTab === 'claims' && <ReviewClaimsTab />}
           {activeTab === 'all-proposals' && <AllProposalsHistoryTab />}
           {activeTab === 'all-claims' && <AllClaimsHistoryTab />}
-          {activeTab === 'calculator' && <PremiumCalculatorTab />}
         </div>
       </main>
 

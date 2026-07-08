@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { PlusCircle, RefreshCw, Slash, Info } from 'lucide-react';
+import { PlusCircle, RefreshCw, Slash, Info, AlertCircle } from 'lucide-react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import API from '../../services/api';
 import Loader from '../loader';
 import InsuranceCard from '../InsuranceCard';
+import Button from '../Common/Button';
 
 const ManagePoliciesTab = () => {
   const [loading, setLoading] = useState(false);
@@ -32,6 +33,7 @@ const ManagePoliciesTab = () => {
     categoryId: 1, // Default Two-Wheeler
     associatedAddOnIds: []
   });
+  const [errors, setErrors] = useState({});
 
   // User Issued Policies states
   const [issuedPoliciesList, setIssuedPoliciesList] = useState([]);
@@ -104,6 +106,41 @@ const ManagePoliciesTab = () => {
   const handleCreateOrUpdatePolicy = async (e) => {
     e.preventDefault();
 
+    const newErrors = {};
+    if (!newPolicy.policyName || !newPolicy.policyName.trim()) newErrors.policyName = 'Policy Name is required.';
+    if (!newPolicy.basePremium) {
+      newErrors.basePremium = 'Base Premium is required.';
+    } else {
+      const premium = parseFloat(newPolicy.basePremium);
+      if (isNaN(premium) || premium < 0) {
+        newErrors.basePremium = 'Base Premium must be a positive number.';
+      }
+    }
+    if (!newPolicy.coverageAmount) {
+      newErrors.coverageAmount = 'Coverage Amount is required.';
+    } else {
+      const coverage = parseFloat(newPolicy.coverageAmount);
+      if (isNaN(coverage) || coverage < 0) {
+        newErrors.coverageAmount = 'Coverage Amount must be a positive number.';
+      }
+    }
+    if (!newPolicy.policyDurationMonths) {
+      newErrors.policyDurationMonths = 'Duration is required.';
+    } else {
+      const duration = parseInt(newPolicy.policyDurationMonths);
+      if (isNaN(duration) || duration < 1) {
+        newErrors.policyDurationMonths = 'Duration must be at least 1 month.';
+      }
+    }
+    if (!newPolicy.description || !newPolicy.description.trim()) newErrors.description = 'Policy Description is required.';
+
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length > 0) {
+      toast.error('Please fill in all required fields.');
+      return;
+    }
+
     try {
       setLoading(true);
       const payload = {
@@ -128,6 +165,7 @@ const ManagePoliciesTab = () => {
       setShowCreatePolicyForm(false);
       setIsEditing(false);
       setEditingPolicyId(null);
+      setErrors({});
       setNewPolicy({
         policyName: '',
         description: '',
@@ -259,7 +297,7 @@ const ManagePoliciesTab = () => {
                   {isEditing ? 'Update Insurance Policy' : 'Publish New Insurance Policy'}
                 </h3>
                 <button 
-                  className="bg-bigstone/5 hover:bg-bigstone/10 text-bigstone text-xs font-semibold py-2 px-4 rounded-lg transition duration-200" 
+                  className="bg-bigstone/5 hover:bg-red-400 hover:text-white text-bigstone text-xs font-semibold py-2 px-4 rounded-lg transition duration-200" 
                   onClick={() => { setShowCreatePolicyForm(false); setIsEditing(false); }}
                 >
                   Cancel
@@ -270,12 +308,20 @@ const ManagePoliciesTab = () => {
                   <label className="text-xs font-bold text-bigstone/70 uppercase tracking-wider">Policy Name</label>
                   <input 
                     type="text" 
-                    required 
                     placeholder="e.g. Premium Auto Guard"
                     value={newPolicy.policyName} 
-                    onChange={e => setNewPolicy({...newPolicy, policyName: e.target.value})} 
+                    onChange={e => {
+                      setNewPolicy({...newPolicy, policyName: e.target.value});
+                      if (errors.policyName) setErrors({...errors, policyName: null});
+                    }} 
                     className="w-full px-4 py-2.5 border border-bigstone/20 rounded-xl text-bigstone bg-bigstone/5 focus:bg-white focus:outline-none focus:border-brightsun focus:ring-4 focus:ring-brightsun/20 transition duration-200 text-sm placeholder:text-bigstone/40"
                   />
+                  {errors.policyName && (
+                    <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1 mt-1">
+                      <AlertCircle size={12} />
+                      {errors.policyName}
+                    </p>
+                  )}
                 </div>
                 <div className="flex flex-col gap-1.5">
                   <label className="text-xs font-bold text-bigstone/70 uppercase tracking-wider">Policy Type</label>
@@ -293,38 +339,62 @@ const ManagePoliciesTab = () => {
                   <label className="text-xs font-bold text-bigstone/70 uppercase tracking-wider">Base Premium (₹)</label>
                   <input 
                     type="number" 
-                    required 
                     min="0"
                     step="0.01"
                     placeholder="e.g. 5000.00"
                     value={newPolicy.basePremium} 
-                    onChange={e => setNewPolicy({...newPolicy, basePremium: e.target.value})} 
+                    onChange={e => {
+                      setNewPolicy({...newPolicy, basePremium: e.target.value});
+                      if (errors.basePremium) setErrors({...errors, basePremium: null});
+                    }} 
                     className="w-full px-4 py-2.5 border border-bigstone/20 rounded-xl text-bigstone bg-bigstone/5 focus:bg-white focus:outline-none focus:border-brightsun focus:ring-4 focus:ring-brightsun/20 transition duration-200 text-sm placeholder:text-bigstone/40"
                   />
+                  {errors.basePremium && (
+                    <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1 mt-1">
+                      <AlertCircle size={12} />
+                      {errors.basePremium}
+                    </p>
+                  )}
                 </div>
                 <div className="flex flex-col gap-1.5">
                   <label className="text-xs font-bold text-bigstone/70 uppercase tracking-wider">Coverage Amount (Max Liability)</label>
                   <input 
                     type="number" 
-                    required 
                     min="0"
                     step="0.01"
                     placeholder="e.g. 150000.00"
                     value={newPolicy.coverageAmount} 
-                    onChange={e => setNewPolicy({...newPolicy, coverageAmount: e.target.value})} 
+                    onChange={e => {
+                      setNewPolicy({...newPolicy, coverageAmount: e.target.value});
+                      if (errors.coverageAmount) setErrors({...errors, coverageAmount: null});
+                    }} 
                     className="w-full px-4 py-2.5 border border-bigstone/20 rounded-xl text-bigstone bg-bigstone/5 focus:bg-white focus:outline-none focus:border-brightsun focus:ring-4 focus:ring-brightsun/20 transition duration-200 text-sm placeholder:text-bigstone/40"
                   />
+                  {errors.coverageAmount && (
+                    <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1 mt-1">
+                      <AlertCircle size={12} />
+                      {errors.coverageAmount}
+                    </p>
+                  )}
                 </div>
                 <div className="flex flex-col gap-1.5">
                   <label className="text-xs font-bold text-bigstone/70 uppercase tracking-wider">Duration (Months)</label>
                   <input 
                     type="number" 
-                    required 
                     min="1"
                     value={newPolicy.policyDurationMonths} 
-                    onChange={e => setNewPolicy({...newPolicy, policyDurationMonths: e.target.value})} 
+                    onChange={e => {
+                      setNewPolicy({...newPolicy, policyDurationMonths: e.target.value});
+                      if (errors.policyDurationMonths) setErrors({...errors, policyDurationMonths: null});
+                    }} 
                     className="w-full px-4 py-2.5 border border-bigstone/20 rounded-xl text-bigstone bg-bigstone/5 focus:bg-white focus:outline-none focus:border-brightsun focus:ring-4 focus:ring-brightsun/20 transition duration-200 text-sm"
                   />
+                  {errors.policyDurationMonths && (
+                    <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1 mt-1">
+                      <AlertCircle size={12} />
+                      {errors.policyDurationMonths}
+                    </p>
+                  )}
                 </div>
                 <div className="flex flex-col gap-1.5">
                   <label className="text-xs font-bold text-bigstone/70 uppercase tracking-wider">Vehicle Category ID</label>
@@ -341,14 +411,22 @@ const ManagePoliciesTab = () => {
                 <div className="md:col-span-2 lg:col-span-3 flex flex-col gap-1.5">
                   <label className="text-xs font-bold text-bigstone/70 uppercase tracking-wider">Policy Description</label>
                   <textarea 
-                    required 
                     rows="3"
                     maxLength="500"
                     placeholder="Summarize the coverage limits, exclusions, etc."
                     value={newPolicy.description} 
-                    onChange={e => setNewPolicy({...newPolicy, description: e.target.value})} 
+                    onChange={e => {
+                      setNewPolicy({...newPolicy, description: e.target.value});
+                      if (errors.description) setErrors({...errors, description: null});
+                    }} 
                     className="w-full px-4 py-2.5 border border-bigstone/20 rounded-xl text-bigstone bg-bigstone/5 focus:bg-white focus:outline-none focus:border-brightsun focus:ring-4 focus:ring-brightsun/20 transition duration-200 text-sm placeholder:text-bigstone/40 resize-none"
                   />
+                  {errors.description && (
+                    <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1 mt-1">
+                      <AlertCircle size={12} />
+                      {errors.description}
+                    </p>
+                  )}
                 </div>
 
                 <div className="md:col-span-2 lg:col-span-3 space-y-4 pt-2">
@@ -388,9 +466,9 @@ const ManagePoliciesTab = () => {
                 </div>
 
                 <div className="md:col-span-2 lg:col-span-3 pt-6 border-t border-bigstone/5 flex justify-end">
-                  <button type="submit" className="w-full md:w-auto bg-bigstone hover:bg-bigstone/90 text-brightsun font-bold py-3 px-8 rounded-xl transition-all duration-200 text-sm cursor-pointer shadow-sm hover:shadow-md hover:-translate-y-0.5">
+                  <Button type="submit" className="w-full md:w-auto">
                     {isEditing ? 'Update Policy' : 'Publish Policy'}
-                  </button>
+                  </Button>
                 </div>
               </form>
             </div>

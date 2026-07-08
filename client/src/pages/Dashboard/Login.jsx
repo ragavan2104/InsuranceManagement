@@ -11,6 +11,8 @@ const Login = ({ onLoginSuccess, onStartLoading, onStopLoading }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
+  const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
 
   // Dynamically load Toastify CSS via JSDelivr CDN on element mounting to prevent Canvas compiling errors
   useEffect(() => {
@@ -25,8 +27,21 @@ const Login = ({ onLoginSuccess, onStartLoading, onStopLoading }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    if (!email || !password) {
+
+    setEmailError('');
+    setPasswordError('');
+
+    let hasError = false;
+    if (!email) {
+      setEmailError('Email address is required.');
+      hasError = true;
+    }
+    if (!password) {
+      setPasswordError('Password is required.');
+      hasError = true;
+    }
+
+    if (hasError) {
       toast.error('Please enter both your email address and password.');
       return;
     }
@@ -114,10 +129,15 @@ const Login = ({ onLoginSuccess, onStartLoading, onStopLoading }) => {
                 placeholder="username@email.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                required
                 className="w-full pl-11 pr-4 py-2.5 border border-slate-200 rounded-xl text-slate-900 bg-slate-50/50 focus:bg-white focus:outline-none focus:border-[#fcdb32] focus:ring-4 focus:ring-[#fcdb32]/10 transition duration-200 text-sm font-semibold"
               />
             </div>
+            {emailError && (
+              <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1 mt-1">
+                <AlertCircle size={12} />
+                {emailError}
+              </p>
+            )}
           </div>
 
           {/* Password Field */}
@@ -144,10 +164,15 @@ const Login = ({ onLoginSuccess, onStartLoading, onStopLoading }) => {
                 placeholder="••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                required
                 className="w-full pl-11 pr-4 py-2.5 border border-slate-200 rounded-xl text-slate-900 bg-slate-50/50 focus:bg-white focus:outline-none focus:border-[#fcdb32] focus:ring-4 focus:ring-[#fcdb32]/10 transition duration-200 text-sm font-semibold"
               />
             </div>
+            {passwordError && (
+              <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1 mt-1">
+                <AlertCircle size={12} />
+                {passwordError}
+              </p>
+            )}
           </div>
 
           <div className="pt-2">

@@ -37,6 +37,9 @@ const Register = ({ onStartLoading, onStopLoading }) => {
   const [panNumber, setPanNumber] = useState('');
   const [address, setAddress] = useState('');
 
+  // Field Error State
+  const [errors, setErrors] = useState({});
+
   // Dynamically load Toastify CSS via JSDelivr CDN on element mounting
   useEffect(() => {
     if (!document.getElementById('react-toastify-css-cdn')) {
@@ -91,7 +94,20 @@ const Register = ({ onStartLoading, onStopLoading }) => {
     e.preventDefault();
 
     // Pre-validation checks
-    if (!fullName || !email || !password || !confirmPassword || !phone || !dateOfBirth || !aadhaarNumber || !panNumber || !address) {
+    const newErrors = {};
+    if (!fullName) newErrors.fullName = 'Full name is required.';
+    if (!email) newErrors.email = 'Email address is required.';
+    if (!password) newErrors.password = 'Password is required.';
+    if (!confirmPassword) newErrors.confirmPassword = 'Please confirm your password.';
+    if (!phone) newErrors.phone = 'Mobile number is required.';
+    if (!dateOfBirth) newErrors.dateOfBirth = 'Date of birth is required.';
+    if (!aadhaarNumber) newErrors.aadhaarNumber = 'Aadhaar number is required.';
+    if (!panNumber) newErrors.panNumber = 'PAN number is required.';
+    if (!address) newErrors.address = 'Address is required.';
+
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length > 0) {
       toast.error('Please fill in all required fields.');
       return;
     }
@@ -224,13 +240,18 @@ const Register = ({ onStartLoading, onStopLoading }) => {
                 placeholder="Enter your name"
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
-                required
                 className="w-full pl-11 pr-10 py-2.5 border border-slate-200 rounded-xl text-slate-900 bg-slate-50/50 focus:bg-white focus:outline-none focus:border-[#fcdb32] focus:ring-4 focus:ring-[#fcdb32]/10 transition duration-200 text-sm font-semibold"
               />
               {fullName.trim().length >= 3 && (
                 <Check size={16} className="absolute right-3.5 text-emerald-500" />
               )}
             </div>
+            {errors.fullName && (
+              <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1">
+                <AlertCircle size={12} />
+                {errors.fullName}
+              </p>
+            )}
           </div>
 
           {/* Email Address */}
@@ -243,13 +264,18 @@ const Register = ({ onStartLoading, onStopLoading }) => {
                 placeholder="username@email.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                required
                 className="w-full pl-11 pr-10 py-2.5 border border-slate-200 rounded-xl text-slate-900 bg-slate-50/50 focus:bg-white focus:outline-none focus:border-[#fcdb32] focus:ring-4 focus:ring-[#fcdb32]/10 transition duration-200 text-sm font-semibold"
               />
               {isValidEmail(email) && (
                 <Check size={16} className="absolute right-3.5 text-emerald-500" />
               )}
             </div>
+            {errors.email && (
+              <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1">
+                <AlertCircle size={12} />
+                {errors.email}
+              </p>
+            )}
           </div>
 
           {/* Password Section */}
@@ -265,13 +291,18 @@ const Register = ({ onStartLoading, onStopLoading }) => {
                     placeholder="••••••••"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    required
                     className="w-full pl-11 pr-10 py-2.5 border border-slate-200 rounded-xl text-slate-900 bg-white focus:outline-none focus:border-[#fcdb32] focus:ring-4 focus:ring-[#fcdb32]/10 transition duration-200 text-sm font-semibold"
                   />
                   {reqMinLength && reqHasUpper && reqHasNumber && reqHasSpecial && (
                     <Check size={16} className="absolute right-3.5 text-emerald-500" />
                   )}
                 </div>
+                {errors.password && (
+                  <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1">
+                    <AlertCircle size={12} />
+                    {errors.password}
+                  </p>
+                )}
                 
                 {/* Strength Meter Bar */}
                 {password && (
@@ -297,13 +328,18 @@ const Register = ({ onStartLoading, onStopLoading }) => {
                     placeholder="••••••••"
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
-                    required
                     className="w-full pl-11 pr-10 py-2.5 border border-slate-200 rounded-xl text-slate-900 bg-white focus:outline-none focus:border-[#fcdb32] focus:ring-4 focus:ring-[#fcdb32]/10 transition duration-200 text-sm font-semibold"
                   />
                   {password && confirmPassword && password === confirmPassword && (
                     <Check size={16} className="absolute right-3.5 text-emerald-500" />
                   )}
                 </div>
+                {errors.confirmPassword && (
+                  <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1">
+                    <AlertCircle size={12} />
+                    {errors.confirmPassword}
+                  </p>
+                )}
               </div>
 
             </div>
@@ -336,13 +372,18 @@ const Register = ({ onStartLoading, onStopLoading }) => {
                 placeholder="e.g. 9876543210"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value.replace(/\D/g, ''))}
-                required
                 className="w-full pl-11 pr-10 py-2.5 border border-slate-200 rounded-xl text-slate-900 bg-slate-50/50 focus:bg-white focus:outline-none focus:border-[#fcdb32] focus:ring-4 focus:ring-[#fcdb32]/10 transition duration-200 text-sm font-semibold"
               />
               {phone.length >= 10 && (
                 <Check size={16} className="absolute right-3.5 text-emerald-500" />
               )}
             </div>
+            {errors.phone && (
+              <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1">
+                <AlertCircle size={12} />
+                {errors.phone}
+              </p>
+            )}
           </div>
 
           {/* Date of Birth */}
@@ -354,10 +395,15 @@ const Register = ({ onStartLoading, onStopLoading }) => {
                 type="date"
                 value={dateOfBirth}
                 onChange={(e) => setDateOfBirth(e.target.value)}
-                required
                 className="w-full pl-11 pr-4 py-2.5 border border-slate-200 rounded-xl text-slate-900 bg-slate-50/50 focus:bg-white focus:outline-none focus:border-[#fcdb32] focus:ring-4 focus:ring-[#fcdb32]/10 transition duration-200 text-sm font-semibold"
               />
             </div>
+            {errors.dateOfBirth && (
+              <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1">
+                <AlertCircle size={12} />
+                {errors.dateOfBirth}
+              </p>
+            )}
           </div>
 
           {/* Aadhaar Number */}
@@ -371,13 +417,18 @@ const Register = ({ onStartLoading, onStopLoading }) => {
                 placeholder="0000 0000 0000"
                 value={aadhaarNumber}
                 onChange={(e) => setAadhaarNumber(e.target.value.replace(/\D/g, ''))}
-                required
                 className="w-full pl-11 pr-10 py-2.5 border border-slate-200 rounded-xl text-slate-900 bg-slate-50/50 focus:bg-white focus:outline-none focus:border-[#fcdb32] focus:ring-4 focus:ring-[#fcdb32]/10 transition duration-200 text-sm font-semibold"
               />
               {aadhaarNumber.length === 12 && (
                 <Check size={16} className="absolute right-3.5 text-emerald-500" />
               )}
             </div>
+            {errors.aadhaarNumber && (
+              <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1">
+                <AlertCircle size={12} />
+                {errors.aadhaarNumber}
+              </p>
+            )}
           </div>
 
           {/* PAN Card Number */}
@@ -391,13 +442,18 @@ const Register = ({ onStartLoading, onStopLoading }) => {
                 placeholder="ABCDE1234F"
                 value={panNumber}
                 onChange={(e) => setPanNumber(e.target.value.toUpperCase())}
-                required
                 className="w-full pl-11 pr-10 py-2.5 border border-slate-200 rounded-xl text-slate-900 bg-slate-50/50 focus:bg-white focus:outline-none focus:border-[#fcdb32] focus:ring-4 focus:ring-[#fcdb32]/10 transition duration-200 text-sm font-semibold"
               />
               {panNumber.length === 10 && (
                 <Check size={16} className="absolute right-3.5 text-emerald-500" />
               )}
             </div>
+            {errors.panNumber && (
+              <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1">
+                <AlertCircle size={12} />
+                {errors.panNumber}
+              </p>
+            )}
           </div>
 
           {/* Home Address */}
@@ -409,7 +465,6 @@ const Register = ({ onStartLoading, onStopLoading }) => {
                 placeholder="Enter your complete home address details..."
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
-                required
                 rows={2}
                 className="w-full pl-11 pr-10 py-2.5 border border-slate-200 rounded-xl text-slate-900 bg-slate-50/50 focus:bg-white focus:outline-none focus:border-[#fcdb32] focus:ring-4 focus:ring-[#fcdb32]/10 transition duration-200 text-sm font-semibold resize-none"
               />
@@ -417,6 +472,12 @@ const Register = ({ onStartLoading, onStopLoading }) => {
                 <Check size={16} className="absolute right-3.5 top-3.5 text-emerald-500" />
               )}
             </div>
+            {errors.address && (
+              <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1">
+                <AlertCircle size={12} />
+                {errors.address}
+              </p>
+            )}
           </div>
 
           {/* Register Action buttons */}

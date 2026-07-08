@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Loader from '../loader';
-import { Eye, Info, Check, ShieldAlert, Award, FileText, Truck } from 'lucide-react';
+import { Eye, Info, Check, ShieldAlert, Award, FileText, Truck, AlertCircle } from 'lucide-react';
+import 'react-toastify/dist/ReactToastify.css';
 import { toast, ToastContainer } from 'react-toastify';
 import { getPendingProposals, reviewProposal } from '../../services/proposalService';
 import Button from '../Common/Button';
@@ -15,6 +16,7 @@ const ReviewProposalsTab = () => {
   });
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(5);
+  const [errors, setErrors] = useState({});
 
   useEffect(() => {
     fetchQueueData();
@@ -42,6 +44,18 @@ const ReviewProposalsTab = () => {
   const handleProposalReviewSubmit = async (e) => {
     e.preventDefault();
     if (!selectedProposal) return;
+    
+    const newErrors = {};
+    if (!proposalReviewData.officerRemarks || !proposalReviewData.officerRemarks.trim()) {
+      newErrors.officerRemarks = 'Auditing remarks/notes are required.';
+    }
+
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length > 0) {
+      toast.error('Please fill in all required fields.');
+      return;
+    }
     
     try {
       setLoading(true);
@@ -305,14 +319,22 @@ const ReviewProposalsTab = () => {
                 <div className="flex flex-col gap-1.5">
                   <label className="text-[10px] font-extrabold text-slate-500 uppercase tracking-wider">Decision Remarks / Notes</label>
                   <textarea 
-                    required
                     rows="3"
                     maxLength="500"
-                    placeholder="Provide details for approval limits or reason for rejection..."
+                    placeholder="Provide details explaining the approval amount or rejection cause..."
                     value={proposalReviewData.officerRemarks}
-                    onChange={e => setProposalReviewData({...proposalReviewData, officerRemarks: e.target.value})}
+                    onChange={e => {
+                      setProposalReviewData({...proposalReviewData, officerRemarks: e.target.value});
+                      if (errors.officerRemarks) setErrors({...errors, officerRemarks: null});
+                    }}
                     className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-slate-900 bg-slate-50 focus:bg-white focus:outline-none focus:border-[#fcdb32] focus:ring-4 focus:ring-[#fcdb32]/15 transition duration-200 text-sm placeholder-slate-400"
                   />
+                  {errors.officerRemarks && (
+                    <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1 mt-1">
+                      <AlertCircle size={12} />
+                      {errors.officerRemarks}
+                    </p>
+                  )}
                 </div>
 
                 <Button 

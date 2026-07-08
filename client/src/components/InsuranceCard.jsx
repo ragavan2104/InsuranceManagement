@@ -29,6 +29,15 @@ const InsuranceCard = ({ policy = {}, onSelect, actionText, showHeaderIcon = tru
     }
   };
 
+  const getCategoryLabel = (categoryId) => {
+    switch (categoryId) {
+      case 1: return 'Two-Wheeler';
+      case 2: return 'Four-Wheeler';
+      case 3: return 'Commercial Vehicle';
+      default: return 'General Auto';
+    }
+  };
+
   return (
     <div className="relative bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-[#141d38]/5 hover:border-[#fcdb32]/50 hover:-translate-y-1.5 transition-all duration-300 flex flex-col h-full overflow-hidden group">
       
@@ -46,9 +55,14 @@ const InsuranceCard = ({ policy = {}, onSelect, actionText, showHeaderIcon = tru
               <Shield size={20} className="stroke-[2.5]" />
             </div>
           )}
-          <h4 className="font-extrabold text-[#141d38] text-base leading-snug tracking-tight">
-            {policy.policyName || 'Standard Policy Plan'}
-          </h4>
+          <div>
+            <h4 className="font-extrabold text-[#141d38] text-base leading-snug tracking-tight">
+              {policy.policyName || 'Standard Policy Plan'}
+            </h4>
+            <span className="text-[10px] font-extrabold text-slate-500 bg-slate-100/80 px-2 py-0.5 rounded-md mt-1 inline-block uppercase tracking-wider">
+              {getCategoryLabel(policy.categoryId)}
+            </span>
+          </div>
         </div>
         <span className="bg-[#141d38] text-[#fcdb32] text-[10px] font-extrabold px-3 py-1 rounded-full shrink-0 uppercase tracking-widest border border-[#141d38]">
           {policy.policyType || 'Comprehensive'}

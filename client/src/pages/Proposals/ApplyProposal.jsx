@@ -9,9 +9,11 @@ import {
   Shield,
   Car,
   FileCheck,
-  ShieldAlert
+  ShieldAlert,
+  AlertCircle
 } from 'lucide-react';
 import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // Real backend services & component imports
 import API from '../../services/api';
@@ -26,9 +28,9 @@ const ApplyProposal = () => {
   const [selectedPolicy, setSelectedPolicy] = useState(null);
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategoryFilter, setSelectedCategoryFilter] = useState(0);
+  const [errors, setErrors] = useState({});
 
   // Form Fields State
   const [vehicleNumber, setVehicleNumber] = useState('');
@@ -39,28 +41,18 @@ const ApplyProposal = () => {
   const [chassisNumber, setChassisNumber] = useState('');
   const [selectedAddOns, setSelectedAddOns] = useState([]);
 
-  // Safely inject Toastify CSS dynamically via CDN link to avoid bundler compile blocks inside Canvas
   useEffect(() => {
-    if (!document.getElementById('react-toastify-css-cdn')) {
-      const link = document.createElement('link');
-      link.id = 'react-toastify-css-cdn';
-      link.rel = 'stylesheet';
-      link.href = 'https://cdn.jsdelivr.net/npm/react-toastify@9.1.3/dist/ReactToastify.css';
-      document.head.appendChild(link);
-    }
     fetchPolicies();
   }, []);
 
   const fetchPolicies = async () => {
     try {
       setLoading(true);
-      setError('');
       const response = await API.get('/Policy');
       setPolicies(response.data);
     } catch (err) {
       console.error(err);
       toast.error('Failed to fetch available insurance policies.');
-      setError('Failed to fetch available insurance policies. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -69,7 +61,6 @@ const ApplyProposal = () => {
   const handlePolicySelect = (policy) => {
     setSelectedPolicy(policy);
     setSelectedAddOns([]); // Reset selected add-ons when policy changes
-    setError('');
     toast.success(`You selected: ${policy.policyName}. Fill your vehicle parameters to proceed!`);
   };
 
@@ -87,14 +78,28 @@ const ApplyProposal = () => {
     e.preventDefault();
     if (!selectedPolicy) {
       toast.error('Please select an insurance policy.');
-      setError('Please select an insurance policy.');
+      return;
+    }
+
+    const newErrors = {};
+    if (!vehicleNumber.trim()) newErrors.vehicleNumber = 'Registration number is required.';
+    if (!vehicleMake.trim()) newErrors.vehicleMake = 'Vehicle manufacturer / make is required.';
+    if (!vehicleModel.trim()) newErrors.vehicleModel = 'Vehicle model is required.';
+    if (!vehicleYear || isNaN(vehicleYear) || parseInt(vehicleYear) < 1900 || parseInt(vehicleYear) > new Date().getFullYear() + 1) {
+      newErrors.vehicleYear = 'Please provide a valid manufacturing year.';
+    }
+    if (!engineNumber.trim()) newErrors.engineNumber = 'Engine number is required.';
+    if (!chassisNumber.trim()) newErrors.chassisNumber = 'Chassis number is required.';
+
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length > 0) {
+      toast.error('Please fill in all required fields.');
       return;
     }
 
     try {
       setSubmitting(true);
-      setError('');
-      setSuccess('');
 
       const proposalPayload = {
         policyId: selectedPolicy.policyId,
@@ -109,9 +114,7 @@ const ApplyProposal = () => {
 
       await submitProposal(proposalPayload);
 
-      const msg = 'Your insurance proposal has been submitted successfully! An officer will review your request.';
-      setSuccess(msg);
-      toast.success(msg);
+      toast.success('Your insurance proposal has been submitted successfully! An officer will review your request.');
       
       // Clear Form
       setVehicleNumber('');
@@ -136,11 +139,10 @@ const ApplyProposal = () => {
           errMsg = data;
         } else if (data.errors) {
           errMsg = Object.values(data.errors).flat().join(', ');
-        } else {
-          errMsg = data.message || data.title || errMsg;
+        } else if (typeof data === 'object') {
+          errMsg = data.error || data.message || data.title || JSON.stringify(data);
         }
       }
-      setError(errMsg);
       toast.error(errMsg);
     } finally {
       setSubmitting(false);
@@ -171,12 +173,16 @@ const ApplyProposal = () => {
     return (baseValue + addonsPremium).toLocaleString();
   };
 
-  // Filter policies based on search query
-  const filteredPolicies = policies.filter(p => 
-    p.policyName?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    p.policyType?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    p.description?.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  // Filter policies based on search query and category
+  const filteredPolicies = policies.filter(p => {
+    const matchesSearch = p.policyName?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                          p.policyType?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                          p.description?.toLowerCase().includes(searchQuery.toLowerCase());
+    
+    const matchesCategory = selectedCategoryFilter === 0 || p.categoryId === selectedCategoryFilter;
+    
+    return matchesSearch && matchesCategory;
+  });
 
   return (
     <div className="min-h-screen bg-slate-50/50 py-10 px-4 sm:px-6 relative">
@@ -207,19 +213,6 @@ const ApplyProposal = () => {
           </h2>
         </header>
 
-        {error && (
-          <div className="bg-rose-50 border border-rose-100 text-rose-700 px-4 py-3 rounded-xl mb-6 text-xs font-semibold flex items-center gap-2">
-            <Info size={16} className="text-rose-500 shrink-0" />
-            <span>{error}</span>
-          </div>
-        )}
-        {success && (
-          <div className="bg-emerald-50 border border-emerald-100 text-emerald-700 px-4 py-3 rounded-xl mb-6 text-xs font-semibold flex items-center gap-2 animate-pulse">
-            <Check size={16} className="text-emerald-500 shrink-0" />
-            <span>{success}</span>
-          </div>
-        )}
-
         {!selectedPolicy ? (
           /* STEP 1: SELECT POLICY PLAN */
           <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 sm:p-8 relative overflow-hidden">
@@ -240,8 +233,8 @@ const ApplyProposal = () => {
               </div>
             ) : (
               <>
-                <div className="mb-6">
-                  <div className="relative flex items-center">
+                <div className="flex flex-col md:flex-row gap-4 mb-6">
+                  <div className="relative flex-grow flex items-center">
                     <Search size={18} className="absolute left-3.5 text-slate-400 pointer-events-none" />
                     <input 
                       type="text" 
@@ -250,6 +243,24 @@ const ApplyProposal = () => {
                       onChange={e => setSearchQuery(e.target.value)}
                       className="w-full pl-11 pr-4 py-3 border border-slate-200 rounded-xl text-slate-900 bg-slate-50 focus:bg-white focus:outline-none focus:border-[#fcdb32] focus:ring-4 focus:ring-[#fcdb32]/10 transition duration-200 text-sm font-semibold"
                     />
+                  </div>
+                  
+                  <div className="relative min-w-[200px]">
+                    <select
+                      value={selectedCategoryFilter}
+                      onChange={e => setSelectedCategoryFilter(parseInt(e.target.value))}
+                      className="w-full px-4 py-3 border border-slate-200 rounded-xl text-slate-900 bg-slate-50 focus:bg-white focus:outline-none focus:border-[#fcdb32] focus:ring-4 focus:ring-[#fcdb32]/10 transition duration-200 text-sm font-bold appearance-none cursor-pointer"
+                    >
+                      <option value={0}>All Vehicle Types</option>
+                      <option value={1}>Two-Wheelers Only</option>
+                      <option value={2}>Four-Wheelers Only</option>
+                      <option value={3}>Commercial Vehicles</option>
+                    </select>
+                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500">
+                      <svg className="fill-current h-4 w-4 text-slate-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                      </svg>
+                    </div>
                   </div>
                 </div>
 
@@ -300,73 +311,103 @@ const ApplyProposal = () => {
                   <label className="text-[10px] font-extrabold text-slate-500 uppercase tracking-widest">Registration Number</label>
                   <input 
                     type="text" 
-                    required 
                     placeholder="e.g. MH12AB1234"
                     value={vehicleNumber}
                     onChange={e => setVehicleNumber(e.target.value.toUpperCase())}
                     className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-slate-900 bg-slate-50 focus:bg-white focus:outline-none focus:border-[#fcdb32] focus:ring-4 focus:ring-[#fcdb32]/10 transition duration-200 text-sm font-semibold"
                   />
+                  {errors.vehicleNumber && (
+                    <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1 mt-1">
+                      <AlertCircle size={12} />
+                      {errors.vehicleNumber}
+                    </p>
+                  )}
                 </div>
 
                 <div className="flex flex-col gap-1.5">
                   <label className="text-[10px] font-extrabold text-slate-500 uppercase tracking-widest">Vehicle Manufacturer / Make</label>
                   <input 
                     type="text" 
-                    required 
                     placeholder="e.g. Maruti Suzuki, Honda"
                     value={vehicleMake}
                     onChange={e => setVehicleMake(e.target.value)}
                     className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-slate-900 bg-slate-50 focus:bg-white focus:outline-none focus:border-[#fcdb32] focus:ring-4 focus:ring-[#fcdb32]/10 transition duration-200 text-sm font-semibold"
                   />
+                  {errors.vehicleMake && (
+                    <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1 mt-1">
+                      <AlertCircle size={12} />
+                      {errors.vehicleMake}
+                    </p>
+                  )}
                 </div>
 
                 <div className="flex flex-col gap-1.5">
                   <label className="text-[10px] font-extrabold text-slate-500 uppercase tracking-widest">Vehicle Model</label>
                   <input 
                     type="text" 
-                    required 
                     placeholder="e.g. Swift, City"
                     value={vehicleModel}
                     onChange={e => setVehicleModel(e.target.value)}
                     className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-slate-900 bg-slate-50 focus:bg-white focus:outline-none focus:border-[#fcdb32] focus:ring-4 focus:ring-[#fcdb32]/10 transition duration-200 text-sm font-semibold"
                   />
+                  {errors.vehicleModel && (
+                    <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1 mt-1">
+                      <AlertCircle size={12} />
+                      {errors.vehicleModel}
+                    </p>
+                  )}
                 </div>
 
                 <div className="flex flex-col gap-1.5">
                   <label className="text-[10px] font-extrabold text-slate-500 uppercase tracking-widest">Manufacturing Year</label>
                   <input 
                     type="number" 
-                    required 
                     min="1990" 
                     max={new Date().getFullYear() + 1}
                     value={vehicleYear}
                     onChange={e => setVehicleYear(e.target.value)}
                     className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-slate-900 bg-slate-50 focus:bg-white focus:outline-none focus:border-[#fcdb32] focus:ring-4 focus:ring-[#fcdb32]/10 transition duration-200 text-sm font-semibold"
                   />
+                  {errors.vehicleYear && (
+                    <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1 mt-1">
+                      <AlertCircle size={12} />
+                      {errors.vehicleYear}
+                    </p>
+                  )}
                 </div>
 
                 <div className="flex flex-col gap-1.5">
                   <label className="text-[10px] font-extrabold text-slate-500 uppercase tracking-widest">Engine Number</label>
                   <input 
                     type="text" 
-                    required 
                     placeholder="e.g. ENG12345678"
                     value={engineNumber}
                     onChange={e => setEngineNumber(e.target.value.toUpperCase())}
                     className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-slate-900 bg-slate-50 focus:bg-white focus:outline-none focus:border-[#fcdb32] focus:ring-4 focus:ring-[#fcdb32]/10 transition duration-200 text-sm font-semibold"
                   />
+                  {errors.engineNumber && (
+                    <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1 mt-1">
+                      <AlertCircle size={12} />
+                      {errors.engineNumber}
+                    </p>
+                  )}
                 </div>
 
                 <div className="flex flex-col gap-1.5">
                   <label className="text-[10px] font-extrabold text-slate-500 uppercase tracking-widest">Chassis Number</label>
                   <input 
                     type="text" 
-                    required 
                     placeholder="e.g. CHA12345678"
                     value={chassisNumber}
                     onChange={e => setChassisNumber(e.target.value.toUpperCase())}
                     className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-slate-900 bg-slate-50 focus:bg-white focus:outline-none focus:border-[#fcdb32] focus:ring-4 focus:ring-[#fcdb32]/10 transition duration-200 text-sm font-semibold"
                   />
+                  {errors.chassisNumber && (
+                    <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1 mt-1">
+                      <AlertCircle size={12} />
+                      {errors.chassisNumber}
+                    </p>
+                  )}
                 </div>
 
                 {/* Add-ons Checklist */}

@@ -15,6 +15,7 @@ import {
   Car
 } from 'lucide-react';
 import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const FileClaim = () => {
   const navigate = useNavigate();
@@ -29,17 +30,7 @@ const FileClaim = () => {
   const [estimatedLossAmount, setEstimatedLossAmount] = useState('');
   
   const [loading, setLoading] = useState(false);
-
-  // Dynamically load Toastify CSS via JSDelivr CDN on element mounting to prevent Canvas compiling errors
-  useEffect(() => {
-    if (!document.getElementById('react-toastify-css-cdn')) {
-      const link = document.createElement('link');
-      link.id = 'react-toastify-css-cdn';
-      link.rel = 'stylesheet';
-      link.href = 'https://cdn.jsdelivr.net/npm/react-toastify@9.1.3/dist/ReactToastify.css';
-      document.head.appendChild(link);
-    }
-  }, []);
+  const [errors, setErrors] = useState({});
 
   useEffect(() => {
     if (!issuedPolicyId) {
@@ -72,7 +63,34 @@ const FileClaim = () => {
       return;
     }
 
-    if (!incidentDate || !incidentDescription || !estimatedLossAmount) {
+    const newErrors = {};
+    if (!incidentDate) {
+      newErrors.incidentDate = 'Incident date is required.';
+    } else {
+      const selectedDate = new Date(incidentDate);
+      if (selectedDate > new Date()) {
+        newErrors.incidentDate = 'Incident date cannot be in the future.';
+      }
+    }
+
+    if (!estimatedLossAmount) {
+      newErrors.estimatedLossAmount = 'Estimated financial damage is required.';
+    } else {
+      const lossAmount = parseFloat(estimatedLossAmount);
+      if (isNaN(lossAmount) || lossAmount <= 0) {
+        newErrors.estimatedLossAmount = 'Estimated loss amount must be a positive number.';
+      }
+    }
+
+    if (!incidentDescription || !incidentDescription.trim()) {
+      newErrors.incidentDescription = 'Incident description is required.';
+    } else if (incidentDescription.length > 500) {
+      newErrors.incidentDescription = 'Incident description cannot exceed 500 characters.';
+    }
+
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length > 0) {
       toast.error('Please fill in all required fields.');
       return;
     }
@@ -249,13 +267,18 @@ const FileClaim = () => {
                   <input
                     type="date"
                     id="incidentDate"
-                    required
                     max={new Date().toISOString().split('T')[0]} // Cannot be in future
                     value={incidentDate}
                     onChange={(e) => setIncidentDate(e.target.value)}
                     className="w-full pl-11 pr-4 py-3 border border-slate-200 rounded-xl text-[#141d38] bg-slate-50/50 focus:bg-white focus:outline-none focus:border-[#fcdb32] focus:ring-4 focus:ring-[#fcdb32]/10 transition duration-200 text-sm font-semibold"
                   />
                 </div>
+                {errors.incidentDate && (
+                  <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1 mt-1">
+                    <AlertCircle size={12} />
+                    {errors.incidentDate}
+                  </p>
+                )}
               </div>
 
               {/* Estimated Loss Amount Input */}
@@ -266,7 +289,6 @@ const FileClaim = () => {
                   <input
                     type="number"
                     id="estimatedLossAmount"
-                    required
                     min="1"
                     step="0.01"
                     placeholder="e.g. 15000.00"
@@ -275,6 +297,12 @@ const FileClaim = () => {
                     className="w-full pl-11 pr-4 py-3 border border-slate-200 rounded-xl text-[#141d38] bg-slate-50/50 focus:bg-white focus:outline-none focus:border-[#fcdb32] focus:ring-4 focus:ring-[#fcdb32]/10 transition duration-200 text-sm font-semibold"
                   />
                 </div>
+                {errors.estimatedLossAmount && (
+                  <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1 mt-1">
+                    <AlertCircle size={12} />
+                    {errors.estimatedLossAmount}
+                  </p>
+                )}
               </div>
 
               {/* Incident Description Input */}
@@ -282,7 +310,6 @@ const FileClaim = () => {
                 <label htmlFor="incidentDescription" className="text-[10px] font-extrabold text-slate-500 uppercase tracking-widest">Incident Description / Damage Details</label>
                 <textarea
                   id="incidentDescription"
-                  required
                   rows="4"
                   maxLength="500"
                   placeholder="Explain exactly what happened, where it happened, and detail the damage on the vehicle..."
@@ -290,6 +317,12 @@ const FileClaim = () => {
                   onChange={(e) => setIncidentDescription(e.target.value)}
                   className="w-full px-4 py-3 border border-slate-200 rounded-xl text-slate-900 bg-slate-50/50 focus:bg-white focus:outline-none focus:border-[#fcdb32] focus:ring-4 focus:ring-[#fcdb32]/10 transition duration-200 text-sm font-medium resize-none placeholder-slate-400"
                 />
+                {errors.incidentDescription && (
+                  <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1 mt-1">
+                    <AlertCircle size={12} />
+                    {errors.incidentDescription}
+                  </p>
+                )}
               </div>
 
               {/* Action Submit */}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { PlusCircle, Info, Edit } from 'lucide-react';
+import { PlusCircle, Info, Edit, AlertCircle } from 'lucide-react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Button from '../Common/Button';
@@ -13,6 +13,7 @@ const ManageAddOnsTab = () => {
   const [editingAddOn, setEditingAddOn] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(5);
+  const [errors, setErrors] = useState({});
   
   const [newAddOn, setNewAddOn] = useState({
     addOnName: '',
@@ -51,6 +52,29 @@ const ManageAddOnsTab = () => {
   const handleCreateAddOn = async (e) => {
     e.preventDefault();
 
+    const newErrors = {};
+    if (!newAddOn.addOnName || !newAddOn.addOnName.trim()) {
+      newErrors.addOnName = 'Add-on Name is required.';
+    }
+    if (!newAddOn.additionalCost) {
+      newErrors.additionalCost = 'Additional Cost is required.';
+    } else {
+      const cost = parseFloat(newAddOn.additionalCost);
+      if (isNaN(cost) || cost < 0) {
+        newErrors.additionalCost = 'Additional Cost must be a positive number.';
+      }
+    }
+    if (!newAddOn.description || !newAddOn.description.trim()) {
+      newErrors.description = 'Add-on Description is required.';
+    }
+
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length > 0) {
+      toast.error('Please fill in all required fields.');
+      return;
+    }
+
     try {
       setLoading(true);
       const payload = {
@@ -85,6 +109,29 @@ const ManageAddOnsTab = () => {
   const handleUpdateAddOn = async (e) => {
     e.preventDefault();
     if (!editingAddOn) return;
+
+    const newErrors = {};
+    if (!editingAddOn.addOnName || !editingAddOn.addOnName.trim()) {
+      newErrors.addOnName = 'Add-on Name is required.';
+    }
+    if (!editingAddOn.additionalCost) {
+      newErrors.additionalCost = 'Additional Cost is required.';
+    } else {
+      const cost = parseFloat(editingAddOn.additionalCost);
+      if (isNaN(cost) || cost < 0) {
+        newErrors.additionalCost = 'Additional Cost must be a positive number.';
+      }
+    }
+    if (!editingAddOn.description || !editingAddOn.description.trim()) {
+      newErrors.description = 'Add-on Description is required.';
+    }
+
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length > 0) {
+      toast.error('Please fill in all required fields.');
+      return;
+    }
 
     try {
       setLoading(true);
@@ -155,38 +202,62 @@ const ManageAddOnsTab = () => {
                 <label className="text-xs font-bold text-bigstone/70 uppercase tracking-wider">Add-On Name</label>
                 <input 
                   type="text" 
-                  required 
                   placeholder="e.g. Zero Depreciation Cover"
                   value={editingAddOn.addOnName} 
-                  onChange={e => setEditingAddOn({...editingAddOn, addOnName: e.target.value})} 
+                  onChange={e => {
+                    setEditingAddOn({...editingAddOn, addOnName: e.target.value});
+                    if (errors.addOnName) setErrors({...errors, addOnName: null});
+                  }} 
                   className="w-full px-4 py-2.5 border border-bigstone/20 rounded-xl text-bigstone bg-bigstone/5 focus:bg-white focus:outline-none focus:border-brightsun focus:ring-4 focus:ring-brightsun/20 transition duration-200 text-sm placeholder:text-bigstone/40"
                 />
+                {errors.addOnName && (
+                  <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1 mt-1">
+                    <AlertCircle size={12} />
+                    {errors.addOnName}
+                  </p>
+                )}
               </div>
               
               <div className="flex flex-col gap-1.5">
                 <label className="text-xs font-bold text-bigstone/70 uppercase tracking-wider">Additional Premium (₹)</label>
                 <input 
                   type="number" 
-                  required 
                   min="0"
                   step="0.01"
                   placeholder="e.g. 750.00"
                   value={editingAddOn.additionalCost} 
-                  onChange={e => setEditingAddOn({...editingAddOn, additionalCost: e.target.value})} 
+                  onChange={e => {
+                    setEditingAddOn({...editingAddOn, additionalCost: e.target.value});
+                    if (errors.additionalCost) setErrors({...errors, additionalCost: null});
+                  }} 
                   className="w-full px-4 py-2.5 border border-bigstone/20 rounded-xl text-bigstone bg-bigstone/5 focus:bg-white focus:outline-none focus:border-brightsun focus:ring-4 focus:ring-brightsun/20 transition duration-200 text-sm placeholder:text-bigstone/40"
                 />
+                {errors.additionalCost && (
+                  <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1 mt-1">
+                    <AlertCircle size={12} />
+                    {errors.additionalCost}
+                  </p>
+                )}
               </div>
               
               <div className="md:col-span-2 flex flex-col gap-1.5">
                 <label className="text-xs font-bold text-bigstone/70 uppercase tracking-wider">Add-On Description</label>
                 <textarea 
-                  required 
                   rows="3"
                   placeholder="Describe what protection this add-on provides..."
                   value={editingAddOn.description} 
-                  onChange={e => setEditingAddOn({...editingAddOn, description: e.target.value})} 
+                  onChange={e => {
+                    setEditingAddOn({...editingAddOn, description: e.target.value});
+                    if (errors.description) setErrors({...errors, description: null});
+                  }} 
                   className="w-full px-4 py-2.5 border border-bigstone/20 rounded-xl text-bigstone bg-bigstone/5 focus:bg-white focus:outline-none focus:border-brightsun focus:ring-4 focus:ring-brightsun/20 transition duration-200 text-sm placeholder:text-bigstone/40 resize-none"
                 />
+                {errors.description && (
+                  <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1 mt-1">
+                    <AlertCircle size={12} />
+                    {errors.description}
+                  </p>
+                )}
               </div>
               
               <div className="md:col-span-2 pt-4 border-t border-bigstone/5">
@@ -201,7 +272,7 @@ const ManageAddOnsTab = () => {
             <div className="flex items-center justify-between border-b border-bigstone/5 pb-5 mb-6">
               <h3 className="text-lg font-bold text-bigstone">Define Add-On Benefit</h3>
               <button 
-                className="bg-bigstone/5 hover:bg-bigstone/10 text-bigstone text-sm font-semibold py-2 px-4 rounded-lg transition duration-200 cursor-pointer" 
+                className="bg-bigstone/5 hover:bg-red-400 hover:text-white text-bigstone text-sm font-semibold py-2 px-4 rounded-lg transition duration-200 cursor-pointer" 
                 onClick={() => setShowCreateAddOnForm(false)}
               >
                 Cancel
@@ -213,38 +284,62 @@ const ManageAddOnsTab = () => {
                 <label className="text-xs font-bold text-bigstone/70 uppercase tracking-wider">Add-On Name</label>
                 <input 
                   type="text" 
-                  required 
                   placeholder="e.g. Zero Depreciation Cover"
                   value={newAddOn.addOnName} 
-                  onChange={e => setNewAddOn({...newAddOn, addOnName: e.target.value})} 
+                  onChange={e => {
+                    setNewAddOn({...newAddOn, addOnName: e.target.value});
+                    if (errors.addOnName) setErrors({...errors, addOnName: null});
+                  }} 
                   className="w-full px-4 py-2.5 border border-bigstone/20 rounded-xl text-bigstone bg-bigstone/5 focus:bg-white focus:outline-none focus:border-brightsun focus:ring-4 focus:ring-brightsun/20 transition duration-200 text-sm placeholder:text-bigstone/40"
                 />
+                {errors.addOnName && (
+                  <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1 mt-1">
+                    <AlertCircle size={12} />
+                    {errors.addOnName}
+                  </p>
+                )}
               </div>
               
               <div className="flex flex-col gap-1.5">
                 <label className="text-xs font-bold text-bigstone/70 uppercase tracking-wider">Additional Premium (₹)</label>
                 <input 
                   type="number" 
-                  required 
                   min="0"
                   step="0.01"
                   placeholder="e.g. 750.00"
                   value={newAddOn.additionalCost} 
-                  onChange={e => setNewAddOn({...newAddOn, additionalCost: e.target.value})} 
+                  onChange={e => {
+                    setNewAddOn({...newAddOn, additionalCost: e.target.value});
+                    if (errors.additionalCost) setErrors({...errors, additionalCost: null});
+                  }} 
                   className="w-full px-4 py-2.5 border border-bigstone/20 rounded-xl text-bigstone bg-bigstone/5 focus:bg-white focus:outline-none focus:border-brightsun focus:ring-4 focus:ring-brightsun/20 transition duration-200 text-sm placeholder:text-bigstone/40"
                 />
+                {errors.additionalCost && (
+                  <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1 mt-1">
+                    <AlertCircle size={12} />
+                    {errors.additionalCost}
+                  </p>
+                )}
               </div>
               
               <div className="md:col-span-2 flex flex-col gap-1.5">
                 <label className="text-xs font-bold text-bigstone/70 uppercase tracking-wider">Add-On Description</label>
                 <textarea 
-                  required 
                   rows="3"
                   placeholder="Describe what protection this add-on provides..."
                   value={newAddOn.description} 
-                  onChange={e => setNewAddOn({...newAddOn, description: e.target.value})} 
+                  onChange={e => {
+                    setNewAddOn({...newAddOn, description: e.target.value});
+                    if (errors.description) setErrors({...errors, description: null});
+                  }} 
                   className="w-full px-4 py-2.5 border border-bigstone/20 rounded-xl text-bigstone bg-bigstone/5 focus:bg-white focus:outline-none focus:border-brightsun focus:ring-4 focus:ring-brightsun/20 transition duration-200 text-sm placeholder:text-bigstone/40 resize-none"
                 />
+                {errors.description && (
+                  <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1 mt-1">
+                    <AlertCircle size={12} />
+                    {errors.description}
+                  </p>
+                )}
               </div>
               
               <div className="md:col-span-2 pt-4 border-t border-bigstone/5">
