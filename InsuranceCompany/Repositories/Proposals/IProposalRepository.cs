@@ -1,4 +1,4 @@
-﻿using InsuranceCompany.Models.Proposals;
+using InsuranceCompany.Models.Proposals;
 namespace InsuranceCompany.Repositories.Proposals
 {
     public interface IProposalRepository
@@ -8,5 +8,6 @@ namespace InsuranceCompany.Repositories.Proposals
         Task<IEnumerable<Proposal>> GetAllProposalsAsync();
         Task<Proposal> AddProposalAsync(Proposal proposal);
         Task<Proposal> UpdateProposalAsync(Proposal proposal);
+        Task<bool> HasActiveProposalOrPolicyForVehicleAsync(string vehicleNumber);
     }
 }

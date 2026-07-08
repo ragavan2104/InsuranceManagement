@@ -17,8 +17,8 @@ namespace InsuranceCompany.DTOs.PolicyManagement
         [Required(ErrorMessage = "Duration in months is required")]
         public int PolicyDurationMonths { get; set; } = 12;
         [Required(ErrorMessage = "Policy type is required")]
-        [RegularExpression("^(Comprehensive |Third-Party, Fire & Theft (TPFT)| Third-Party Only (TPO))", ErrorMessage = "Policy type must be either 'Comprehensive', 'Third-Party, Fire & Theft (TPFT)', or 'Third-Party Only (TPO)'")]
-
+        [RegularExpression("^(Comprehensive|Third-Party, Fire & Theft \\(TPFT\\)|Third-Party Only \\(TPO\\))$",
+            ErrorMessage = "Policy type must be either 'Comprehensive', 'Third-Party, Fire & Theft (TPFT)', or 'Third-Party Only (TPO)'")]
         public string PolicyType { get; set; } = string.Empty;
 
         public bool IsActive { get; set; } = true;

@@ -1,3 +1,5 @@
+using InsuranceCompany.DTOs.PolicyManagement;
+
 namespace InsuranceCompany.DTOs.Proposals
 {
     public class ProposalResponseDto
@@ -22,6 +24,8 @@ namespace InsuranceCompany.DTOs.Proposals
         public List<string> AppliedAddOnName { get; set; } = new List<string>();
         public int? IssuedPolicyId { get; set; }
 
-
+        public string EngineNumber { get; set; } = string.Empty;
+        public string ChassisNumber { get; set; } = string.Empty;
+        public PolicyResponseDto? InsurancePolicy { get; set; }
     }
 }

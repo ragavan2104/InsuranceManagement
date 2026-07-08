@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "DwmU2vYvYkQ=",
+  "dgSpecHash": "QERumZjU2VA=",
   "success": true,
   "projectFilePath": "D:\\c#\\InsuranceCompany\\InsuranceCompany\\InsuranceCompany.csproj",
   "expectedPackageFiles": [
@@ -12,6 +12,7 @@
     "C:\\Users\\Ragavan\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.11.0\\fluentvalidation.dependencyinjectionextensions.11.11.0.nupkg.sha512",
     "C:\\Users\\Ragavan\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Ragavan\\.nuget\\packages\\log4net\\3.3.1\\log4net.3.3.1.nupkg.sha512",
+    "C:\\Users\\Ragavan\\.nuget\\packages\\mailtrap\\1.1.0\\mailtrap.1.1.0.nupkg.sha512",
     "C:\\Users\\Ragavan\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\10.0.9\\microsoft.aspnetcore.authentication.jwtbearer.10.0.9.nupkg.sha512",
     "C:\\Users\\Ragavan\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\8.0.0\\microsoft.bcl.asyncinterfaces.8.0.0.nupkg.sha512",
     "C:\\Users\\Ragavan\\.nuget\\packages\\microsoft.bcl.cryptography\\9.0.4\\microsoft.bcl.cryptography.9.0.4.nupkg.sha512",

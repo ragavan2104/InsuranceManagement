@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using InsuranceCompany.DTOs.PolicyManagement;
@@ -74,7 +74,7 @@ namespace InsuranceCompany.Controllers.PolicyManagement
             }
         }
         [HttpPost("AddPolicy")]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin,Officer")]
         public async Task<IActionResult> CreatePolicy([FromBody] PolicyCreateDto dto)
         {
             try
@@ -91,7 +91,7 @@ namespace InsuranceCompany.Controllers.PolicyManagement
                 if (string.IsNullOrEmpty(adminIdClaim))
                 {
                     _log.Warn("Unauthorized policy creation attempt: Missing NameIdentifier claim.");
-                    return Unauthorized("Could not resolve admin identification credentials.");
+                    return Unauthorized("Could not resolve user identification credentials.");
                 }
 
                 int adminId = int.Parse(adminIdClaim);
@@ -108,14 +108,14 @@ namespace InsuranceCompany.Controllers.PolicyManagement
             }
         }
         [HttpPut("UpdatePolicy/{id}")]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin,Officer")]
         public async Task<IActionResult> UpdatePolicy(int id, [FromBody] PolicyUpdateDto dto)
         {
             try
             {
                 _log.Info("Updating Policy");
 
-                if (!User.IsInRole("Admin"))
+                if (!User.IsInRole("Admin") && !User.IsInRole("Officer"))
                 {
                     _log.Warn("Unauthorized policy update attempt.");
                     return Forbid();
@@ -147,6 +147,67 @@ namespace InsuranceCompany.Controllers.PolicyManagement
             {
                 _log.Error(ex);
                 return StatusCode(StatusCodes.Status500InternalServerError, "An unexpected error occurred.");
+            }
+        }
+
+        [HttpPost("CalculatePremium")]
+        public async Task<IActionResult> CalculatePremium([FromBody] PremiumCalculationRequestDto dto)
+        {
+            try
+            {
+                _log.Info($"Received request to calculate premium for PolicyId: {dto.PolicyId}");
+                var policy = await _policyService.GetPolicyByIdAsync(dto.PolicyId);
+                if (policy == null)
+                {
+                    _log.Warn("Policy not found.");
+                    return NotFound("Insurance policy not found.");
+                }
+
+                int currentYear = DateTime.Now.Year;
+                int age = Math.Max(0, currentYear - dto.VehicleYear);
+
+                decimal basePremium = policy.BasePremium;
+                decimal ageSurcharge = 0;
+                decimal riskSurcharge = 0;
+
+                // Age of Vehicle Factor
+                if (age > 5)
+                {
+                    ageSurcharge = basePremium * 0.10m;
+                }
+                else if (age > 2)
+                {
+                    ageSurcharge = basePremium * 0.05m;
+                }
+
+                // Risk Factors
+                if (dto.HasPriorClaims)
+                {
+                    riskSurcharge += basePremium * 0.15m;
+                }
+                if (dto.IsDriverUnder25)
+                {
+                    riskSurcharge += basePremium * 0.10m;
+                }
+                if (dto.IsCommercialUse)
+                {
+                    riskSurcharge += basePremium * 0.20m;
+                }
+
+                var response = new PremiumCalculationResponseDto
+                {
+                    BasePremium = basePremium,
+                    VehicleAgeSurcharge = Math.Round(ageSurcharge, 2),
+                    RiskSurcharge = Math.Round(riskSurcharge, 2),
+                    TotalPremium = Math.Round(basePremium + ageSurcharge + riskSurcharge, 2)
+                };
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Error calculating premium", ex);
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while calculating the premium.");
             }
         }
     }

@@ -1,10 +1,9 @@
-﻿using InsuranceCompany.Models.PolicyManagement;
-using InsuranceCompany.Models.Authentication;
 using InsuranceCompany.Models.PolicyManagement;
+using InsuranceCompany.Models.Authentication;
 using InsuranceCompany.Models.Proposals;
 using System;
 using System.Collections.Generic;
-using System.Security.Claims;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace InsuranceCompany.Models.Operations
 {
@@ -25,6 +24,8 @@ namespace InsuranceCompany.Models.Operations
 
         public virtual Proposal? Proposal { get; set; }
         public virtual User? User { get; set; }
+
+        [ForeignKey("PolicyId")]
         public virtual InsurancePolicy? InsurancePolicy { get; set; }
         public virtual Payment? Payment { get; set; }
         public virtual ICollection<Claim> Claims { get; set; } = new List<Claim>();

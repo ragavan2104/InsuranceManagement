@@ -54,17 +54,22 @@ namespace InsuranceCompany.Controllers.Operations
             catch (ArgumentException ex)
             {
                 _log.Warn($"Claim validation failed: {ex.Message}");
-                return BadRequest(new { Error = ex.Message });
+                return BadRequest(ex.Message);
+            }
+            catch (InvalidOperationException ex)
+            {
+                _log.Warn($"Claim invalid operation: {ex.Message}");
+                return BadRequest(ex.Message);
             }
             catch (KeyNotFoundException ex)
             {
                 _log.Warn($"Policy not found: {ex.Message}");
-                return NotFound(new { Error = ex.Message });
+                return NotFound(ex.Message);
             }
             catch (UnauthorizedAccessException ex)
             {
                 _log.Warn($"Unauthorized claim attempt: {ex.Message}");
-                return StatusCode(StatusCodes.Status403Forbidden, new { Error = ex.Message });
+                return StatusCode(StatusCodes.Status403Forbidden, ex.Message);
             }
             catch (Exception ex)
             {

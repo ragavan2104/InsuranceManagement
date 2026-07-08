@@ -30,6 +30,8 @@ namespace InsuranceCompany.Repositories.Claims
                     .ThenInclude(p => p!.InsurancePolicy)
                 .Include(c => c.IssuedPolicy)
                     .ThenInclude(p => p!.Payment)
+                .Include(c => c.IssuedPolicy)
+                    .ThenInclude(p => p!.User)
                 .FirstOrDefaultAsync(c => c.ClaimId == claimId);
         }
 
@@ -76,7 +78,18 @@ namespace InsuranceCompany.Repositories.Claims
             return await _context.IssuedPolicies
                 .Include(p => p.Proposal)
                 .Include(p => p.InsurancePolicy)
+                .Include(p => p.User)
                 .FirstOrDefaultAsync(p => p.IssuedPolicyId == issuedPolicyId);
+        }
+
+        public async Task<bool> HasIncompleteClaimForVehicleAsync(string vehicleNumber)
+        {
+            return await _context.Claims
+                .AnyAsync(c => c.IssuedPolicy != null && 
+                               c.IssuedPolicy.Proposal != null && 
+                               c.IssuedPolicy.Proposal.VehicleNumber == vehicleNumber && 
+                               c.Status != "Approved" && 
+                               c.Status != "Rejected");
         }
     }
 }

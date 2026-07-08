@@ -56,6 +56,16 @@ namespace InsuranceCompany.Controllers.Proposals
                 _log.Warn($"Policy not found while creating proposal: {ex.Message}");
                 return NotFound(ex.Message);
             }
+            catch (InvalidOperationException ex)
+            {
+                _log.Warn($"Proposal invalid operation: {ex.Message}");
+                return BadRequest(ex.Message);
+            }
+            catch (ArgumentException ex)
+            {
+                _log.Warn($"Proposal validation failed: {ex.Message}");
+                return BadRequest(ex.Message);
+            }
             catch (Exception ex)
             {
                 _log.Error("Error occurred while creating proposal.", ex);

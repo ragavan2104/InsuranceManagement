@@ -1,8 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using InsuranceCompany.Models.Authentication;
 using InsuranceCompany.Data;
 using InsuranceCompany.DTOs.Authentication;
 using InsuranceCompany.Services.Authentication;
+using InsuranceCompany.Services.Communications;
 using Microsoft.EntityFrameworkCore;
 using FluentValidation;
 using log4net; 
@@ -22,13 +23,20 @@ namespace InsuranceCompany.Controllers
         private readonly ITokenService _tokenService;
         private readonly IPasswordHasher _passwordHasher;
         private readonly IValidator<UserRegisterDto> _registerValidator;
+        private readonly IEmailService _emailService;
 
-        public AuthController(AppDbContext context, ITokenService tokenService, IPasswordHasher passwordHasher, IValidator<UserRegisterDto> registerValidator)
+        public AuthController(
+            AppDbContext context, 
+            ITokenService tokenService, 
+            IPasswordHasher passwordHasher, 
+            IValidator<UserRegisterDto> registerValidator,
+            IEmailService emailService)
         {
             _context = context;
             _tokenService = tokenService;
             _passwordHasher = passwordHasher;
             _registerValidator = registerValidator;
+            _emailService = emailService;
         }
 
         [HttpPost("register")]
@@ -62,6 +70,12 @@ namespace InsuranceCompany.Controllers
                 {
                     _log.Warn("Invalid RoleId ");
                     return BadRequest("Invalid RoleId");
+                }
+
+                if (assignedRole.RoleName != "User")
+                {
+                    _log.Warn($"Registration attempt blocked: Public registration is only allowed for 'User' role. Attempted: {assignedRole.RoleName}");
+                    return BadRequest("Only customer accounts ('User' role) can be created via the public registration page.");
                 }
 
                 int calculatedAge = DateTime.Today.Year - dto.DateOfBirth.Year;
@@ -151,6 +165,52 @@ namespace InsuranceCompany.Controllers
             {
                 _log.Error(ex);
                 return StatusCode(500, "An Internal Error");
+            }
+        }
+
+        [HttpPost("forgot-password")]
+        public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordDto dto)
+        {
+            if (dto == null || string.IsNullOrEmpty(dto.Email))
+            {
+                return BadRequest("Email is required");
+            }
+
+            _log.Info($"Forgot password requested for email: {dto.Email}");
+
+            try
+            {
+                var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == dto.Email);
+                if (user == null)
+                {
+                    return BadRequest("Email address is not registered.");
+                }
+
+                var recoveryToken = Guid.NewGuid().ToString("N").Substring(0, 8).ToUpper();
+                
+                string subject = "AutoShield Protection - Recover Your Password";
+                string htmlBody = $@"
+                    <div style='font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #eee; border-radius: 10px;'>
+                        <h2 style='color: #009087;'>AutoShield Protection Portal</h2>
+                        <p>Hello <strong>{user.FullName}</strong>,</p>
+                        <p>We received a request to recover the password for your coverage account.</p>
+                        <p>Please use the following temporary security token to reset your password:</p>
+                        <div style='background: #f4f4f4; padding: 15px; text-align: center; font-size: 24px; font-weight: bold; letter-spacing: 2px; color: #333; margin: 20px 0; border-radius: 5px;'>
+                            {recoveryToken}
+                        </div>
+                        <p>If you did not request this, you can safely ignore this email.</p>
+                        <hr style='border: none; border-top: 1px solid #eee;' />
+                        <p style='font-size: 11px; color: #999;'>This is an automated notification from AutoShield Protection. Please do not reply to this email.</p>
+                    </div>";
+
+                await _emailService.SendEmailAsync(user.Email, subject, htmlBody, "ForgotPassword", user.UserId);
+
+                return Ok(new { Message = "If the email is registered, a password recovery link has been sent." });
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Error in ForgotPassword flow", ex);
+                return StatusCode(500, "An internal error occurred.");
             }
         }
     }

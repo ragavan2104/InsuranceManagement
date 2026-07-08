@@ -1,5 +1,6 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using InsuranceCompany.Models.Authentication;
 using InsuranceCompany.Models.PolicyManagement;
 using InsuranceCompany.Models.Operations;
@@ -25,7 +26,10 @@ namespace InsuranceCompany.Models.Proposals
         public DateTime? UpdatedAt { get; set; }
 
         public virtual User? User { get; set; }
+
+        [ForeignKey("PolicyId")]
         public virtual InsurancePolicy? InsurancePolicy { get; set; }
+
         public virtual User? AssignedOfficer { get; set; }
 
         public virtual Quote? Quote { get; set; }

@@ -12,6 +12,7 @@ using InsuranceCompany.Services.PolicyManagement;
 using InsuranceCompany.Services.Proposals;
 using InsuranceCompany.Repositories.Users;
 using InsuranceCompany.Services.Users;
+using InsuranceCompany.Services.Communications;
 using InsuranceCompany.Validators.Authentication;
 using log4net;
 using log4net.Config;
@@ -55,6 +56,7 @@ builder.Services.AddScoped<IClaimRepository, ClaimRepository>();
 builder.Services.AddScoped<IClaimService, ClaimService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
 
 // JWT Authentication Setup
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

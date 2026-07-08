@@ -175,6 +175,37 @@
         }
       }
     },
+    "/api/Auth/forgot-password": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ForgotPasswordDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ForgotPasswordDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ForgotPasswordDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Claim/file": {
       "post": {
         "tags": [
@@ -288,6 +319,76 @@
       "get": {
         "tags": [
           "Claim"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/IssuedPolicy/my": {
+      "get": {
+        "tags": [
+          "IssuedPolicy"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/IssuedPolicy/all": {
+      "get": {
+        "tags": [
+          "IssuedPolicy"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/IssuedPolicy/cancel/{id}": {
+      "post": {
+        "tags": [
+          "IssuedPolicy"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/IssuedPolicy/renew/{id}": {
+      "post": {
+        "tags": [
+          "IssuedPolicy"
         ],
         "parameters": [
           {
@@ -435,6 +536,37 @@
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/PolicyUpdateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Policy/CalculatePremium": {
+      "post": {
+        "tags": [
+          "Policy"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PremiumCalculationRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PremiumCalculationRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PremiumCalculationRequestDto"
               }
             }
           }
@@ -728,6 +860,20 @@
         },
         "additionalProperties": false
       },
+      "ForgotPasswordDto": {
+        "required": [
+          "email"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "minLength": 1,
+            "type": "string",
+            "format": "email"
+          }
+        },
+        "additionalProperties": false
+      },
       "PaymentProcessDto": {
         "required": [
           "paymentMethod",
@@ -788,7 +934,7 @@
           },
           "policyType": {
             "minLength": 1,
-            "pattern": "^(Comprehensive|Third-Party, Fire & Theft TPFT|Third-Party Only TPO)$",
+            "pattern": "^(Comprehensive|Third-Party, Fire & Theft \\(TPFT\\)|Third-Party Only \\(TPO\\))$",
             "type": "string"
           },
           "categoryId": {
@@ -840,7 +986,7 @@
           },
           "policyType": {
             "minLength": 1,
-            "pattern": "^(Comprehensive |Third-Party, Fire & Theft (TPFT)| Third-Party Only (TPO))",
+            "pattern": "^(Comprehensive|Third-Party, Fire & Theft \\(TPFT\\)|Third-Party Only \\(TPO\\))$",
             "type": "string"
           },
           "isActive": {
@@ -857,6 +1003,35 @@
               "format": "int32"
             },
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PremiumCalculationRequestDto": {
+        "required": [
+          "policyId",
+          "vehicleYear"
+        ],
+        "type": "object",
+        "properties": {
+          "policyId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "vehicleYear": {
+            "maximum": 2100,
+            "minimum": 1900,
+            "type": "integer",
+            "format": "int32"
+          },
+          "hasPriorClaims": {
+            "type": "boolean"
+          },
+          "isDriverUnder25": {
+            "type": "boolean"
+          },
+          "isCommercialUse": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false

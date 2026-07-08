@@ -125,6 +125,15 @@
           }
         }
       },
+      "Mailtrap/1.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Mailtrap.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Mailtrap.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authentication.JwtBearer/10.0.9": {
         "type": "package",
         "dependencies": {
@@ -1409,6 +1418,19 @@
         "log4net.3.3.1.nupkg.sha512",
         "log4net.nuspec",
         "package-icon.png"
+      ]
+    },
+    "Mailtrap/1.1.0": {
+      "sha512": "rXBYEj0ljgabkKqPKFX+v4ovmxYov6fUrsNM7OLgEw/Gwcbie20CeRjBJA0G8RrSTD0O8eJA7u8PjNQTNFAOGg==",
+      "type": "package",
+      "path": "mailtrap/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/netstandard2.1/Mailtrap.dll",
+        "mailtrap.1.1.0.nupkg.sha512",
+        "mailtrap.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/10.0.9": {
@@ -3796,6 +3818,7 @@
     "net10.0": [
       "BCrypt.Net-Next >= 4.2.0",
       "FluentValidation.AspNetCore >= 11.3.1",
+      "Mailtrap >= 1.1.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 10.0.9",
       "Microsoft.EntityFrameworkCore >= 10.0.9",
       "Microsoft.EntityFrameworkCore.Design >= 10.0.9",
@@ -3866,6 +3889,10 @@
           "FluentValidation.AspNetCore": {
             "target": "Package",
             "version": "[11.3.1, )"
+          },
+          "Mailtrap": {
+            "target": "Package",
+            "version": "[1.1.0, )"
           },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",

@@ -13,5 +13,6 @@ namespace InsuranceCompany.Repositories.Claims
         Task<IEnumerable<Claim>> GetAllClaimsAsync();
         Task UpdateClaimAsync(Claim claim);
         Task<IssuedPolicy?> GetIssuedPolicyByIdAsync(int issuedPolicyId);
+        Task<bool> HasIncompleteClaimForVehicleAsync(string vehicleNumber);
     }
 }

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using InsuranceCompany.Dtos.Claims;
 using InsuranceCompany.Models.Operations;
 using InsuranceCompany.Repositories.Claims;
+using InsuranceCompany.Services.Communications;
 using log4net;
 
 namespace InsuranceCompany.Services.Claims
@@ -12,11 +13,13 @@ namespace InsuranceCompany.Services.Claims
     public class ClaimService : IClaimService
     {
         private readonly IClaimRepository _claimRepository;
+        private readonly IEmailService _emailService;
         private static readonly ILog _log = LogManager.GetLogger(typeof(ClaimService));
 
-        public ClaimService(IClaimRepository claimRepository)
+        public ClaimService(IClaimRepository claimRepository, IEmailService emailService)
         {
             _claimRepository = claimRepository;
+            _emailService = emailService;
         }
 
         public async Task<Claim> FileClaimAsync(int userId, ClaimFileDto dto)
@@ -41,6 +44,16 @@ namespace InsuranceCompany.Services.Claims
                     throw new UnauthorizedAccessException("You do not have permission to file a claim for this policy.");
                 }
 
+                if (policy.Proposal != null && !string.IsNullOrEmpty(policy.Proposal.VehicleNumber))
+                {
+                    bool hasActiveClaim = await _claimRepository.HasIncompleteClaimForVehicleAsync(policy.Proposal.VehicleNumber);
+                    if (hasActiveClaim)
+                    {
+                        _log.Warn($"Claim filing blocked: Vehicle {policy.Proposal.VehicleNumber} already has an active, incomplete claim.");
+                        throw new InvalidOperationException($"Cannot file a new claim for vehicle {policy.Proposal.VehicleNumber} because there is already an active, unresolved claim in progress.");
+                    }
+                }
+
                 decimal maxCoverage = policy.InsurancePolicy?.CoverageAmount ?? 0;
                 if (dto.EstimatedLossAmount > maxCoverage)
                 {
@@ -61,6 +74,37 @@ namespace InsuranceCompany.Services.Claims
                 var result = await _claimRepository.AddClaimAsync(claimEntity);
 
                 _log.Info($"Claim successfully filed with ID: {result.ClaimId} for User: {userId}");
+
+                if (policy.User != null && !string.IsNullOrEmpty(policy.User.Email))
+                {
+                    try
+                    {
+                        string subject = $"AutoShield Protection - Claim #{result.ClaimId} Filed Successfully";
+                        string htmlBody = $@"
+                            <div style='font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #eee; border-radius: 10px;'>
+                                <h2 style='color: #009087;'>Insurance Claim Filed</h2>
+                                <p>Hello <strong>{policy.User.FullName}</strong>,</p>
+                                <p>This notification confirms that your claim has been successfully filed for Policy Number <strong>{policy.PolicyNumber}</strong>.</p>
+                                <p><strong>Claim Details:</strong></p>
+                                <ul>
+                                    <li><strong>Claim Reference ID:</strong> #{result.ClaimId}</li>
+                                    <li><strong>Incident Description:</strong> {result.IncidentDescription}</li>
+                                    <li><strong>Estimated Loss Amount:</strong> ₹{result.EstimatedLossAmount}</li>
+                                    <li><strong>Date of Incident:</strong> {result.IncidentDate:yyyy-MM-dd}</li>
+                                    <li><strong>Status:</strong> Filed (Under Evaluation)</li>
+                                </ul>
+                                <p>An insurance claims officer will review the incident report and details shortly. You can monitor progress and status updates directly from your dashboard.</p>
+                                <hr style='border: none; border-top: 1px solid #eee;' />
+                                <p style='font-size: 11px; color: #999;'>This is an automated notification. Please do not reply directly.</p>
+                            </div>";
+
+                        await _emailService.SendEmailAsync(policy.User.Email, subject, htmlBody, "ClaimFiled", policy.User.UserId);
+                    }
+                    catch (Exception mailEx)
+                    {
+                        _log.Error("Failed to send claim filing email notification", mailEx);
+                    }
+                }
 
                 return result;
             }
@@ -97,6 +141,39 @@ namespace InsuranceCompany.Services.Claims
                 claim.UpdatedAt = DateTime.UtcNow;
 
                 await _claimRepository.UpdateClaimAsync(claim);
+
+                if (claim.IssuedPolicy != null && claim.IssuedPolicy.User != null && !string.IsNullOrEmpty(claim.IssuedPolicy.User.Email))
+                {
+                    try
+                    {
+                        string subject = $"AutoShield Protection - Claim #{claim.ClaimId} Evaluation Decision";
+                        string statusText = dto.Status == "Approved" ? "APPROVED" : "REJECTED";
+                        string statusColor = dto.Status == "Approved" ? "#009087" : "#e03e3e";
+
+                        string htmlBody = $@"
+                            <div style='font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #eee; border-radius: 10px;'>
+                                <h2 style='color: {statusColor};'>Claim Evaluation: {statusText}</h2>
+                                <p>Hello <strong>{claim.IssuedPolicy.User.FullName}</strong>,</p>
+                                <p>An insurance claims officer has reviewed and finalized the decision for your claim filed against Policy Number <strong>{claim.IssuedPolicy.PolicyNumber}</strong>.</p>
+                                <p><strong>Decision Details:</strong></p>
+                                <ul>
+                                    <li><strong>Claim Reference ID:</strong> #{claim.ClaimId}</li>
+                                    <li><strong>Status:</strong> <span style='color: {statusColor}; font-weight: bold;'>{dto.Status}</span></li>
+                                    {(dto.Status == "Approved" ? $"<li><strong>Approved Settlement Amount:</strong> ₹{claim.ApprovedSettlementAmount}</li>" : "")}
+                                    <li><strong>Officer Remarks:</strong> {claim.OfficerRemarks ?? "No remarks provided."}</li>
+                                </ul>
+                                {(dto.Status == "Approved" ? "<p>The approved settlement amount is scheduled to be disbursed to your registered bank details shortly.</p>" : "<p>If you have any questions regarding the rejection of this claim, you may contact our claims helpdesk.</p>")}
+                                <hr style='border: none; border-top: 1px solid #eee;' />
+                                <p style='font-size: 11px; color: #999;'>This is an automated notification. Please do not reply directly.</p>
+                            </div>";
+
+                        await _emailService.SendEmailAsync(claim.IssuedPolicy.User.Email, subject, htmlBody, $"Claim{dto.Status}", claim.IssuedPolicy.User.UserId);
+                    }
+                    catch (Exception mailEx)
+                    {
+                        _log.Error("Failed to send claim review email notification", mailEx);
+                    }
+                }
 
                 _log.Info($"Claim ID {claimId} successfully reviewed and marked as: {dto.Status}");
 
@@ -176,14 +253,12 @@ namespace InsuranceCompany.Services.Claims
                 var claim = await _claimRepository.GetClaimByIdAsync(claimId);
                 if (claim == null) return null;
 
-                // ✅ If Admin or Officer, return data immediately and skip customer checks
                 if (bypassOwnershipCheck)
                 {
                     _log.Info($"Ownership check bypassed for backoffice role on Claim ID: {claimId}");
                     return claim;
                 }
 
-                
                 var userClaims = await _claimRepository.GetClaimsByUserIdAsync(userId);
                 if (!userClaims.Any(c => c.ClaimId == claimId))
                 {

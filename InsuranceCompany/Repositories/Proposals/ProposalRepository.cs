@@ -108,5 +108,14 @@ namespace InsuranceCompany.Repositories.Proposals
                 throw;
             }
         }
+
+        public async Task<bool> HasActiveProposalOrPolicyForVehicleAsync(string vehicleNumber)
+        {
+            return await _context.Proposals
+                .Include(p => p.IssuedPolicy)
+                .AnyAsync(p => p.VehicleNumber == vehicleNumber && 
+                               (p.Status != "Rejected" && p.Status != "Expired" && p.Status != "Cancelled") && 
+                               (p.IssuedPolicy == null || p.IssuedPolicy.Status == "Active"));
+        }
     }
 }
