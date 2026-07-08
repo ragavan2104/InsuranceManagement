@@ -3,13 +3,18 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { fileClaim } from '../../services/claimService';
 import { getMyProposalHistory } from '../../services/proposalService';
 import Loader from '../../components/loader';
+import Button from '../../components/Common/Button';
 import { 
   ArrowLeft, 
   Calendar, 
   DollarSign, 
   Check, 
-  AlertCircle 
+  AlertCircle,
+  ShieldAlert,
+  FileText,
+  Car
 } from 'lucide-react';
+import { toast, ToastContainer } from 'react-toastify';
 
 const FileClaim = () => {
   const navigate = useNavigate();
@@ -24,8 +29,17 @@ const FileClaim = () => {
   const [estimatedLossAmount, setEstimatedLossAmount] = useState('');
   
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
+
+  // Dynamically load Toastify CSS via JSDelivr CDN on element mounting to prevent Canvas compiling errors
+  useEffect(() => {
+    if (!document.getElementById('react-toastify-css-cdn')) {
+      const link = document.createElement('link');
+      link.id = 'react-toastify-css-cdn';
+      link.rel = 'stylesheet';
+      link.href = 'https://cdn.jsdelivr.net/npm/react-toastify@9.1.3/dist/ReactToastify.css';
+      document.head.appendChild(link);
+    }
+  }, []);
 
   useEffect(() => {
     if (!issuedPolicyId) {
@@ -36,7 +50,6 @@ const FileClaim = () => {
   const fetchActivePolicies = async () => {
     try {
       setLoading(true);
-      setError('');
       const proposals = await getMyProposalHistory();
       const active = proposals.filter(p => p.status === 'PolicyIssued' && p.issuedPolicyId);
       setActivePolicies(active);
@@ -45,7 +58,7 @@ const FileClaim = () => {
       }
     } catch (err) {
       console.error(err);
-      setError('Failed to fetch your active policies.');
+      toast.error('Failed to fetch your active policies.');
     } finally {
       setLoading(false);
     }
@@ -55,19 +68,32 @@ const FileClaim = () => {
     e.preventDefault();
     const activeId = issuedPolicyId || selectedPolicyId;
     if (!activeId) {
-      setError('No active policy specified for this claim. Return to dashboard.');
+      toast.error('No active policy specified for this claim. Return to dashboard.');
       return;
     }
 
     if (!incidentDate || !incidentDescription || !estimatedLossAmount) {
-      setError('Please fill in all required fields.');
+      toast.error('Please fill in all required fields.');
+      return;
+    }
+
+    // Client-side coverage limit validation
+    let maxCoverage = 0;
+    if (issuedPolicyId) {
+      maxCoverage = parseFloat(location.state?.coverageAmount || 0);
+    } else {
+      const selectedPolicy = activePolicies.find(p => p.issuedPolicyId?.toString() === selectedPolicyId);
+      maxCoverage = parseFloat(selectedPolicy?.finalInsuredDeclaredValue || 0);
+    }
+
+    const lossAmount = parseFloat(estimatedLossAmount);
+    if (maxCoverage > 0 && lossAmount > maxCoverage) {
+      toast.error(`Claim amount (Estimated Loss) cannot exceed the maximum policy coverage limit of ₹${maxCoverage.toLocaleString()}.`);
       return;
     }
 
     try {
       setLoading(true);
-      setError('');
-      setSuccess('');
 
       const claimPayload = {
         issuedPolicyId: parseInt(activeId),
@@ -78,7 +104,7 @@ const FileClaim = () => {
 
       await fileClaim(claimPayload);
 
-      setSuccess('Your insurance claim has been successfully registered! An adjuster will review it.');
+      toast.success('Your insurance claim has been successfully registered! An adjuster will review it.');
       setIncidentDate('');
       setIncidentDescription('');
       setEstimatedLossAmount('');
@@ -93,14 +119,14 @@ const FileClaim = () => {
       if (err.response?.data) {
         const data = err.response.data;
         if (typeof data === 'string') {
-          setError(data);
+          toast.error(data);
         } else if (data.errors) {
-          setError(Object.values(data.errors).flat().join(', '));
+          toast.error(Object.values(data.errors).flat().join(', '));
         } else {
-          setError(data.error || data.message || data.title || 'Failed to file claim. Please check inputs.');
+          toast.error(data.error || data.message || data.title || 'Failed to file claim. Please check inputs.');
         }
       } else {
-        setError('Connection to backend failed. Please try again.');
+        toast.error('Connection to backend failed. Please try again.');
       }
     } finally {
       setLoading(false);
@@ -110,63 +136,65 @@ const FileClaim = () => {
   const hasAccess = issuedPolicyId || (activePolicies.length > 0);
 
   return (
-    <div className="min-h-screen bg-slate-50 py-10 px-6">
+    <div className="min-h-screen bg-slate-50/50 py-12 px-4 sm:px-6 relative font-sans">
+      
+      {/* Toast Notification Deck */}
+      <ToastContainer position="top-right" autoClose={3500} hideProgressBar={false} />
+
       {loading && (
-        <div className="fixed inset-0 bg-white/80 z-[100] flex items-center justify-center">
+        <div className="fixed inset-0 bg-white/80 z-[100] flex items-center justify-center backdrop-blur-sm transition-all duration-300">
           <Loader />
         </div>
       )}
 
       <div className="max-w-xl mx-auto">
+        
         {/* Header bar */}
-        <header className="flex items-center justify-between border-b border-slate-200 pb-5 mb-8">
+        <header className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-100 pb-5 mb-8 gap-3">
           <button 
-            className="flex items-center gap-2 text-slate-500 hover:text-slate-800 text-sm font-semibold transition duration-150 cursor-pointer" 
+            className="flex items-center gap-2 text-slate-500 hover:text-[#141d38] text-sm font-bold transition-all duration-200 self-start group cursor-pointer" 
             onClick={() => navigate('/dashboard')}
           >
-            <ArrowLeft size={16} />
+            <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
             <span>Back to Dashboard</span>
           </button>
-          <h2 className="text-xl font-bold text-slate-800">Register Protection Claim</h2>
+          <h2 className="text-lg font-black text-[#141d38] tracking-tight uppercase flex items-center gap-2">
+            <ShieldAlert size={18} className="text-[#fcdb32]" />
+            Register Claim
+          </h2>
         </header>
 
-        {error && (
-          <div className="bg-red-50 border border-red-100 text-red-600 px-4 py-3 rounded-xl mb-6 text-sm font-medium">
-            <span>{error}</span>
-          </div>
-        )}
-        {success && (
-          <div className="bg-emerald-50 border border-emerald-100 text-emerald-600 px-4 py-3 rounded-xl mb-6 text-sm font-medium">
-            <span>{success}</span>
-          </div>
-        )}
-
         {!hasAccess ? (
-          <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-8 text-center">
-            <AlertCircle size={40} className="text-red-500 mx-auto mb-3" />
-            <p className="text-sm text-slate-500 mb-5">You do not have any active insurance policies to file a claim against.</p>
+          <div className="bg-white rounded-2xl border border-slate-100 shadow-xl p-8 text-center relative overflow-hidden">
+            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#141d38] via-[#fcdb32] to-[#141d38]" />
+            <AlertCircle size={40} className="text-rose-500 mx-auto mb-4 animate-pulse" />
+            <p className="text-sm font-semibold text-[#141d38] mb-1">No Active Policies Found</p>
+            <p className="text-xs text-slate-400 max-w-xs mx-auto mb-6">You do not have any active insurance policies to file a claim against at this moment.</p>
             <button 
-              className="bg-blue-600 hover:bg-blue-700 active:scale-[0.98] text-white font-semibold py-2.5 px-4 rounded-xl transition duration-200 text-xs cursor-pointer" 
+              className="bg-[#141d38] hover:bg-[#141d38]/95 text-[#fcdb32] text-xs font-bold py-2.5 px-5 rounded-xl transition duration-200 cursor-pointer shadow-md" 
               onClick={() => navigate('/dashboard')}
             >
               Return to Dashboard
             </button>
           </div>
         ) : (
-          <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-8">
-            <div className="border-b border-slate-100 pb-4 mb-6">
-              <h3 className="text-lg font-bold text-slate-800">File Incident Report</h3>
-              <p className="text-sm text-slate-500 mt-1">Provide the details of the loss incident to evaluate coverage</p>
+          <div className="bg-white rounded-2xl border border-slate-100 shadow-xl p-6 sm:p-8 relative overflow-hidden transition-all duration-300">
+            {/* Top decorative line highlight */}
+            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#141d38] via-[#fcdb32] to-[#141d38]" />
+
+            <div className="border-b border-slate-100 pb-4 mb-6 pt-2">
+              <h3 className="text-base font-extrabold text-[#141d38]">File Incident Report</h3>
+              <p className="text-xs text-slate-400 mt-1">Provide the details of the loss incident to evaluate coverage</p>
             </div>
 
             {/* Policy Selector Dropdown (only visible when direct navigation) */}
             {!issuedPolicyId && activePolicies.length > 0 && (
               <div className="flex flex-col gap-1.5 mb-5">
-                <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Select Covered Policy</label>
+                <label className="text-[10px] font-extrabold text-slate-500 uppercase tracking-widest">Select Covered Policy</label>
                 <select
                   value={selectedPolicyId}
                   onChange={(e) => setSelectedPolicyId(e.target.value)}
-                  className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-slate-900 bg-slate-50 focus:bg-white focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition duration-200 text-sm"
+                  className="w-full px-4 py-3 border border-slate-200 rounded-xl text-[#141d38] bg-slate-50/50 font-bold focus:bg-white focus:outline-none focus:border-[#fcdb32] focus:ring-4 focus:ring-[#fcdb32]/10 transition duration-200 text-xs"
                 >
                   {activePolicies.map(p => (
                     <option key={p.proposalId} value={p.issuedPolicyId}>
@@ -178,19 +206,19 @@ const FileClaim = () => {
             )}
 
             {/* Policy Info Box */}
-            <div className="bg-slate-50 rounded-xl p-5 mb-6 space-y-3 border border-slate-100/50">
-              <div className="flex justify-between items-center text-sm">
-                <span className="text-slate-400 font-medium">Covered Policy:</span>
-                <span className="text-slate-800 font-bold">
+            <div className="bg-slate-50 rounded-xl p-5 mb-6 space-y-3.5 border border-slate-100/50 border-l-4 border-l-[#141d38]">
+              <div className="flex justify-between items-center text-xs">
+                <span className="text-slate-400 font-bold uppercase tracking-wider">Covered Policy:</span>
+                <span className="text-[#141d38] font-black">
                   {issuedPolicyId 
                     ? (policyName || 'Standard Policy') 
                     : (activePolicies.find(p => p.issuedPolicyId?.toString() === selectedPolicyId)?.insurancePolicy?.policyName || 'N/A')
                   }
                 </span>
               </div>
-              <div className="flex justify-between items-center text-sm">
-                <span className="text-slate-400 font-medium">Covered Vehicle:</span>
-                <span className="text-slate-800 font-semibold">
+              <div className="flex justify-between items-center text-xs">
+                <span className="text-slate-400 font-bold uppercase tracking-wider">Covered Vehicle:</span>
+                <span className="text-slate-700 font-bold">
                   {issuedPolicyId 
                     ? (vehicleInfo || 'N/A') 
                     : (() => {
@@ -200,11 +228,22 @@ const FileClaim = () => {
                   }
                 </span>
               </div>
+              <div className="flex justify-between items-center text-xs border-t border-slate-200/50 pt-3">
+                <span className="text-slate-400 font-bold uppercase tracking-wider">Max Coverage Limit (IDV):</span>
+                <span className="text-blue-600 font-black">
+                  ₹{issuedPolicyId 
+                    ? parseFloat(location.state?.coverageAmount || 0).toLocaleString() 
+                    : parseFloat(activePolicies.find(p => p.issuedPolicyId?.toString() === selectedPolicyId)?.finalInsuredDeclaredValue || 0).toLocaleString()
+                  }
+                </span>
+              </div>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-5">
+              
+              {/* Incident Date Input */}
               <div className="flex flex-col gap-1.5">
-                <label htmlFor="incidentDate" className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Incident Date</label>
+                <label htmlFor="incidentDate" className="text-[10px] font-extrabold text-slate-500 uppercase tracking-widest">Incident Date</label>
                 <div className="relative flex items-center">
                   <Calendar size={18} className="absolute left-3.5 text-slate-400 pointer-events-none" />
                   <input
@@ -214,13 +253,14 @@ const FileClaim = () => {
                     max={new Date().toISOString().split('T')[0]} // Cannot be in future
                     value={incidentDate}
                     onChange={(e) => setIncidentDate(e.target.value)}
-                    className="w-full pl-11 pr-4 py-2.5 border border-slate-200 rounded-xl text-slate-900 bg-slate-50 focus:bg-white focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition duration-200 text-sm"
+                    className="w-full pl-11 pr-4 py-3 border border-slate-200 rounded-xl text-[#141d38] bg-slate-50/50 focus:bg-white focus:outline-none focus:border-[#fcdb32] focus:ring-4 focus:ring-[#fcdb32]/10 transition duration-200 text-sm font-semibold"
                   />
                 </div>
               </div>
 
+              {/* Estimated Loss Amount Input */}
               <div className="flex flex-col gap-1.5">
-                <label htmlFor="estimatedLossAmount" className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Estimated Financial Damage (₹)</label>
+                <label htmlFor="estimatedLossAmount" className="text-[10px] font-extrabold text-slate-500 uppercase tracking-widest">Estimated Financial Damage (₹)</label>
                 <div className="relative flex items-center">
                   <DollarSign size={18} className="absolute left-3.5 text-slate-400 pointer-events-none" />
                   <input
@@ -232,13 +272,14 @@ const FileClaim = () => {
                     placeholder="e.g. 15000.00"
                     value={estimatedLossAmount}
                     onChange={(e) => setEstimatedLossAmount(e.target.value)}
-                    className="w-full pl-11 pr-4 py-2.5 border border-slate-200 rounded-xl text-slate-900 bg-slate-50 focus:bg-white focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition duration-200 text-sm"
+                    className="w-full pl-11 pr-4 py-3 border border-slate-200 rounded-xl text-[#141d38] bg-slate-50/50 focus:bg-white focus:outline-none focus:border-[#fcdb32] focus:ring-4 focus:ring-[#fcdb32]/10 transition duration-200 text-sm font-semibold"
                   />
                 </div>
               </div>
 
+              {/* Incident Description Input */}
               <div className="flex flex-col gap-1.5">
-                <label htmlFor="incidentDescription" className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Incident Description / Damage Details</label>
+                <label htmlFor="incidentDescription" className="text-[10px] font-extrabold text-slate-500 uppercase tracking-widest">Incident Description / Damage Details</label>
                 <textarea
                   id="incidentDescription"
                   required
@@ -247,19 +288,18 @@ const FileClaim = () => {
                   placeholder="Explain exactly what happened, where it happened, and detail the damage on the vehicle..."
                   value={incidentDescription}
                   onChange={(e) => setIncidentDescription(e.target.value)}
-                  className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-slate-900 bg-slate-50 focus:bg-white focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition duration-200 text-sm"
+                  className="w-full px-4 py-3 border border-slate-200 rounded-xl text-slate-900 bg-slate-50/50 focus:bg-white focus:outline-none focus:border-[#fcdb32] focus:ring-4 focus:ring-[#fcdb32]/10 transition duration-200 text-sm font-medium resize-none placeholder-slate-400"
                 />
               </div>
 
+              {/* Action Submit */}
               <div className="pt-2">
-                <button 
-                  type="submit" 
-                  className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 active:scale-[0.98] text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 shadow-sm hover:shadow-md text-sm cursor-pointer"
-                >
-                  <Check size={16} />
+                <Button type="submit">
+                  <Check size={16} className="stroke-[2.5]" />
                   <span>Submit Claim Report</span>
-                </button>
+                </Button>
               </div>
+
             </form>
           </div>
         )}

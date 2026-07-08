@@ -1,18 +1,27 @@
 import React, { useState, useEffect } from 'react';
+import { PlusCircle, RefreshCw, Slash, Info } from 'lucide-react';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import API from '../../services/api';
 import Loader from '../loader';
-import { PlusCircle } from 'lucide-react';
 import InsuranceCard from '../InsuranceCard';
 
 const ManagePoliciesTab = () => {
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
 
+  // Mode select state
+  const [viewMode, setViewMode] = useState('templates'); // 'templates' | 'issued'
+
+  // Policy Template states
   const [policiesList, setPoliciesList] = useState([]);
   const [addOnsList, setAddOnsList] = useState([]);
   const [showCreatePolicyForm, setShowCreatePolicyForm] = useState(false);
   
+  // Edit state
+  const [isEditing, setIsEditing] = useState(false);
+  const [editingPolicyId, setEditingPolicyId] = useState(null);
+
   const [newPolicy, setNewPolicy] = useState({
     policyName: '',
     description: '',
@@ -24,20 +33,23 @@ const ManagePoliciesTab = () => {
     associatedAddOnIds: []
   });
 
+  // User Issued Policies states
+  const [issuedPoliciesList, setIssuedPoliciesList] = useState([]);
+
   useEffect(() => {
     fetchPolicies();
     fetchAddOns();
+    fetchIssuedPolicies();
   }, []);
 
   const fetchPolicies = async () => {
     try {
       setLoading(true);
-      setError('');
       const response = await API.get('/Policy');
       setPoliciesList(response.data);
     } catch (err) {
       console.error(err);
-      setError('Failed to fetch policies.');
+      toast.error('Failed to fetch policies.');
     } finally {
       setLoading(false);
     }
@@ -50,17 +62,47 @@ const ManagePoliciesTab = () => {
     } catch (err) {
       console.error(err);
       if (err.response?.status !== 404) {
-        setError('Failed to fetch Add-ons.');
+        toast.error('Failed to fetch Add-ons.');
       } else {
         setAddOnsList([]);
       }
     }
   };
 
-  const handleCreatePolicy = async (e) => {
+  const fetchIssuedPolicies = async () => {
+    try {
+      setLoading(true);
+      const response = await API.get('/IssuedPolicy/all');
+      setIssuedPoliciesList(response.data);
+    } catch (err) {
+      console.error(err);
+      // Suppress alert if no records are found yet
+      if (err.response?.status !== 404) {
+        toast.error('Failed to fetch issued policies.');
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleEditClick = (policy) => {
+    setIsEditing(true);
+    setEditingPolicyId(policy.policyId);
+    setNewPolicy({
+      policyName: policy.policyName || '',
+      description: policy.description || '',
+      basePremium: policy.basePremium ? policy.basePremium.toString() : '',
+      coverageAmount: policy.coverageAmount ? policy.coverageAmount.toString() : '',
+      policyDurationMonths: policy.policyDurationMonths || 12,
+      policyType: policy.policyType || 'Comprehensive',
+      categoryId: policy.categoryId || 1,
+      associatedAddOnIds: policy.associatedAddOns?.map(ao => ao.addOnId) || []
+    });
+    setShowCreatePolicyForm(true);
+  };
+
+  const handleCreateOrUpdatePolicy = async (e) => {
     e.preventDefault();
-    setError('');
-    setSuccess('');
 
     try {
       setLoading(true);
@@ -75,9 +117,17 @@ const ManagePoliciesTab = () => {
         associatedAddOnIds: newPolicy.associatedAddOnIds.map(id => parseInt(id))
       };
 
-      await API.post('/Policy/AddPolicy', payload);
-      setSuccess('Insurance policy created successfully!');
+      if (isEditing) {
+        await API.put(`/Policy/UpdatePolicy/${editingPolicyId}`, payload);
+        toast.success('Insurance policy updated successfully!');
+      } else {
+        await API.post('/Policy/AddPolicy', payload);
+        toast.success('Insurance policy created successfully!');
+      }
+
       setShowCreatePolicyForm(false);
+      setIsEditing(false);
+      setEditingPolicyId(null);
       setNewPolicy({
         policyName: '',
         description: '',
@@ -92,10 +142,40 @@ const ManagePoliciesTab = () => {
     } catch (err) {
       console.error(err);
       if (err.response && err.response.data) {
-        setError(JSON.stringify(err.response.data));
+        toast.error(typeof err.response.data === 'string' ? err.response.data : JSON.stringify(err.response.data));
       } else {
-        setError('Failed to create insurance policy.');
+        toast.error(isEditing ? 'Failed to update insurance policy.' : 'Failed to create insurance policy.');
       }
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleCancelIssuedPolicy = async (id) => {
+    if (!window.confirm('Are you sure you want to cancel this policy? This action is irreversible.')) return;
+    try {
+      setLoading(true);
+      await API.post(`/IssuedPolicy/cancel/${id}`);
+      toast.success(`Policy ID ${id} cancelled successfully.`);
+      fetchIssuedPolicies();
+    } catch (err) {
+      console.error(err);
+      toast.error(err.response?.data?.message || 'Failed to cancel the policy.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleRenewIssuedPolicy = async (id) => {
+    if (!window.confirm('Renew this policy? The expiration date will be extended.')) return;
+    try {
+      setLoading(true);
+      await API.post(`/IssuedPolicy/renew/${id}`);
+      toast.success(`Policy ID ${id} renewed successfully.`);
+      fetchIssuedPolicies();
+    } catch (err) {
+      console.error(err);
+      toast.error(err.response?.data?.message || 'Failed to renew the policy.');
     } finally {
       setLoading(false);
     }
@@ -117,188 +197,316 @@ const ManagePoliciesTab = () => {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 min-h-screen p-8 bg-gray-50">
+      <ToastContainer position="top-right" />
+
       {loading && (
-        <div className="fixed inset-0 bg-white/80 z-[100] flex items-center justify-center">
+        <div className="fixed inset-0 bg-white/80 z-[100] flex items-center justify-center backdrop-blur-sm">
           <Loader />
         </div>
       )}
 
-      <div className="flex items-center justify-between border-b border-slate-200 pb-4 mb-4">
-        <h2 className="text-xl font-bold text-slate-800">Policies Catalog</h2>
-        {!showCreatePolicyForm && (
+      {/* Mode Selector and Actions bar */}
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-bigstone/10 pb-5 gap-4">
+        
+        {/* Toggle Mode button group */}
+        <div className="flex bg-bigstone/5 p-1.5 rounded-xl w-fit shadow-inner">
           <button 
-            className="flex items-center gap-1.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-200 text-sm"
-            onClick={() => setShowCreatePolicyForm(true)}
+            className={`px-5 py-2 text-xs font-bold rounded-lg transition-all duration-300 ${viewMode === 'templates' ? 'bg-white text-bigstone shadow-sm scale-100' : 'text-bigstone/60 hover:text-bigstone hover:bg-white/50 scale-95'}`}
+            onClick={() => { setViewMode('templates'); setShowCreatePolicyForm(false); }}
           >
-            <PlusCircle size={16} />
+            Policy Templates
+          </button>
+          <button 
+            className={`px-5 py-2 text-xs font-bold rounded-lg transition-all duration-300 ${viewMode === 'issued' ? 'bg-white text-bigstone shadow-sm scale-100' : 'text-bigstone/60 hover:text-bigstone hover:bg-white/50 scale-95'}`}
+            onClick={() => { setViewMode('issued'); setShowCreatePolicyForm(false); }}
+          >
+            User Coverages
+          </button>
+        </div>
+
+        {viewMode === 'templates' && !showCreatePolicyForm && (
+          <button 
+            className="flex items-center gap-2 bg-bigstone hover:bg-bigstone/90 text-brightsun font-semibold py-2.5 px-5 rounded-xl transition duration-200 text-sm w-fit shadow-sm hover:shadow-md hover:-translate-y-0.5"
+            onClick={() => {
+              setIsEditing(false);
+              setNewPolicy({
+                policyName: '',
+                description: '',
+                basePremium: '',
+                coverageAmount: '',
+                policyDurationMonths: 12,
+                policyType: 'Comprehensive',
+                categoryId: 1,
+                associatedAddOnIds: []
+              });
+              setShowCreatePolicyForm(true);
+            }}
+          >
+            <PlusCircle size={18} />
             <span>Create Policy</span>
           </button>
         )}
       </div>
 
-      {error && (
-        <div className="bg-red-50 border border-red-100 text-red-600 px-4 py-3 rounded-xl text-sm font-medium">
-          <span>{error}</span>
-        </div>
-      )}
-      {success && (
-        <div className="bg-emerald-50 border border-emerald-100 text-emerald-600 px-4 py-3 rounded-xl text-sm font-medium">
-          <span>{success}</span>
-        </div>
-      )}
-
-      <div className="grid grid-cols-1 gap-8">
-        {showCreatePolicyForm ? (
-          <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-8">
-            <div className="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
-              <h3 className="text-lg font-bold text-slate-800">Publish New Insurance Policy</h3>
-              <button 
-                className="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold py-2 px-3 rounded-lg transition duration-200" 
-                onClick={() => setShowCreatePolicyForm(false)}
-              >
-                Cancel
-              </button>
-            </div>
-            <form onSubmit={handleCreatePolicy} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Policy Name</label>
-                <input 
-                  type="text" 
-                  required 
-                  placeholder="e.g. Premium Auto Guard"
-                  value={newPolicy.policyName} 
-                  onChange={e => setNewPolicy({...newPolicy, policyName: e.target.value})} 
-                  className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-slate-900 bg-slate-50 focus:bg-white focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition duration-200 text-sm"
-                />
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Policy Type</label>
-                <select 
-                  value={newPolicy.policyType}
-                  onChange={e => setNewPolicy({...newPolicy, policyType: e.target.value})}
-                  className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-slate-900 bg-slate-50 focus:bg-white focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition duration-200 text-sm"
+      {/* Main Mode Rendering */}
+      {viewMode === 'templates' ? (
+        <div className="grid grid-cols-1 gap-8 animate-in fade-in duration-300">
+          {showCreatePolicyForm ? (
+            <div className="bg-white rounded-2xl border border-bigstone/10 shadow-sm p-8 transition-all duration-300">
+              <div className="flex items-center justify-between border-b border-bigstone/5 pb-5 mb-6">
+                <h3 className="text-xl font-bold text-bigstone">
+                  {isEditing ? 'Update Insurance Policy' : 'Publish New Insurance Policy'}
+                </h3>
+                <button 
+                  className="bg-bigstone/5 hover:bg-bigstone/10 text-bigstone text-xs font-semibold py-2 px-4 rounded-lg transition duration-200" 
+                  onClick={() => { setShowCreatePolicyForm(false); setIsEditing(false); }}
                 >
-                  <option value="Comprehensive">Comprehensive</option>
-                  <option value="Third-Party, Fire & Theft (TPFT)">Third-Party, Fire & Theft (TPFT)</option>
-                  <option value="Third-Party Only (TPO)">Third-Party Only (TPO)</option>
-                </select>
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Base Premium (₹)</label>
-                <input 
-                  type="number" 
-                  required 
-                  min="0"
-                  step="0.01"
-                  placeholder="e.g. 5000.00"
-                  value={newPolicy.basePremium} 
-                  onChange={e => setNewPolicy({...newPolicy, basePremium: e.target.value})} 
-                  className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-slate-900 bg-slate-50 focus:bg-white focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition duration-200 text-sm"
-                />
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Coverage Amount (Max Liability) (₹)</label>
-                <input 
-                  type="number" 
-                  required 
-                  min="0"
-                  step="0.01"
-                  placeholder="e.g. 150000.00"
-                  value={newPolicy.coverageAmount} 
-                  onChange={e => setNewPolicy({...newPolicy, coverageAmount: e.target.value})} 
-                  className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-slate-900 bg-slate-50 focus:bg-white focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition duration-200 text-sm"
-                />
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Policy Duration (Months)</label>
-                <input 
-                  type="number" 
-                  required 
-                  min="1"
-                  value={newPolicy.policyDurationMonths} 
-                  onChange={e => setNewPolicy({...newPolicy, policyDurationMonths: e.target.value})} 
-                  className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-slate-900 bg-slate-50 focus:bg-white focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition duration-200 text-sm"
-                />
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Vehicle Category ID</label>
-                <select 
-                  value={newPolicy.categoryId}
-                  onChange={e => setNewPolicy({...newPolicy, categoryId: e.target.value})}
-                  className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-slate-900 bg-slate-50 focus:bg-white focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition duration-200 text-sm"
-                >
-                  <option value={1}>Two-Wheeler (ID: 1)</option>
-                  <option value={2}>Four-Wheeler (ID: 2)</option>
-                  <option value={3}>Commercial Vehicle (ID: 3)</option>
-                </select>
-              </div>
-              <div className="md:col-span-2 lg:col-span-3 flex flex-col gap-1.5">
-                <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Policy Description</label>
-                <textarea 
-                  required 
-                  rows="3"
-                  maxLength="500"
-                  placeholder="Summarize the coverage limits, exclusions, etc."
-                  value={newPolicy.description} 
-                  onChange={e => setNewPolicy({...newPolicy, description: e.target.value})} 
-                  className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-slate-900 bg-slate-50 focus:bg-white focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition duration-200 text-sm"
-                />
-              </div>
-
-              <div className="md:col-span-2 lg:col-span-3 space-y-3">
-                <label className="text-xs font-bold text-slate-700 uppercase tracking-wider block">Select Associated Add-On Benefits</label>
-                {addOnsList.length === 0 ? (
-                  <p className="text-sm text-slate-400">No active add-ons available. Create add-ons in the Add-ons tab.</p>
-                ) : (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {addOnsList.map(addon => (
-                      <label key={addon.addOnId} className="flex items-start gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100 hover:bg-slate-100/50 transition duration-150 cursor-pointer">
-                        <input 
-                          type="checkbox"
-                          checked={newPolicy.associatedAddOnIds.includes(addon.addOnId)}
-                          onChange={() => handleAddOnCheckboxChange(addon.addOnId)}
-                          className="mt-1 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
-                        />
-                        <div className="flex flex-col">
-                          <span className="text-sm font-semibold text-slate-800">{addon.addOnName}</span>
-                          <span className="text-xs font-semibold text-blue-600 mt-0.5">Premium: +₹{addon.additionalPremium}</span>
-                        </div>
-                      </label>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              <div className="md:col-span-2 lg:col-span-3 pt-4">
-                <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition duration-200 text-sm">
-                  Publish Policy
+                  Cancel
                 </button>
               </div>
-            </form>
-          </div>
-        ) : (
-          <div className="w-full">
-            <div className="border-b border-slate-100 pb-4 mb-6">
-              <h3 className="text-base font-bold text-slate-800">Active Policies Directory</h3>
-            </div>
-            {policiesList.length === 0 ? (
-              <div className="bg-white rounded-2xl border border-slate-100 p-8 text-center text-slate-400">
-                <p className="text-sm">No insurance policies published yet.</p>
-              </div>
-            ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {policiesList.map(p => (
-                  <InsuranceCard 
-                    key={p.policyId} 
-                    policy={p} 
+              <form onSubmit={handleCreateOrUpdatePolicy} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-xs font-bold text-bigstone/70 uppercase tracking-wider">Policy Name</label>
+                  <input 
+                    type="text" 
+                    required 
+                    placeholder="e.g. Premium Auto Guard"
+                    value={newPolicy.policyName} 
+                    onChange={e => setNewPolicy({...newPolicy, policyName: e.target.value})} 
+                    className="w-full px-4 py-2.5 border border-bigstone/20 rounded-xl text-bigstone bg-bigstone/5 focus:bg-white focus:outline-none focus:border-brightsun focus:ring-4 focus:ring-brightsun/20 transition duration-200 text-sm placeholder:text-bigstone/40"
                   />
-                ))}
+                </div>
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-xs font-bold text-bigstone/70 uppercase tracking-wider">Policy Type</label>
+                  <select 
+                    value={newPolicy.policyType}
+                    onChange={e => setNewPolicy({...newPolicy, policyType: e.target.value})}
+                    className="w-full px-4 py-2.5 border border-bigstone/20 rounded-xl text-bigstone bg-bigstone/5 focus:bg-white focus:outline-none focus:border-brightsun focus:ring-4 focus:ring-brightsun/20 transition duration-200 text-sm"
+                  >
+                    <option value="Comprehensive">Comprehensive</option>
+                    <option value="Third-Party, Fire & Theft (TPFT)">Third-Party, Fire & Theft (TPFT)</option>
+                    <option value="Third-Party Only (TPO)">Third-Party Only (TPO)</option>
+                  </select>
+                </div>
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-xs font-bold text-bigstone/70 uppercase tracking-wider">Base Premium (₹)</label>
+                  <input 
+                    type="number" 
+                    required 
+                    min="0"
+                    step="0.01"
+                    placeholder="e.g. 5000.00"
+                    value={newPolicy.basePremium} 
+                    onChange={e => setNewPolicy({...newPolicy, basePremium: e.target.value})} 
+                    className="w-full px-4 py-2.5 border border-bigstone/20 rounded-xl text-bigstone bg-bigstone/5 focus:bg-white focus:outline-none focus:border-brightsun focus:ring-4 focus:ring-brightsun/20 transition duration-200 text-sm placeholder:text-bigstone/40"
+                  />
+                </div>
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-xs font-bold text-bigstone/70 uppercase tracking-wider">Coverage Amount (Max Liability)</label>
+                  <input 
+                    type="number" 
+                    required 
+                    min="0"
+                    step="0.01"
+                    placeholder="e.g. 150000.00"
+                    value={newPolicy.coverageAmount} 
+                    onChange={e => setNewPolicy({...newPolicy, coverageAmount: e.target.value})} 
+                    className="w-full px-4 py-2.5 border border-bigstone/20 rounded-xl text-bigstone bg-bigstone/5 focus:bg-white focus:outline-none focus:border-brightsun focus:ring-4 focus:ring-brightsun/20 transition duration-200 text-sm placeholder:text-bigstone/40"
+                  />
+                </div>
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-xs font-bold text-bigstone/70 uppercase tracking-wider">Duration (Months)</label>
+                  <input 
+                    type="number" 
+                    required 
+                    min="1"
+                    value={newPolicy.policyDurationMonths} 
+                    onChange={e => setNewPolicy({...newPolicy, policyDurationMonths: e.target.value})} 
+                    className="w-full px-4 py-2.5 border border-bigstone/20 rounded-xl text-bigstone bg-bigstone/5 focus:bg-white focus:outline-none focus:border-brightsun focus:ring-4 focus:ring-brightsun/20 transition duration-200 text-sm"
+                  />
+                </div>
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-xs font-bold text-bigstone/70 uppercase tracking-wider">Vehicle Category ID</label>
+                  <select 
+                    value={newPolicy.categoryId}
+                    onChange={e => setNewPolicy({...newPolicy, categoryId: parseInt(e.target.value)})}
+                    className="w-full px-4 py-2.5 border border-bigstone/20 rounded-xl text-bigstone bg-bigstone/5 focus:bg-white focus:outline-none focus:border-brightsun focus:ring-4 focus:ring-brightsun/20 transition duration-200 text-sm"
+                  >
+                    <option value={1}>Two-Wheeler (ID: 1)</option>
+                    <option value={2}>Four-Wheeler (ID: 2)</option>
+                    <option value={3}>Commercial Vehicle (ID: 3)</option>
+                  </select>
+                </div>
+                <div className="md:col-span-2 lg:col-span-3 flex flex-col gap-1.5">
+                  <label className="text-xs font-bold text-bigstone/70 uppercase tracking-wider">Policy Description</label>
+                  <textarea 
+                    required 
+                    rows="3"
+                    maxLength="500"
+                    placeholder="Summarize the coverage limits, exclusions, etc."
+                    value={newPolicy.description} 
+                    onChange={e => setNewPolicy({...newPolicy, description: e.target.value})} 
+                    className="w-full px-4 py-2.5 border border-bigstone/20 rounded-xl text-bigstone bg-bigstone/5 focus:bg-white focus:outline-none focus:border-brightsun focus:ring-4 focus:ring-brightsun/20 transition duration-200 text-sm placeholder:text-bigstone/40 resize-none"
+                  />
+                </div>
+
+                <div className="md:col-span-2 lg:col-span-3 space-y-4 pt-2">
+                  <label className="text-xs font-bold text-bigstone uppercase tracking-wider block border-b border-bigstone/5 pb-2">Select Associated Add-On Benefits</label>
+                  {addOnsList.length === 0 ? (
+                    <div className="p-4 bg-bigstone/5 rounded-xl border border-dashed border-bigstone/10 text-center">
+                      <p className="text-sm font-medium text-bigstone/50">No active add-ons available.</p>
+                    </div>
+                  ) : (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {addOnsList.map(addon => {
+                        const isSelected = newPolicy.associatedAddOnIds.includes(addon.addOnId);
+                        return (
+                          <label 
+                            key={addon.addOnId} 
+                            className={`flex items-start gap-3 p-4 rounded-xl border transition-all duration-200 cursor-pointer 
+                              ${isSelected 
+                                ? 'bg-brightsun/10 border-brightsun shadow-sm ring-1 ring-brightsun/50' 
+                                : 'bg-bigstone/5 border-transparent hover:bg-bigstone/10 hover:border-bigstone/20'
+                              }`}
+                          >
+                            <input 
+                              type="checkbox"
+                              checked={isSelected}
+                              onChange={() => handleAddOnCheckboxChange(addon.addOnId)}
+                              className="mt-1 w-4 h-4 rounded border-bigstone/30 text-brightsun focus:ring-brightsun/50 transition-colors cursor-pointer accent-bigstone"
+                            />
+                            <div className="flex flex-col">
+                              <span className={`text-sm font-bold transition-colors ${isSelected ? 'text-bigstone' : 'text-bigstone/80'}`}>{addon.addOnName}</span>
+                              <span className={`text-xs font-bold mt-1 transition-colors ${isSelected ? 'text-bigstone/80' : 'text-bigstone/60'}`}>Premium: +₹{addon.additionalCost}</span>
+                            </div>
+                          </label>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+
+                <div className="md:col-span-2 lg:col-span-3 pt-6 border-t border-bigstone/5 flex justify-end">
+                  <button type="submit" className="w-full md:w-auto bg-bigstone hover:bg-bigstone/90 text-brightsun font-bold py-3 px-8 rounded-xl transition-all duration-200 text-sm cursor-pointer shadow-sm hover:shadow-md hover:-translate-y-0.5">
+                    {isEditing ? 'Update Policy' : 'Publish Policy'}
+                  </button>
+                </div>
+              </form>
+            </div>
+          ) : (
+            <div className="w-full">
+              <div className="border-b border-bigstone/10 pb-4 mb-6">
+                <h3 className="text-lg font-bold text-bigstone">Active Policies Directory</h3>
               </div>
-            )}
+              {policiesList.length === 0 ? (
+                <div className="bg-white rounded-2xl border border-bigstone/10 p-12 text-center">
+                   <Info size={36} className="mx-auto mb-4 text-bigstone/30" />
+                  <p className="text-base font-medium text-bigstone/70">No insurance policies published yet.</p>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {policiesList.map(p => (
+                    <InsuranceCard 
+                      key={p.policyId} 
+                      policy={p} 
+                      onSelect={handleEditClick}
+                      actionText="Edit Policy"
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      ) : (
+        /* ISSUED COVERAGES VIEW */
+        <div className="bg-white rounded-2xl border border-bigstone/10 shadow-sm overflow-hidden animate-in fade-in duration-300">
+          <div className="p-6 border-b border-bigstone/5 bg-bigstone/[0.02]">
+            <h3 className="text-lg font-bold text-bigstone">Active User Coverages Catalog</h3>
+            <p className="text-sm text-bigstone/60 mt-1">Manage active coverages, extend terms, or process cancellations</p>
           </div>
-        )}
-      </div>
+
+          {issuedPoliciesList.length === 0 ? (
+            <div className="p-16 text-center text-bigstone/60 bg-bigstone/[0.01]">
+               <Info size={36} className="mx-auto mb-4 text-bigstone/30" />
+               <p className="text-base font-medium text-bigstone/70">No active user policies have been issued by the system.</p>
+            </div>
+          ) : (
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="bg-bigstone/5 border-b-2 border-bigstone/10 text-xs font-bold text-bigstone/70 uppercase tracking-wider">
+                    <th className="py-4 px-6">Policy Number</th>
+                    <th className="py-4 px-6">Customer</th>
+                    <th className="py-4 px-6">Policy Plan</th>
+                    <th className="py-4 px-6">Start / End Dates</th>
+                    <th className="py-4 px-6 text-center">Status</th>
+                    <th className="py-4 px-6 text-right">Actions</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-bigstone/5">
+                  {issuedPoliciesList.map(ip => (
+                    <tr key={ip.issuedPolicyId} className="hover:bg-brightsun/10 transition-colors duration-200 group">
+                      <td className="py-4 px-6 font-bold text-bigstone text-sm">{ip.policyNumber}</td>
+                      <td className="py-4 px-6 text-sm text-bigstone/80">
+                        <span className="font-bold text-bigstone block">{ip.user?.fullName || 'N/A'}</span>
+                        <span className="text-[11px] text-bigstone/60 font-medium tracking-wide">{ip.user?.email || 'N/A'}</span>
+                      </td>
+                      <td className="py-4 px-6 text-sm text-bigstone/80">
+                        <span className="font-bold text-bigstone block">{ip.insurancePolicy?.policyName || 'Standard Policy'}</span>
+                        <span className="text-[11px] text-bigstone/60 font-medium bg-bigstone/5 px-2 py-0.5 rounded-md inline-block mt-1">
+                          Type: {ip.insurancePolicy?.policyType || 'Comprehensive'}
+                        </span>
+                      </td>
+                      <td className="py-4 px-6 text-xs text-bigstone/70">
+                        <span className="block font-medium mb-1"><span className="text-bigstone/50 w-8 inline-block">Start:</span> {new Date(ip.startDate).toLocaleDateString()}</span>
+                        <span className="block font-medium"><span className="text-bigstone/50 w-8 inline-block">End:</span> {new Date(ip.endDate).toLocaleDateString()}</span>
+                      </td>
+                      <td className="py-4 px-6 text-center">
+                        <span className={`inline-block px-3 py-1 text-[11px] font-bold rounded-full shadow-sm border ${
+                          ip.status === 'Active' 
+                            ? 'bg-emerald-50 text-emerald-700 border-emerald-200' 
+                            : 'bg-rose-50 text-rose-700 border-rose-200'
+                        }`}>
+                          {ip.status}
+                        </span>
+                      </td>
+                      <td className="py-4 px-6 text-right">
+                        <div className="flex justify-end gap-2.5 opacity-80 group-hover:opacity-100 transition-opacity">
+                          {ip.status === 'Active' && (
+                            <>
+                              <button
+                                onClick={() => handleRenewIssuedPolicy(ip.issuedPolicyId)}
+                                className="flex items-center gap-1.5 bg-bigstone/5 hover:bg-emerald-50 text-bigstone hover:text-emerald-700 hover:border-emerald-200 border border-transparent font-bold py-1.5 px-3 rounded-lg text-xs transition-all duration-200 cursor-pointer shadow-sm hover:shadow"
+                                title="Renew / Extend Term"
+                              >
+                                <RefreshCw size={14} />
+                                <span>Renew</span>
+                              </button>
+                              <button
+                                onClick={() => handleCancelIssuedPolicy(ip.issuedPolicyId)}
+                                className="flex items-center gap-1.5 bg-bigstone/5 hover:bg-rose-50 text-bigstone hover:text-rose-700 hover:border-rose-200 border border-transparent font-bold py-1.5 px-3 rounded-lg text-xs transition-all duration-200 cursor-pointer shadow-sm hover:shadow"
+                                title="Cancel Policy"
+                              >
+                                <Slash size={14} />
+                                <span>Cancel</span>
+                              </button>
+                            </>
+                          )}
+                          {ip.status === 'Cancelled' && (
+                            <span className="text-xs font-bold text-bigstone/40 bg-bigstone/5 px-3 py-1.5 rounded-lg border border-dashed border-bigstone/10">Cancelled</span>
+                          )}
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 };

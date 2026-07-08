@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './pages/Dashboard/Login';
+import Register from './pages/Dashboard/Register';
+import ForgotPassword from './pages/Dashboard/ForgotPassword';
 import AdminDashboard from './pages/Dashboard/AdminDashboard';
 import UserDashboard from './pages/Dashboard/UserDashboard';
 import OfficerDashboard from './pages/Dashboard/OfficerDashboard';
@@ -8,73 +10,27 @@ import Profile from './pages/Dashboard/Profile';
 import ApplyProposal from './pages/Proposals/ApplyProposal';
 import FileClaim from './pages/Claims/FileClaim';
 import Checkout from './pages/Payments/Checkout';
+import NotFound from './pages/NotFound';
 import Loader from './components/loader';
+import { useAuth } from './contexts/AuthContext.jsx';
 import './App.css';
 
 function App() {
-  const [token, setToken] = useState(localStorage.getItem('token') || '');
-  const [user, setUser] = useState({
-    userId: localStorage.getItem('userId') || '',
-    fullName: localStorage.getItem('fullName') || '',
-    email: localStorage.getItem('email') || '',
-    roleName: localStorage.getItem('roleName') || ''
-  });
-  const [appLoading, setAppLoading] = useState(false);
-
-  // Sync token and user profile on mount and storage events
-  useEffect(() => {
-    const handleStorageChange = () => {
-      const savedToken = localStorage.getItem('token');
-      if (savedToken) {
-        setToken(savedToken);
-        setUser({
-          userId: localStorage.getItem('userId') || '',
-          fullName: localStorage.getItem('fullName') || '',
-          email: localStorage.getItem('email') || '',
-          roleName: localStorage.getItem('roleName') || ''
-        });
-      } else {
-        setToken('');
-        setUser({ userId: '', fullName: '', email: '', roleName: '' });
-      }
-    };
-    window.addEventListener('storage', handleStorageChange);
-    return () => window.removeEventListener('storage', handleStorageChange);
-  }, []);
-
-  const handleLoginSuccess = (loginData) => {
-    setToken(loginData.token);
-    setUser({
-      userId: loginData.userId,
-      fullName: loginData.fullName,
-      email: loginData.email,
-      roleName: loginData.roleName
-    });
-  };
-
-  const handleLogout = () => {
-    localStorage.clear();
-    setToken('');
-    setUser({ userId: '', fullName: '', email: '', roleName: '' });
-  };
-
-  // Loader state control callbacks
-  const startLoading = () => setAppLoading(true);
-  const stopLoading = () => setAppLoading(false);
+  const { token, user, appLoading, login, logout, startLoading, stopLoading } = useAuth();
 
   const getDashboardComponent = () => {
     if (user.roleName === 'Admin') {
-      return <AdminDashboard user={user} onLogout={handleLogout} />;
+      return <Navigate to="/admin/users" replace />;
     } else if (user.roleName === 'Officer') {
-      return <OfficerDashboard user={user} onLogout={handleLogout} />;
+      return <Navigate to="/officer/proposals" replace />;
     } else if (user.roleName === 'User') {
-      return <UserDashboard user={user} onLogout={handleLogout} />;
+      return <UserDashboard user={user} onLogout={logout} />;
     }
     return (
       <div className="empty-state">
         <h3>Access Forbidden</h3>
         <p>Your user profile role is not recognized or lacks security privileges.</p>
-        <button className="btn btn-primary" onClick={handleLogout}>Sign Out</button>
+        <button className="btn btn-primary" onClick={logout}>Sign Out</button>
       </div>
     );
   };
@@ -95,10 +51,37 @@ function App() {
               <Navigate to="/dashboard" replace />
             ) : (
               <Login 
-                onLoginSuccess={handleLoginSuccess} 
+                onLoginSuccess={login} 
                 onStartLoading={startLoading} 
                 onStopLoading={stopLoading} 
               />
+            )
+          } 
+        />
+
+        {/* Register Route */}
+        <Route 
+          path="/register" 
+          element={
+            token ? (
+              <Navigate to="/dashboard" replace />
+            ) : (
+              <Register 
+                onStartLoading={startLoading} 
+                onStopLoading={stopLoading} 
+              />
+            )
+          } 
+        />
+
+        {/* Forgot Password Route */}
+        <Route 
+          path="/forgot-password" 
+          element={
+            token ? (
+              <Navigate to="/dashboard" replace />
+            ) : (
+              <ForgotPassword />
             )
           } 
         />
@@ -111,6 +94,72 @@ function App() {
               getDashboardComponent()
             ) : (
               <Navigate to="/login" replace />
+            )
+          } 
+        />
+
+        {/* Admin Dashboard Routes */}
+        <Route 
+          path="/admin" 
+          element={
+            token && user.roleName === 'Admin' ? (
+              <Navigate to="/admin/users" replace />
+            ) : (
+              <Navigate to="/login" replace />
+            )
+          } 
+        />
+        <Route 
+          path="/admin/:tab" 
+          element={
+            token && user.roleName === 'Admin' ? (
+              <AdminDashboard user={user} onLogout={logout} />
+            ) : (
+              <Navigate to="/login" replace />
+            )
+          } 
+        />
+
+        {/* Officer Dashboard Routes */}
+        <Route 
+          path="/officer" 
+          element={
+            token && user.roleName === 'Officer' ? (
+              <Navigate to="/officer/proposals" replace />
+            ) : (
+              <Navigate to="/login" replace />
+            )
+          } 
+        />
+        <Route 
+          path="/officer/:tab" 
+          element={
+            token && user.roleName === 'Officer' ? (
+              <OfficerDashboard user={user} onLogout={logout} />
+            ) : (
+              <Navigate to="/login" replace />
+            )
+          } 
+        />
+
+        {/* Direct Addon Shortcut Routes */}
+        <Route 
+          path="/addon" 
+          element={
+            token && user.roleName === 'Admin' ? (
+              <Navigate to="/admin/addons" replace />
+            ) : (
+              <Navigate to="/dashboard" replace />
+            )
+          } 
+        />
+        <Route 
+          path="/addons" 
+          element={
+            token && user.roleName === 'Admin' ? (
+              <Navigate to="/admin/addons" replace />
+            ) : (
+              <Navigate to="/dashboard" replace />
             )
           } 
         />
@@ -156,7 +205,7 @@ function App() {
           path="/profile" 
           element={
             token ? (
-              <Profile user={user} onLogout={handleLogout} />
+              <Profile user={user} onLogout={logout} />
             ) : (
               <Navigate to="/login" replace />
             )
@@ -169,11 +218,8 @@ function App() {
           element={<Navigate to={token ? "/dashboard" : "/login"} replace />} 
         />
         
-        {/* Fallback */}
-        <Route 
-          path="*" 
-          element={<Navigate to={token ? "/dashboard" : "/login"} replace />} 
-        />
+        {/* 404 – Page Not Found */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );

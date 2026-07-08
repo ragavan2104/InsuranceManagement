@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
 import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
-import { useNavigate } from 'react-router-dom';
-import { Layers, Clock, ShieldAlert, LogOut, User, Menu as MenuIcon } from 'lucide-react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { Layers, Clock, ShieldAlert, LogOut, User, Menu as MenuIcon, Shield, Calculator } from 'lucide-react';
 import ReviewProposalsTab from '../../components/Admin/ReviewProposalsTab';
 import ReviewClaimsTab from '../../components/Admin/ReviewClaimsTab';
 import AllProposalsHistoryTab from '../../components/Admin/AllProposalsHistoryTab';
 import AllClaimsHistoryTab from '../../components/Admin/AllClaimsHistoryTab';
+import ManagePoliciesTab from '../../components/Admin/ManagePoliciesTab';
+import PremiumCalculatorTab from '../../components/Common/PremiumCalculatorTab';
 
 const OfficerDashboard = ({ user, onLogout }) => {
-  const [activeTab, setActiveTab] = useState('proposals');
+  const { tab } = useParams();
   const navigate = useNavigate();
   const [toggled, setToggled] = useState(false);
+
+  const activeTab = tab || 'proposals';
 
   return (
     <div className="flex min-h-screen bg-slate-50">
@@ -39,7 +43,7 @@ const OfficerDashboard = ({ user, onLogout }) => {
           <MenuItem 
             active={activeTab === 'proposals'} 
             icon={<Clock size={18} />} 
-            onClick={() => { setActiveTab('proposals'); setToggled(false); }}
+            onClick={() => { navigate('/officer/proposals'); setToggled(false); }}
           >
             Proposals Queue
           </MenuItem>
@@ -47,25 +51,41 @@ const OfficerDashboard = ({ user, onLogout }) => {
           <MenuItem 
             active={activeTab === 'claims'} 
             icon={<ShieldAlert size={18} />} 
-            onClick={() => { setActiveTab('claims'); setToggled(false); }}
+            onClick={() => { navigate('/officer/claims'); setToggled(false); }}
           >
             Claims Queue
           </MenuItem>
-
+ 
           <MenuItem 
             active={activeTab === 'all-proposals'} 
             icon={<Clock size={18} />} 
-            onClick={() => { setActiveTab('all-proposals'); setToggled(false); }}
+            onClick={() => { navigate('/officer/all-proposals'); setToggled(false); }}
           >
             Proposals History
           </MenuItem>
-
+ 
           <MenuItem 
             active={activeTab === 'all-claims'} 
             icon={<ShieldAlert size={18} />} 
-            onClick={() => { setActiveTab('all-claims'); setToggled(false); }}
+            onClick={() => { navigate('/officer/all-claims'); setToggled(false); }}
           >
             Claims History
+          </MenuItem>
+ 
+          <MenuItem 
+            active={activeTab === 'policies'} 
+            icon={<Shield size={18} />} 
+            onClick={() => { navigate('/officer/policies'); setToggled(false); }}
+          >
+            Manage Policies
+          </MenuItem>
+ 
+          <MenuItem 
+            active={activeTab === 'calculator'} 
+            icon={<Calculator size={18} />} 
+            onClick={() => { navigate('/officer/calculator'); setToggled(false); }}
+          >
+            Premium Calculator
           </MenuItem>
 
           <MenuItem 
@@ -99,6 +119,8 @@ const OfficerDashboard = ({ user, onLogout }) => {
             {activeTab === 'claims' && 'Claims Evaluation Queue'}
             {activeTab === 'all-proposals' && 'Proposals History Catalog'}
             {activeTab === 'all-claims' && 'Claims Settlement History'}
+            {activeTab === 'policies' && 'Insurance Policies & Coverages'}
+            {activeTab === 'calculator' && 'Insurance Premium Calculator'}
           </h1>
         </header>
 
@@ -107,6 +129,8 @@ const OfficerDashboard = ({ user, onLogout }) => {
         {activeTab === 'claims' && <ReviewClaimsTab />}
         {activeTab === 'all-proposals' && <AllProposalsHistoryTab />}
         {activeTab === 'all-claims' && <AllClaimsHistoryTab />}
+        {activeTab === 'policies' && <ManagePoliciesTab />}
+        {activeTab === 'calculator' && <PremiumCalculatorTab />}
       </main>
     </div>
   );
