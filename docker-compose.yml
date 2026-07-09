@@ -1,0 +1,40 @@
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: insurance-db
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "YourStrongPassword!123"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver-data:/var/opt/mssql
+
+  backend:
+    build:
+      context: ./InsuranceCompany
+      dockerfile: Dockerfile
+    container_name: insurance-backend
+    ports:
+      - "5260:5260"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ApplyMigrationsOnStartup: "true"
+      ConnectionStrings__DefaultConnection: "Server=db;Database=VehicleInsuranceDB;User Id=sa;Password=YourStrongPassword!123;Encrypt=True;TrustServerCertificate=True;"
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+      args:
+        VITE_API_BASE_URL: "http://localhost:5260/api"
+    container_name: insurance-frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+volumes:
+  sqlserver-data:

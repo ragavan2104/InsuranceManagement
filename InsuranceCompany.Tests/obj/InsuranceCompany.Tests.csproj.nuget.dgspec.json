@@ -447,6 +447,10 @@
               "target": "Package",
               "version": "[11.3.1, )"
             },
+            "Mailtrap": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[10.0.9, )"

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "MHFhprxHZNI=",
+  "dgSpecHash": "1RDGLOrph/4=",
   "success": true,
   "projectFilePath": "D:\\c#\\InsuranceCompany\\InsuranceCompany.Tests\\InsuranceCompany.Tests.csproj",
   "expectedPackageFiles": [
@@ -14,6 +14,7 @@
     "C:\\Users\\Ragavan\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.1\\fluentvalidation.aspnetcore.11.3.1.nupkg.sha512",
     "C:\\Users\\Ragavan\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.11.0\\fluentvalidation.dependencyinjectionextensions.11.11.0.nupkg.sha512",
     "C:\\Users\\Ragavan\\.nuget\\packages\\log4net\\3.3.1\\log4net.3.3.1.nupkg.sha512",
+    "C:\\Users\\Ragavan\\.nuget\\packages\\mailtrap\\1.1.0\\mailtrap.1.1.0.nupkg.sha512",
     "C:\\Users\\Ragavan\\.nuget\\packages\\microsoft.applicationinsights\\2.22.0\\microsoft.applicationinsights.2.22.0.nupkg.sha512",
     "C:\\Users\\Ragavan\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\10.0.9\\microsoft.aspnetcore.authentication.jwtbearer.10.0.9.nupkg.sha512",
     "C:\\Users\\Ragavan\\.nuget\\packages\\microsoft.aspnetcore.mvc.testing\\10.0.9\\microsoft.aspnetcore.mvc.testing.10.0.9.nupkg.sha512",

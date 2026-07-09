@@ -3,6 +3,7 @@ using InsuranceCompany.Dtos.Claims;
 using InsuranceCompany.Models.Operations;
 using InsuranceCompany.Repositories.Claims;
 using InsuranceCompany.Services.Claims;
+using InsuranceCompany.Services.Communications;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
@@ -22,13 +23,15 @@ namespace InsuranceCompany.Tests.Claims
     public class ClaimServiceTests
     {
         private Mock<IClaimRepository> _mockClaimRepository = null!;
+        private Mock<IEmailService> _mockEmailService = null!;
         private ClaimService _claimService = null!;
 
         [SetUp]
         public void Setup()
         {
             _mockClaimRepository = new Mock<IClaimRepository>();
-            _claimService = new ClaimService(_mockClaimRepository.Object);
+            _mockEmailService = new Mock<IEmailService>();
+            _claimService = new ClaimService(_mockClaimRepository.Object, _mockEmailService.Object);
         }
 
         #region FileClaimAsync Tests

@@ -1,4 +1,4 @@
-﻿using FluentValidation;
+using FluentValidation;
 using InsuranceCompany.Models.Authentication;
 
 namespace InsuranceCompany.Validators.Authentication
@@ -36,9 +36,9 @@ namespace InsuranceCompany.Validators.Authentication
                 .WithMessage("Aadhaar number must be 12 digits.");
 
             RuleFor(x => x.PANNumber)
-                .Matches(@"^[A-Z]{5}\d{4}[A-Z]$")
+                .Length(10, 16)
                 .When(x => !string.IsNullOrEmpty(x.PANNumber))
-                .WithMessage("PAN number must be in the format: 5 letters, 4 digits, 1 letter.");
+                .WithMessage("License number must be between 10 and 16 characters.");
 
             RuleFor(x => x.Address)
                 .NotEmpty().WithMessage("Address is Required.");
@@ -47,7 +47,12 @@ namespace InsuranceCompany.Validators.Authentication
                 .NotEmpty()
                 .WithMessage("Date of Birth is Required.")
                 .LessThan(DateTime.Now)
-                .WithMessage("Date of Birth must be in the past.");
+                .WithMessage("Date of Birth must be in the past.")
+                .Must(dob => {
+                    int calculatedAge = DateTime.Today.Year - dob.Year;
+                    if (dob > DateTime.Today.AddYears(-calculatedAge)) calculatedAge--;
+                    return calculatedAge >= 18;
+                }).WithMessage("You must be at least 18 years old.");
 
 
         }

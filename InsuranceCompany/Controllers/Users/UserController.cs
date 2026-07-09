@@ -38,11 +38,22 @@ namespace InsuranceCompany.Controllers.Users
         }
 
         [HttpGet("{id}")]
-        [Authorize(Roles = "Admin")]
+        [Authorize]
         public async Task<IActionResult> GetUserById(int id)
         {
             try
             {
+                var userIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+                if (string.IsNullOrEmpty(userIdClaim)) return Unauthorized();
+
+                int currentUserId = int.Parse(userIdClaim);
+                bool isAdmin = User.IsInRole("Admin");
+
+                if (!isAdmin && currentUserId != id)
+                {
+                    return Forbid();
+                }
+
                 var user = await userService.GetUserByIdAsync(id);
                 if (user == null)
                 {

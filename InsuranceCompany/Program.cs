@@ -119,7 +119,35 @@ using (var scope = app.Services.CreateScope())
     try
     {
         var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-        _log.Info("Database connection check successful.");
+        if (app.Configuration.GetValue<bool>("ApplyMigrationsOnStartup"))
+        {
+            _log.Info("ApplyMigrationsOnStartup is enabled. Checking/Applying database migrations...");
+            int retries = 10;
+            while (retries > 0)
+            {
+                try
+                {
+                    context.Database.Migrate();
+                    _log.Info("Migrations applied successfully.");
+                    break;
+                }
+                catch (Exception ex)
+                {
+                    retries--;
+                    _log.Warn($"Database migration failed. Retrying in 5 seconds... ({retries} retries left)", ex);
+                    if (retries == 0)
+                    {
+                        _log.Error("Database initialization failed after maximum retries.", ex);
+                        throw;
+                    }
+                    System.Threading.Thread.Sleep(5000);
+                }
+            }
+        }
+        else
+        {
+            _log.Info("Database connection check successful.");
+        }
     }
     catch (Exception ex)
     {

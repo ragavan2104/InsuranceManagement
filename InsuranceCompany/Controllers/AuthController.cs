@@ -84,6 +84,18 @@ namespace InsuranceCompany.Controllers
                     calculatedAge--;
                 }
 
+                if (dto.DateOfBirth > DateTime.Today)
+                {
+                    _log.Warn("Date of birth cannot be in the future");
+                    return BadRequest("Date of birth cannot be in the future.");
+                }
+
+                if (calculatedAge < 18)
+                {
+                    _log.Warn($"Registration rejected: User must be at least 18 years old. Calculated age: {calculatedAge}");
+                    return BadRequest("You must be at least 18 years old to register.");
+                }
+
                 var newUser = new User
                 {
                     FullName = dto.FullName,
