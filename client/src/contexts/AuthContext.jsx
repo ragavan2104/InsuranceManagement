@@ -12,7 +12,6 @@ export const AuthProvider = ({ children }) => {
     roleName: localStorage.getItem('roleName') || ''
   });
 
-  // Sync token and user profile on storage change events (multi-tab sync support)
   useEffect(() => {
     const handleStorageChange = () => {
       const savedToken = localStorage.getItem('token');

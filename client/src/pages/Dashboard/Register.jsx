@@ -34,7 +34,7 @@ const Register = ({ onStartLoading, onStopLoading }) => {
   const [phone, setPhone] = useState('');
   const [dateOfBirth, setDateOfBirth] = useState('');
   const [aadhaarNumber, setAadhaarNumber] = useState('');
-  const [panNumber, setPanNumber] = useState('');
+  const [licenseNumber, setLicenseNumber] = useState('');
   const [address, setAddress] = useState('');
 
   // Field Error State
@@ -100,9 +100,26 @@ const Register = ({ onStartLoading, onStopLoading }) => {
     if (!password) newErrors.password = 'Password is required.';
     if (!confirmPassword) newErrors.confirmPassword = 'Please confirm your password.';
     if (!phone) newErrors.phone = 'Mobile number is required.';
-    if (!dateOfBirth) newErrors.dateOfBirth = 'Date of birth is required.';
+    if (!dateOfBirth) {
+      newErrors.dateOfBirth = 'Date of birth is required.';
+    } else {
+      const selectedDate = new Date(dateOfBirth);
+      const today = new Date();
+      if (selectedDate > today) {
+        newErrors.dateOfBirth = 'Date of birth cannot be in the future.';
+      } else {
+        let age = today.getFullYear() - selectedDate.getFullYear();
+        const m = today.getMonth() - selectedDate.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < selectedDate.getDate())) {
+          age--;
+        }
+        if (age < 18) {
+          newErrors.dateOfBirth = 'You must be at least 18 years old to register.';
+        }
+      }
+    }
     if (!aadhaarNumber) newErrors.aadhaarNumber = 'Aadhaar number is required.';
-    if (!panNumber) newErrors.panNumber = 'PAN number is required.';
+    if (!licenseNumber) newErrors.licenseNumber = 'License number is required.';
     if (!address) newErrors.address = 'Address is required.';
 
     setErrors(newErrors);
@@ -137,8 +154,8 @@ const Register = ({ onStartLoading, onStopLoading }) => {
       return;
     }
 
-    if (panNumber.length !== 10) {
-      toast.error('PAN Card Number must be exactly 10 characters.');
+    if (licenseNumber.length < 10 || licenseNumber.length > 16) {
+      toast.error('License Number must be between 10 and 16 characters.');
       return;
     }
 
@@ -152,7 +169,7 @@ const Register = ({ onStartLoading, onStopLoading }) => {
         phone,
         dateOfBirth: new Date(dateOfBirth).toISOString(),
         aadhaarNumber,
-        panNumber: panNumber.toUpperCase(),
+        panNumber: licenseNumber.toUpperCase(), // Mapped to backend PANNumber parameter
         address,
         roleId: 1 // Strictly customer role
       };
@@ -169,7 +186,7 @@ const Register = ({ onStartLoading, onStopLoading }) => {
       setPhone('');
       setDateOfBirth('');
       setAadhaarNumber('');
-      setPanNumber('');
+      setLicenseNumber('');
       setAddress('');
 
       setTimeout(() => {
@@ -393,8 +410,12 @@ const Register = ({ onStartLoading, onStopLoading }) => {
               <Calendar size={16} className="absolute left-3.5 text-slate-400 pointer-events-none" />
               <input
                 type="date"
+                max={new Date().toISOString().split('T')[0]}
                 value={dateOfBirth}
-                onChange={(e) => setDateOfBirth(e.target.value)}
+                onChange={(e) => {
+                  setDateOfBirth(e.target.value);
+                  if (errors.dateOfBirth) setErrors({...errors, dateOfBirth: null});
+                }}
                 className="w-full pl-11 pr-4 py-2.5 border border-slate-200 rounded-xl text-slate-900 bg-slate-50/50 focus:bg-white focus:outline-none focus:border-[#fcdb32] focus:ring-4 focus:ring-[#fcdb32]/10 transition duration-200 text-sm font-semibold"
               />
             </div>
@@ -431,27 +452,30 @@ const Register = ({ onStartLoading, onStopLoading }) => {
             )}
           </div>
 
-          {/* PAN Card Number */}
+          {/* Driving License Number */}
           <div className="space-y-1.5">
-            <label className="block text-[10px] font-extrabold text-slate-500 uppercase tracking-widest">PAN Card (10-character)</label>
+            <label className="block text-[10px] font-extrabold text-slate-500 uppercase tracking-widest">Driving License Number</label>
             <div className="relative flex items-center">
               <FileText size={16} className="absolute left-3.5 text-slate-400 pointer-events-none" />
               <input
                 type="text"
-                maxLength={10}
-                placeholder="ABCDE1234F"
-                value={panNumber}
-                onChange={(e) => setPanNumber(e.target.value.toUpperCase())}
+                maxLength={16}
+                placeholder="e.g. DL1420110012345"
+                value={licenseNumber}
+                onChange={(e) => {
+                  setLicenseNumber(e.target.value.toUpperCase());
+                  if (errors.licenseNumber) setErrors({...errors, licenseNumber: null});
+                }}
                 className="w-full pl-11 pr-10 py-2.5 border border-slate-200 rounded-xl text-slate-900 bg-slate-50/50 focus:bg-white focus:outline-none focus:border-[#fcdb32] focus:ring-4 focus:ring-[#fcdb32]/10 transition duration-200 text-sm font-semibold"
               />
-              {panNumber.length === 10 && (
+              {licenseNumber.length >= 10 && (
                 <Check size={16} className="absolute right-3.5 text-emerald-500" />
               )}
             </div>
-            {errors.panNumber && (
+            {errors.licenseNumber && (
               <p className="text-[11px] text-red-500 font-semibold flex items-center gap-1">
                 <AlertCircle size={12} />
-                {errors.panNumber}
+                {errors.licenseNumber}
               </p>
             )}
           </div>

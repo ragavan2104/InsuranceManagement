@@ -533,10 +533,10 @@ const Profile = ({ user, onLogout }) => {
 
                   <div
                     className="p-3.5 bg-slate-50/70 rounded-xl border border-slate-100/50 flex justify-between items-center group cursor-pointer hover:bg-slate-100 transition"
-                    onClick={() => handleCopyText(userDetails?.panNumber, "PAN Card Number")}
+                    onClick={() => handleCopyText(userDetails?.panNumber, "Driving License Number")}
                   >
                     <div className="flex flex-col">
-                      <span className="text-[9px] font-extrabold text-slate-400 uppercase tracking-widest">PAN Card Number</span>
+                      <span className="text-[9px] font-extrabold text-slate-400 uppercase tracking-widest">Driving License Number</span>
                       <div className="text-xs font-bold text-[#141d38] mt-1 font-mono tracking-wider">{userDetails?.panNumber || 'N/A'}</div>
                     </div>
                     <Clipboard size={14} className="text-slate-300 group-hover:text-[#141d38] transition-colors" />
